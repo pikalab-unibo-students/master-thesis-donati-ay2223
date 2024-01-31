@@ -167,7 +167,7 @@ Ansible is ideal for managing IT environments, as it can automate tasks on a mul
 
 \section{Main Ansible components}
 
-\subsubsection{Inventory}
+\subsection{Inventory}
             The inventory defines the nodes (also called hosts) of the infrastructure on which Ansible performs automations.
             Even if you can pass the host names from the terminal, it is good practice to create the inventory file.
             The hosts are inserted into groups, so that you can run automations on multiple hosts at the same time.
@@ -182,8 +182,42 @@ Ansible is ideal for managing IT environments, as it can automate tasks on a mul
             In addition, you can also make parent-child relationships, in which each machine inserted in a child group is also part of the parent group. All that can be done usingt the \texttt{children} attribute.
             Another function that might be useful, considering the inventories, are the variables, which can be defined for the groups (and also subgroups), through the \texttt{vars} attribute.
 
-\paragraph{Example Inventory Ansible}
-\lstinputlisting[float,language=YAML,label={lst:exampleInventoryAnsible}]{listings/InventoryAnsible.yaml}
+\subsubsection{Example Inventory Ansible}
+
+\lstinputlisting[label={lst:exampleInventoryAnsible}]{listings/exampleInventoryAnsible.yaml}
+
+\subsection{Modules}
+Modules are small programs, which are called by tasks to perform operations on machines.
+There are modules for different jobs we want to perform, some already provided by default, can be used from package installation to DevOps workflows.
+One example is package installation via apt (ansible.builtin.apt).
+There are also many modules provided by the community. If the community and default modules are not enough, there is the option of creating custom modules\cite{ansibleDocNewModules}.
+Ansible modules are designed to be idempotent, which means that they will make changes to managed nodes only when necessary. This ensures that managed nodes remain in the desired state, even if the playbook is run multiple times.
+
+\subsection{Play}
+The play contains the list of tasks to be executed (at least one). The play also contains the list of hosts on which the tasks will be executed; it may contain variables and other commands.
+Plays within the playbook are executed from top to bottom. Considering that playbooks are written in YAML, they are easily readable.
+
+\subsection{Task}
+The Task is the action we need to execute towards the controlled machine. The commands will be executed by calling the choosen modules with various parameters.
+
+\subsection{Playbook}
+Playbook is a collection of one or more Plays.
+These are sorts of books that contain different Plays, which depending on the request, will go to be executed. Playbooks use basic programming constructs such as loops and conditionals, which allows for greater flexibility in controlling the code.
+Playbooks can be reused, so you can create the best combination according to your scenario.
+
+\subsubsection{Example Playbook Ansible}
+\lstinputlisting[label={lst:examplePlaybookAnsible}]{listings/examplePlaybookAnsible.yaml}
+
+%commento
+%paragraph{Roles}
+
+%Roles: i roles (ruoli) sono dei componenti dei playbook che raggruppano operazioni legate tra di loro con uno scopo specifico. Queste vengono di solito unificate per avere più riusabilità delle stesse. Se il ruolo definito è processo standard, è facile che qualcuno lo abbia già implementato e lo si può scaricare da Ansible Galaxy!.
+
+%differenzeeee plugin e modules
+%https://docs.ansible.com/ansible/latest/dev_guide/developing_locally.html#developing-locally
+
+
+
 
 \chapter{Conclusion}
 Scrivere la conclusione

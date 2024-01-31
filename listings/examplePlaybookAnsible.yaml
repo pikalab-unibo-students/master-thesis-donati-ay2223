@@ -1,0 +1,24 @@
+- name: Package installation
+  hosts: campusNord
+  become: yes
+  vars:
+    package_name_1: nginx
+    package_name_2: nodejs
+  tasks:
+    - name: Install package 1
+      ansible.builtin.apt:
+        name: "{{ package_name_1 }}"
+        state: present
+    - name: Install package 2
+      ansible.builtin.apt:
+        name: "{{ package_name_2 }}"
+        state: present
+
+- name: Uninstall package
+  hosts: campusNord
+  become: yes
+  tasks:
+    - name: Uninstall MongoDB
+      ansible.builtin.apt:
+        name: mongodb
+        state: absent
