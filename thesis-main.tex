@@ -30,7 +30,6 @@
 \frontmatter\frontispiece
 
 \begin{abstract}
-
     Considering that companies have an increasing number of server connected to the network, IT professionals increasingly find themselves with machines on which to perform the same tasks.
     Therefore, systems that could automate tasks on large numbers of machines in parallel have been created and are increasingly being used.
     This thesis aims to compare and evaluate different server automation and orchestration systems, analyzing their features, advantages, and disadvantages.
@@ -140,6 +139,51 @@ On 2015 Ansible was acquired from RedHat\cite{ansibleRedHat}.
 
 Now, Ansible is currently one of the most used automation tool.
 
+\section{Purpose of the technology}
+Ansible is a technology used for automation. It allows from any environment to manage the automation of commands on other machines.
+The files used for the description and therefore the execution of the scripts are called Playbooks.
+Ansible is based on the Python language, so it is cross-platform.
+Usually, its use is recommended in a Linux environment, some features are slightly different on a Windows environment.
+Considering that most servers have a Linux kernel, the tests will focus on a Linux environment.
+Ansible is ideal for managing IT environments, as it can automate tasks on a multitude of nodes simultaneously.
+
+\subsection{Best points of Ansible}
+\begin{itemize}
+    \item \textbf{Simple}: As syntax, the files are described in YAML language. YAML is easy to understand by those who have minimal knowledge of programming languages and is often used for configurations. In addition, most configuration management software is characterized by an agent and a server from which to start the orchestration. In this case, Ansible's agentless management makes it easy to manage machines.
+    \item \textbf{Fast}: Ansible, in addition to having a low learning curve, has a fast configuration, not having agents that must be constantly active on the host machines. Ansible connects directly to the host machines via ssh, and it is enough to have Python installed on the host machines.
+    \item \textbf{Efficient}: Considering that Ansible do not have active agents, this does not consume extra resources in the hosts where the automatisms are executed. Ansible take space and resources only during the execution of the activity on the controlled node.
+    \item \textbf{Secure}: Considering that the connection from manager to controlled node is via ssh, no extra open ports are required.
+\end{itemize}
+
+\section{How the tool is shown to the community}
+
+\section{Who supports and maintains the project}
+\subsection{Statistics [Examples]}
+            \subsubsection{Number of GitHub issues}
+            \subsubsection{Issues that have been resolved}
+            \subsubsection{How active is the community}
+            \subsubsection{Management of user feedback}
+            \subsubsection{Community repository for uploading projects}
+
+\section{Main Ansible components}
+
+\subsubsection{Inventory}
+            The inventory defines the nodes (also called hosts) of the infrastructure on which Ansible performs automations.
+            Even if you can pass the host names from the terminal, it is good practice to create the inventory file.
+            The hosts are inserted into groups, so that you can run automations on multiple hosts at the same time.
+            According to the Ansible documentation on inventory management\cite{ansibleDocInventory}, you can group the machines according to the following criteria:
+            
+            \begin{itemize}
+                \item \textbf{What:} What purpose they were created for
+                \item \textbf{Where:} Where the machines are located
+                \item \textbf{When:} The stage of development they are assigned to
+            \end{itemize}
+            
+            In addition, you can also make parent-child relationships, in which each machine inserted in a child group is also part of the parent group. All that can be done usingt the \texttt{children} attribute.
+            Another function that might be useful, considering the inventories, are the variables, which can be defined for the groups (and also subgroups), through the \texttt{vars} attribute.
+
+\paragraph{Example Inventory Ansible}
+\lstinputlisting[float,language=YAML,label={lst:exampleInventoryAnsible}]{listings/InventoryAnsible.yaml}
 
 \chapter{Conclusion}
 Scrivere la conclusione
@@ -155,9 +199,9 @@ Considerazioni finali
 
 \chapter{Contribution}
 
-You may also put some code snippet (which is NOT float by default), eg: \cref{lst:random-code}.
+%You may also put some code snippet (which is NOT float by default), eg: \cref{lst:random-code}.
 
-\lstinputlisting[float,language=Java,label={lst:random-code}]{listings/HelloWorld.java}
+%\lstinputlisting[float,language=Java,label={lst:random-code}]{listings/HelloWorld.java}
 
 %\section{Fancy formulas here}
 

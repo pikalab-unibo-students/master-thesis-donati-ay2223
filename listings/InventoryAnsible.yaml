@@ -1,0 +1,34 @@
+ungrouped:
+    hosts:
+        example.domain.com:
+webservers:
+    hosts:
+        webser1.domain.com:
+        webser2.domain.com:
+dbservers:
+    hosts:
+        one.domain.com:
+        two.domain.com:
+        three.domain.com:
+        four.domain.com:
+campusNord:
+    hosts:
+        webser1.domain.com:
+        one.domain.com:
+        two.domain.com:
+    vars:
+        portain1: 5555
+        portaout1: 3333
+campusSud:
+    hosts:
+        webser2.domain.com:
+        three.domain.com:
+prod:
+    children:
+        campusNord:
+test:
+    children:
+        campusSud:
+    hosts:
+        four.domain.com:
+            
