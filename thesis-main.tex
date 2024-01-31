@@ -90,8 +90,66 @@ Automation systems aims to simplify the execution of repetitive task.
 %    \label{fig:random-image}
 %\end{figure}
 
+\chapter{Ansible}
+
+\section{The begin of Ansible}
+
+Michael DeHaan define Ansible:
+"Ansible is a configuration management tool, deployment tool, and ad-hoc task execution tool all in one."
+
+The observation that formed the basis of Michael DeHaan's idea was that several online stores used separate tools for configuration, deployment, and yet another for task execution. This was because there was not one technology that could perform all these functions.
+He also wanted Ansible to be as extensible as possible, that is, modules could be written in any language that could return JSON or key-value pairs.
+
+One of the basic concepts that Micheal specified from the beginning was that configuration should be extremely simple, so without using configuration files, daemons and databases. Ansible from the beginning used a file with the machines that were to be managed written on it. Only the machines described in that file were managed, in case they were not included they would not be managed.
+
+Quoting Micheal on his motivations for creating Ansible:
+"While part of starting Ansible was to show the world there was an easier way -- to take those lessons from Red Hat, the field, and a long history of building systems management applications -- it was mostly to build the tool that (A) I actually wanted to use, and (B) was a tool that you could not use for six months, come back to, and still remember. I couldn't bring myself to be settled with the tools we had to use, it was too frustrating. As a developer myself, I wanted to write development code, I didn't want to spend 50\% of my time fighting with the automation tooling and have the automation itself be a source of frustration. I wanted to help all of these IT environments I was finding myself in, and also help myself as a consumer of those environments."
+
+The motivation of Micheal about the project was:
+"As a software developer, I myself can emphasize -- the software design/development/testing process is frequently painful, and I would rather think of infrastructure as being data-driven. Data is supposed to be simple, programs are often not. This is why I made Ansible."
+
+\subsection{History}
+In 2006 Michael DeHaan was working at Red Hat's Emerging Technologies group, a research unit under Red Hat. Emerging Tech was created specifically where people could could work on virtually anything they thought people needed.
+
+Still those years, RedHat was very interested in configuration management. An early prototype of application virtualization management used Cobbler for provisioning the base operating system and Puppet for configuring virtual machines.
+
+This project did not take off and Michael DeHaan attributed the cause to the fact that it was complex to write the detail under virtual applications, but Red Hat virtualization was also still in its early days.
+
+Greg DeKoenigsberg was a Fedora community character and created a group with Michael DeHaan, Adrian Likins and Seth Vidal (author of yum). They wanted to create another very democratic open-source project in Red Hat, one that could have a wide variety of contributors and solve new problems. They thought back to busrpc. This project existed because it filled the gaps between Cobbler and Puppet. Cobbler could provide a system, and Puppet could put in configuration files, but because Puppet was too declarative you couldn't use it to do things like restart servers or do all the "ad hoc" tasks. In the past, Red Hat was exploring CIM, but there were not many good implementations of API support for Linux, so it would not be possible to build an open source project that would be able to rescout community success around CIM. The idea that was followed was to create an API-like channel for managing applications to configure systems, This idea was called Func.
+
+Func was based on a central server reaching out to a remote node to send automation orders. It was called the central server "overlord" and each of the remote machines "minions." 
+
+Other clones of Func were also created. Fabric and Capistrano also existed, but the team od Func wanted something more of an API and less of a script. Func was later used by Tumblr, and Steve Salesvan, who was interning at Red Hat at the time, continued to maintain it for Tumblr.
+
+Michael therefore wanted to build a configuration management system on top of Func, tentatively called "Remote Rocket Surgery."
+
+Cobbler, Puppet and Func formed some of the earliest DevOps-friendly automation tools, with Cobbler sometimes doing the provisioning and Func being used to launch Puppet.
+
+After leaving RedHat and a brief term at Puppet, Micheal saw that the language often divided potential users and that the most important thing in automation tools, simplicity, should be a priority.
+
+So Ansible began as a project in the beginning of 2012. It took off quickly due to many sysadmins and developers knowing Micheal.
+Also, people from Fedora Infrastructure, replaced their Puppet automation with Ansible and so Fedora help Ansible to grow and also used as a test platform.
+
+Like Func, it persues a "batteries included" philosophy, allowing everyone to contribute to the main modules and forming an active community of users.
+
+After a period when Micheal was working on automation of OpenStack with Puppet, the project started to take off on GitHub, and soon the company was founded.
+
+Ansible increase and Micheal and others had a good-sized company supporting it and more importantly building great products on top of it.
+
+On 2015 Ansible was acquired from RedHat\cite{ansibleRedHat}.
+
+Now, Ansible is currently one of the most used automation tool.
+
+
 \chapter{Conclusion}
-\input{chapters/conclusion.tex}
+Scrivere la conclusione
+
+\subsection{Comparations}
+Esempio comparazione tecnologie
+
+\subsection{Consideration}
+Considerazioni finali
+
 
 %\section{Some cool topic}
 
