@@ -206,7 +206,21 @@ These are sorts of books that contain different Plays, which depending on the re
 Playbooks can be reused, so you can create the best combination according to your scenario.
 
 \subsubsection{Example Playbook Ansible}
+
 \lstinputlisting[label={lst:examplePlaybookAnsible}]{listings/examplePlaybookAnsible.yaml}
+
+[CONTROLLA CHE TUTTO ABBIA SENSO CON IL CODICE]
+In this example, the names of the plays are \texttt{Install packages} and \texttt{Uninstall package}.
+
+They will be executed within the host group campusNord, with superuser privileges, given by the attribute plus value \texttt{become : yes}.
+
+Instead, \texttt{vars} defines two variables, \texttt{name_package_1} and \texttt{name_package_2}, which represent the names of the packages to install.
+
+The tasks called \texttt{Install package 1} and \texttt{Install package 2} install the packages specified by the variables \texttt{name_package_1} and \texttt{name_package_2}.
+
+Considering that as said before, Ansible is idempotent, in case the packages were already installed in the system, Ansible will not perform any operation and will not reinstall them either. If instead the packages were not already present in the system, Ansible, through the apt module, will install them.
+
+In the task \texttt{Uninstall MongoDB}, the apt module takes as input directly the value \texttt{mongodb}, and sets the state to \texttt{absent} to make sure that, if present, it is removed.
 
 %commento
 %paragraph{Roles}
@@ -215,6 +229,21 @@ Playbooks can be reused, so you can create the best combination according to you
 
 %differenzeeee plugin e modules
 %https://docs.ansible.com/ansible/latest/dev_guide/developing_locally.html#developing-locally
+
+[controlalre robe su overleaf]
+\subsection{Platforms available (Linux,Windows,MacOS)}
+\subsubsection{Operating Systems supported and recommended}
+
+\subsubsection{Language of the project}
+\subsubsection{Laguage for automation definition}
+\subsubsection{Architecture agent or agentless}
+
+\subsection{Structure of the project}
+\subsubsection{Documentation of the project}
+\subsubsection{Extensions of the project (modules, libraries)}
+
+\subsection{Struttura del progetto in depth (how it is the open source internal project)}
+
 
 
 
