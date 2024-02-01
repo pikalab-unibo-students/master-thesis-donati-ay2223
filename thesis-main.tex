@@ -118,7 +118,7 @@ Greg DeKoenigsberg was a Fedora community character and created a group with Mic
 
 Func was based on a central server reaching out to a remote node to send automation orders. It was called the central server "overlord" and each of the remote machines "minions." 
 
-Other clones of Func were also created. Fabric and Capistrano also existed, but the team od Func wanted something more of an API and less of a script. Func was later used by Tumblr, and Steve Salesvan, who was interning at Red Hat at the time, continued to maintain it for Tumblr.
+Other clones of Func were also created. Fabric and Capistrano also existed, but the team of Func wanted something more of an API and less of a script. Func was later used by Tumblr, and Steve Salesvan, who was interning at Red Hat at the time, continued to maintain it for Tumblr.
 
 Michael therefore wanted to build a configuration management system on top of Func, tentatively called "Remote Rocket Surgery."
 
@@ -129,13 +129,13 @@ After leaving RedHat and a brief term at Puppet, Micheal saw that the language o
 So Ansible began as a project in the beginning of 2012. It took off quickly due to many sysadmins and developers knowing Micheal.
 Also, people from Fedora Infrastructure, replaced their Puppet automation with Ansible and so Fedora help Ansible to grow and also used as a test platform.
 
-Like Func, it persues a "batteries included" philosophy, allowing everyone to contribute to the main modules and forming an active community of users.
+Like Func, it pursues a "batteries included" philosophy, allowing everyone to contribute to the main modules and forming an active community of users.
 
 After a period when Micheal was working on automation of OpenStack with Puppet, the project started to take off on GitHub, and soon the company was founded.
 
-Ansible increase and Micheal and others had a good-sized company supporting it and more importantly building great products on top of it.
+Ansible increased and Micheal and others had a good-sized company supporting it and more importantly, building great products on top of it.
 
-On 2015 Ansible was acquired from RedHat\cite{ansibleRedHat}.
+In 2015 Ansible was acquired from RedHat\cite{ansibleRedHat}.
 
 Now, Ansible is currently one of the most used automation tool.
 
@@ -151,7 +151,7 @@ Ansible is ideal for managing IT environments, as it can automate tasks on a mul
 \begin{itemize}
     \item \textbf{Simple}: As syntax, the files are described in YAML language. YAML is easy to understand by those who have minimal knowledge of programming languages and is often used for configurations. In addition, most configuration management software is characterized by an agent and a server from which to start the orchestration. In this case, Ansible's agentless management makes it easy to manage machines.
     \item \textbf{Fast}: Ansible, in addition to having a low learning curve, has a fast configuration, not having agents that must be constantly active on the host machines. Ansible connects directly to the host machines via ssh, and it is enough to have Python installed on the host machines.
-    \item \textbf{Efficient}: Considering that Ansible do not have active agents, this does not consume extra resources in the hosts where the automatisms are executed. Ansible take space and resources only during the execution of the activity on the controlled node.
+    \item \textbf{Efficient}: Considering that Ansible does not have active agents, this does not consume extra resources in the hosts where the automatisms are executed. Ansible take space and resources only during the execution of the activity on the controlled node.
     \item \textbf{Secure}: Considering that the connection from manager to controlled node is via ssh, no extra open ports are required.
 \end{itemize}
 
@@ -168,7 +168,7 @@ Ansible is ideal for managing IT environments, as it can automate tasks on a mul
 \section{Main Ansible components}
 
 \subsection{Inventory}
-            The inventory defines the nodes (also called hosts) of the infrastructure on which Ansible performs automations.
+            The inventory defines the nodes (also called hosts) of the infrastructure on which Ansible performs automation.
             Even if you can pass the host names from the terminal, it is good practice to create the inventory file.
             The hosts are inserted into groups, so that you can run automations on multiple hosts at the same time.
             According to the Ansible documentation on inventory management\cite{ansibleDocInventory}, you can group the machines according to the following criteria:
@@ -188,7 +188,7 @@ Ansible is ideal for managing IT environments, as it can automate tasks on a mul
 
 \subsection{Modules}
 Modules are small programs, which are called by tasks to perform operations on machines.
-There are modules for different jobs we want to perform, some already provided by default, can be used from package installation to DevOps workflows.
+There are modules for different jobs we want to perform, some are already provided by default, and can be used from package installation to DevOps workflows.
 One example is package installation via apt (ansible.builtin.apt).
 There are also many modules provided by the community. If the community and default modules are not enough, there is the option of creating custom modules\cite{ansibleDocNewModules}.
 Ansible modules are designed to be idempotent, which means that they will make changes to managed nodes only when necessary. This ensures that managed nodes remain in the desired state, even if the playbook is run multiple times.
@@ -211,7 +211,7 @@ Playbooks can be reused, so you can create the best combination according to you
 
 In this example, the names of Plays are \texttt{Package installation} and \texttt{Package uninstallation}.
 
-The execution will be target to the host group \texttt{campusNord}, with superuser privileges, given by the attribute-value \texttt{become : yes}.
+The execution will be targeted to the host group \texttt{campusNord}, with superuser privileges, given by the attribute-value \texttt{become : yes}.
 
 In addition, \texttt{vars} defines two variables: \texttt{package\_name\_1} and \texttt{package\_name\_2}, which represent the names of the packages to install.
 
@@ -232,19 +232,17 @@ In the Task \texttt{Uninstall MongoDB}, the apt module takes as input directly t
 
 \section{Characteristics}
 
-\subsection{Platforms available (Linux,Windows,MacOS)}
+\subsection{Platforms available (Linux, Windows, MacOS)}
 \subsection{Operating Systems supported and recommended}
 \subsection{Language of the project}
 \subsection{Language for automation definition}
 \subsection{Architecture, agent or agentless}
 \subsection{Structure of the project}
-\subsubsection{Deep structure of of the project (how it is the open source internal project)}
+\subsubsection{Deep structure of the project (how it is the open source internal project)}
 \subsection{Documentation of the project}
 \subsection{Extensions of the project (modules, libraries)}
 
-\section{Installation and configuration}
-
-
+\section{Installation}
 As indicated in the official documentation\cite{ansibleDocInstall}:
 
 Ansible community packages are distributed in two ways:
@@ -254,48 +252,51 @@ Ansible community packages are distributed in two ways:
 - \textbf{ansible}: a much larger package that adds a curated selection from the Ansible Collections community to automate a wide range of devices.
 
 The official method involves pip and then installing Ansible via pip.
-
-\lstlisting[label={lst:installAnsibleViaPip}]
-{
+\begin{lstlisting}
 sudo apt install python3-pip
-}
+\end{lstlisting}
 
-%\texttt{pip} occupa circa 250 MegaByte di spazio,
+\texttt{pip} takes about 250 MegaByte of disk space.
 
-%Poi con pip per installare Ansible (core):
-%\begin{listing}[H]
-%\begin{minted}{BASH}
-%python3 -m pip install --user ansible-core
-%\end{minted}
-%\end{listing}
+After installing pip, install Ansible(core):
 
-%Su ubuntu.04 LTS,
-%Considering that Python3 in pre installed in Ubuntu, it is possible to install Ansible via \texttt{apt}
+\begin{lstlisting}
+python3 -m pip install --user ansible-core
+\end{lstlisting}
 
-%\begin{listing}[H]
-%\begin{minted}{BASH}
-%sudo apt install ansible-core
-%\end{minted}
-%\end{listing}
+On ubuntu.04 LTS,
+Considering that Python3 is pre installed in Ubuntu, it is possible to install Ansible via \texttt{apt}.
 
-%L'installazione richiede solamente circa 80 MegaByte,
+\begin{lstlisting}
+sudo apt install ansible-core
+\end{lstlisting}
 
+The installation requires only about 80 MegaByte.
+
+\subsection{Example}
 %prova questo
 %https://riptutorial.com/ansible/example/5069/hello--world
 
+\subsection{Learning curve}
 
+\subsection{Tecnologies for testing Ansible}
+\subsubsection{Suite for check syntax}
+\subsubsection{Suite for check jobs}
 
+\section{Pros}
 
+\section{Cons}
 
+\section{Real project use cases}
 
 
 \chapter{Conclusion}
 Scrivere la conclusione
 
-\subsection{Comparations}
+\section{Comparations}
 Esempio comparazione tecnologie
 
-\subsection{Consideration}
+\section{Consideration}
 Considerazioni finali
 
 
