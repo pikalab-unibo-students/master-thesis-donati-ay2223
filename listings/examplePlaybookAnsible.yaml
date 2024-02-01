@@ -14,7 +14,7 @@
         name: "{{ package_name_2 }}"
         state: present
 
-- name: Uninstall package
+- name: Package unistallation
   hosts: campusNord
   become: yes
   tasks:

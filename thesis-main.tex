@@ -209,18 +209,18 @@ Playbooks can be reused, so you can create the best combination according to you
 
 \lstinputlisting[label={lst:examplePlaybookAnsible}]{listings/examplePlaybookAnsible.yaml}
 
-%[CONTROLLA CHE TUTTO ABBIA SENSO CON IL CODICE]
-In this example, the names of the plays are \texttt{Install packages} and \texttt{Uninstall package}.
+In this example, the names of Plays are \texttt{Package installation} and \texttt{Package uninstallation}.
 
-They will be executed within the host group campusNord, with superuser privileges, given by the attribute plus value \texttt{become : yes}.
+The execution will be target to the host group \texttt{campusNord}, with superuser privileges, given by the attribute-value \texttt{become : yes}.
 
-Instead, \texttt{vars} defines two variables, \texttt{name_package_1} and \texttt{name_package_2}, which represent the names of the packages to install.
+In addition, \texttt{vars} defines two variables: \texttt{package\_name\_1} and \texttt{package\_name\_2}, which represent the names of the packages to install.
 
-The tasks called \texttt{Install package 1} and \texttt{Install package 2} install the packages specified by the variables \texttt{name_package_1} and \texttt{name_package_2}.
+The Tasks called \texttt{Install package 1} and \texttt{Install package 2} install the packages specified by the variables \texttt{package\_name\_1} e \texttt{package\_name\_2}.
 
-Considering that as said before, Ansible is idempotent, in case the packages were already installed in the system, Ansible will not perform any operation and will not reinstall them either. If instead the packages were not already present in the system, Ansible, through the apt module, will install them.
+Considering that Ansible is idempotent,
+in case the packages were already installed in the system, Ansible will not perform any operation and will not reinstall them either. If instead the packages were not already present in the system, Ansible, through the apt module, will install them.
 
-In the task \texttt{Uninstall MongoDB}, the apt module takes as input directly the value \texttt{mongodb}, and sets the state to \texttt{absent} to make sure that, if present, it is removed.
+In the Task \texttt{Uninstall MongoDB}, the apt module takes as input directly the value \texttt{mongodb}, and sets the state to \texttt{absent} to make sure that, if present, it is removed.
 
 %commento
 %paragraph{Roles}
@@ -230,19 +230,60 @@ In the task \texttt{Uninstall MongoDB}, the apt module takes as input directly t
 %differenzeeee plugin e modules
 %https://docs.ansible.com/ansible/latest/dev_guide/developing_locally.html#developing-locally
 
-%[controlalre robe su overleaf]
+\section{Characteristics}
+
 \subsection{Platforms available (Linux,Windows,MacOS)}
-\subsubsection{Operating Systems supported and recommended}
-
-\subsubsection{Language of the project}
-\subsubsection{Laguage for automation definition}
-\subsubsection{Architecture agent or agentless}
-
+\subsection{Operating Systems supported and recommended}
+\subsection{Language of the project}
+\subsection{Language for automation definition}
+\subsection{Architecture, agent or agentless}
 \subsection{Structure of the project}
-\subsubsection{Documentation of the project}
-\subsubsection{Extensions of the project (modules, libraries)}
+\subsubsection{Deep structure of of the project (how it is the open source internal project)}
+\subsection{Documentation of the project}
+\subsection{Extensions of the project (modules, libraries)}
 
-\subsection{Struttura del progetto in depth (how it is the open source internal project)}
+\section{Installation and configuration}
+
+
+As indicated in the official documentation\cite{ansibleDocInstall}:
+
+Ansible community packages are distributed in two ways:
+
+- \textbf{ansible-core} a minimalist language and runtime package that contains a set of Ansible.Builtin.
+
+- \textbf{ansible} a much larger package "with batteries included" that adds a curated selection from the Ansible Collections community to automate a wide range of devices.
+
+The official method involves pip and then installing Ansible via pip.
+
+\lstlisting[label={lst:installAnsibleViaPip}]
+{
+sudo apt install python3-pip
+}
+
+%\texttt{pip} occupa circa 250 MegaByte di spazio,
+
+%Poi con pip per installare Ansible (core):
+%\begin{listing}[H]
+%\begin{minted}{BASH}
+%python3 -m pip install --user ansible-core
+%\end{minted}
+%\end{listing}
+
+%Su ubuntu.04 LTS,
+%Considering that Python3 in pre installed in Ubuntu, it is possible to install Ansible via \texttt{apt}
+
+%\begin{listing}[H]
+%\begin{minted}{BASH}
+%sudo apt install ansible-core
+%\end{minted}
+%\end{listing}
+
+%L'installazione richiede solamente circa 80 MegaByte,
+
+%prova questo
+%https://riptutorial.com/ansible/example/5069/hello--world
+
+
 
 
 
