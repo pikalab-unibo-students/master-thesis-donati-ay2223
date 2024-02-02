@@ -30,9 +30,9 @@
 \frontmatter\frontispiece
 
 \begin{abstract}
-    Considering that companies have an increasing number of server connected to the network, IT professionals increasingly find themselves with machines on which to perform the same tasks.
+    Considering that companies have an increasing number of servers connected to the network, IT professionals increasingly find themselves with machines on which to perform the same tasks.
     Therefore, systems that could automate tasks on large numbers of machines in parallel have been created and are increasingly being used.
-    This thesis aims to compare and evaluate different server automation and orchestration systems, analyzing their features, advantages, and disadvantages.
+    This thesis aims to compare and evaluate different server automation tools, analyzing their features, advantages, and disadvantages.
     It will then go on to provide a summary overview of the reasons why professionals choose one alternative over another.
 \end{abstract}
 
@@ -57,26 +57,70 @@
 \label{chap:introduction}
 %----------------------------------------------------------------------------------------
 
-This thesis aims to compare and evaluate different server automation and orchestration systems.
-It will provide also a summary overview, useful for professionals of IT to compare solutions.
+Considering the last decades, the number of servers increased, computing capacity is increasing more and more and technologies are growing.
+So, now IT companies need also technologies to manage the infrastructure they have, that could simplify and organize the jobs on servers.
+There are a lot of repetitive tasks when it is needed to install and configure a server, so there are now tools to simplify it a lot and also make an automation on it.
+These technologies could be called "automation tools".
 
-\paragraph{Structure of the Thesis}
+Considering different DevOps technologies, this document aims to study, present and compare technologies about automation.
+That document will be useful for IT students, teachers and enthusiasts who wish to manage their IT environment differently.
+It will be a starting point to see what is automation tools, different types of ways to automate of these technologies, see some examples and also see and overviews and comparisons.
+
+\section{Metology}
+Starting from some technologies that it is already known, it will search for technologies similar to them.
+Also, sites and theses that talk about automation will be beginning to see what technologies exist.
+There will be a focus on "popular" tools in these years. Searching for technologies just created will not be the scope, and also finding technologies too old might result not useful for real use.
+Technologies with no costs, an open-source project, and Apache or similar license will be preferred.
+There are some technologies properties of Amazon, Google and Microsoft, even if they might be described, they will not be the focus of the document.
+That research also searching for tecnologies that could be useful for multipurpose scope, always related to automation.
+For example, tools might not be able only to start and configure server, but it is better if it is also possible to expand with other functions.
+These tools must have a solid user base. Also, It does not search for a particular language or a single way to manage machines (for example agent-agentless).
+
+\section{Explanation of the structure}
+
+Initially, there will be a brief description of what the automation tools are and who uses them.
+Also, there will be a brief explanation about Open Source, and its importance for the projects in our use case.
+For each technology, there will be a little historical view, a little study about the open source project, the trend of the language, the community and the support.
+There will be a description of the tool and its components.
+Also, some info on installation and examples.
+Considering that automation could be easily integrated with CI/CD, it will be searching for some sort of automatic test and checks of the technology.
+Considering this research and other sources, there will be a little description of pros and cons.
+At the end, there will be a summary of the research done writing that document, and make tables or similar mixing different technologies.
+
+The structure will be something like that:
+
+\begin{itemize}
+    \item Introduction
+    \item State of the art (what are automation tools, who uses, open source)
+    \item for each automation tool:
+    \begin{itemize}
+    \item History of the technology
+    \item Purpose of the technology
+    \item Community, maintenance and support
+    \item Main technology components
+    \item Installation and examples
+    \item How to test the technology
+    \item Pros and Cons
+    \end{itemize}
+    \item Conclusions (Considerations and comparisons)
+\end{itemize}
+
 
 \note{At the end, describe the structure of the paper}
 
 \chapter{State of the art}
 
-\section{What are automation systems}
-Automation systems are software tools that allow you to manage, monitor, and automate operations on a large number of servers. These systems can include features such as automatic provisioning, configuration management, service orchestration, performance monitoring, and troubleshooting.
+\section{What are automation tools}
+Automation tools are software tools that allow you to manage, monitor, and automate operations on a large number of servers. These systems can include features such as automatic provisioning, configuration management, service orchestration, performance monitoring, and troubleshooting.
 An example of these systems is \textbf{Ansible}, which uses an agentless management model to connect to servers and perform automation tasks. Other examples include Puppet, Chef, and SaltStack, which offer similar features but use different approaches for server management.
 These automation systems can be particularly useful in environments with a large number of servers, where manual management of each server would be inefficient and prone to errors. Through automation, organizations can improve operational efficiency, reduce errors, and free up IT staff to focus on other works.
-Automation systems aims to simplify the execution of repetitive task.
+Automation systems aim to simplify the execution of repetitive tasks.
 
-\section{Who uses automation systems}
+\section{Who uses automation tools}
 
 \section{When it makes sense (or doesn't make sense) to automate operations}
 
-\section{What are the main systems}
+\section{What are the main toolss}
 
 \section{OpenSource and Closed Source, when OpenSource becomes Closed for some use cases}
 
@@ -277,11 +321,11 @@ The installation requires only about 80 MegaByte.
 %prova questo
 %https://riptutorial.com/ansible/example/5069/hello--world
 
-\subsection{Learning curve}
+\section{Tecnologies for testing Ansible}
+\subsection{Suite for check syntax}
+\subsection{Suite for check jobs}
 
-\subsection{Tecnologies for testing Ansible}
-\subsubsection{Suite for check syntax}
-\subsubsection{Suite for check jobs}
+\section{Learning curve}
 
 \section{Pros}
 
@@ -293,7 +337,7 @@ The installation requires only about 80 MegaByte.
 \chapter{Conclusion}
 Scrivere la conclusione
 
-\section{Comparations}
+\section{Comparison}
 Esempio comparazione tecnologie
 
 \section{Consideration}
