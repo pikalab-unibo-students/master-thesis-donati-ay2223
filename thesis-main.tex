@@ -112,27 +112,65 @@ The structure will be something like that:
 \chapter{State of the art}
 
 \section{What are automation tools}
+We could consider in some way that for DevOps purpose all the job we need to execute is expressed in form of code\cite{learnDevOps}.
+And also the configuration of server and installation of software could do that.
 Automation tools are software tools that allow you to manage, monitor, and automate operations on a large number of servers. These systems can include features such as automatic provisioning, configuration management, service orchestration, performance monitoring, and troubleshooting.
 An example of these systems is \textbf{Ansible}, which uses an agentless management model to connect to servers and perform automation tasks. Other examples include Puppet, Chef, and SaltStack, which offer similar features but use different approaches for server management.
 These automation systems can be particularly useful in environments with a large number of servers, where manual management of each server would be inefficient and prone to errors. Through automation, organizations can improve operational efficiency, reduce errors, and free up IT staff to focus on other works.
 Automation systems aim to simplify the execution of repetitive tasks.
 
 \section{Who uses automation tools}
+Automation tools could be useful from single use who wish to simplify some task in his home running server (or cloud), to IT companies or University from a few to thusands of servers.
+Some automation tools are simple than other, for example starting from the structure of the langague used to create automations.
+Some of them also require specific knowledge(Cobbler require PXE).
+There are some that could be used by beginners in IT, other that require oop languages like Ruby.
 
 \section{When it makes sense (or doesn't make sense) to automate operations}
+There are questons that helps to understand when an automation tool could be a great choice:
+\begin{itemize}
+    \item Does It need to do that job more than once?
+    \item How much time did I spend to create that automation?
+    \item Create that automation will save me time or is time-consuming and not useful?
+    \item What is the probability that I need to do that job another time in the future?
+    \item How much is the ability to use that tool?
+\end{itemize}
 
-\section{What are the main toolss}
+For example, in the case that building a very particular Linux machine with a list of packages, even if only one is needed, it could be useful because If in the future another installation of the same configuration is needed, it is possible to reinstall all the systyem in a few steps.
+At the same, if I need to install a number of a few packages on hundreds of server, it will be a saving time procedure.
+On the other hand, we might consider also the time spend on learn the technology, if I already know that, I could automate also very simple jobs beacuse it is used to automate all.
+If it is a beginner, there are some stuff that it probability has no sense to automate beacuse the effort and time do not worth it.
+When someone know a tools enough, it is possible to also expand the automation for more complex jobs.
+
+\section{What are the main tools}
+Some of the tools used by the community for automation, which try to reply to the scope indicated above are:
+
+\begin{itemize}
+    \item Ansible
+    \item Cobbler
+    \item Puppet
+    \item Chef
+    \item SaltStack
+    \item Terraform
+\end{itemize}
+
+Every technology has some differences considering for example language to write automation, learning curve, necessity of demons, connection with machines and so on.
 
 \section{OpenSource and Closed Source, when OpenSource becomes Closed for some use cases}
+Nowadays there are a lot of companies that acquires strategically some important business related to Open Source projects.
+In the last years, for example, Ansible was acquired by RedHat in 2015, GitHub was acquired by Microsoft in 2018, SaltStack was acquired from VMware in 2020.
+Even if there are some problems when a company acquires a company related to a big open-source project, it doesn't mean that the technology is worse because there are companies that make a profit on it.
 
-%I suggest referencing stuff as follows: \cref{fig:random-image} or \Cref{fig:random-image}
+Usually, big tech company that acquires others related to open source contribute to the spreading and improving the technology.
+It is possible to consider one of the most important examples of that in Ubuntu.
+Ubuntu is one of the most popular Linux distributions, Ubuntu has great community support and behind it is the company Canonical.
+Canonical helps and contributes to Ubuntu distribution but also sells some products related like support, differences updates, infrastructures.
 
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=.8\linewidth]{figures/random-image.pdf}
-%    \caption{Some random image}
-%    \label{fig:random-image}
-%\end{figure}
+About automation tools, for example, Red Hat offers Ansible Automation Platform:"
+Red Hat Ansible Automation Platform is an end-to-end automation platform to configure systems, deploy software, and orchestrate advanced workflows. It includes resources to create, manage, and scale across the entire enterprise."\cite{ansibleAutomationPlatform}.
+Automation controller it is a part of Ansible Automation Platform, and there is a sort of community-supported alternative called "AWX"\cite{ansibleAwxAAP}.
+Red Hat explains that Automation controller "is produced by taking selected releases of AWX, hardening them for long-term supportability, and making them available to customers as a hosted service within Red Hat Ansible Automation Platform"\cite{ansibleFaq}.
+
+So, when a company makes a big contribution to an open-source project there could be some negative implications ( for example regarding support or licenses), but the community nonetheless takes benefits.
 
 \chapter{Ansible}
 
@@ -354,6 +392,15 @@ Considerazioni finali
 %\lstinputlisting[float,language=Java,label={lst:random-code}]{listings/HelloWorld.java}
 
 %\section{Fancy formulas here}
+
+%I suggest referencing stuff as follows: \cref{fig:random-image} or \Cref{fig:random-image}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=.8\linewidth]{figures/random-image.pdf}
+%    \caption{Some random image}
+%    \label{fig:random-image}
+%\end{figure}
 
 %----------------------------------------------------------------------------------------
 % BIBLIOGRAPHY
