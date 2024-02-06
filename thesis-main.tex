@@ -316,13 +316,21 @@ In the Task \texttt{Uninstall MongoDB}, the apt module takes as input directly t
 \section{Characteristics}
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
+
 \subsection{Operating Systems supported and recommended}
+
 \subsection{Language of the project}
+
 \subsection{Language for automation definition}
+
 \subsection{Architecture, agent or agentless}
+
 \subsection{Structure of the project}
+
 \subsubsection{Deep structure of the project (how it is the open source internal project)}
+
 \subsection{Documentation of the project}
+
 \subsection{Extensions of the project (modules, libraries)}
 
 \section{Installation}
@@ -348,7 +356,7 @@ python3 -m pip install --user ansible-core
 \end{lstlisting}
 
 On ubuntu.04 LTS,
-Considering that Python3 is pre installed in Ubuntu, it is possible to install Ansible via \texttt{apt}.
+Considering that Python3 is pre-installed in Ubuntu, it is possible to install Ansible via \texttt{apt}.
 
 \begin{lstlisting}
 sudo apt install ansible-core
@@ -357,14 +365,43 @@ sudo apt install ansible-core
 The installation requires only about 80 MegaByte.
 
 \subsection{Example}
-%prova questo
-%https://riptutorial.com/ansible/example/5069/hello--world
+
+There is a very simple way to make a fast test to see if Ansible is working, following that simple tutorial\cite{ansibleRIP}.
+First, create a dir to work on it with the \texttt{mkdir} command.
+After that, create a file \textbf{hosts} and add remote systems how want to manage.
+\begin{lstlisting}
+    192.168.1.101
+    192.168.1.102
+\end{lstlisting}
+
+Considering that Ansible commands other machines with SSH connection, make sure there is a connection between the machine from where the test is done and the others.
+
+To try the connections there is a ping module already built in Ansible, it is possible to use that also using Ansible CLI.
+\begin{lstlisting}
+ansible all -m ping -k
+\end{lstlisting}
+
+In case of success there will be something like that:
+\begin{lstlisting}
+    192.168.1.101| SUCCESS => {
+        "changed": false, 
+        "ping": "pong"
+    }
+    192.168.1.102| SUCCESS => {
+        "changed": false, 
+        "ping": "pong"
+    }
+\end{lstlisting}
 
 \section{Tecnologies for testing Ansible}
+There are different types of technologies and suites to test Ansible Playbooks in different ways.
 \subsection{Suite for check syntax}
+
 \subsection{Suite for check jobs}
 
 \section{Learning curve}
+Ansible has a very fast learning curve, considering that Ansible that the automation is written in YAML files.
+Also, the project has written in Python, so understanding the project is also simpler than in other languages.
 
 \section{Pros}
 
