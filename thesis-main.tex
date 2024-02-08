@@ -436,23 +436,56 @@ In case of success there will be something like that:
 
 \section{Tecnologies for testing Ansible}
 There are different types of technologies and suites to test Ansible Playbooks in different ways.
+Usually it is a good practice execute test in a dev environment. So, if something brokes, we do not need to revert  a production environment.
+In our case, we need to check the Ansible Playbooks.
 
+Considering some advice taken from \textbf{Ansible for DevOps}\cite{ansibleForDevOps}, there is three type of test:
 
-Considering some steps taken from \textbf{Ansible for DevOps}\cite{ansibleForDevOps}.
+\textbf{Unit testing}, would typically apply to individual playbooks.
+Run individual playbooks in an isolated environment could be done, but it could be not too useful in that case. It is useful to check the playbook syntax
 
-\subsection{Suite for check syntax}
+\textbf{Integration testing}, is the testing of small groupings of individual units of code, to make sure they work correctly together.
+Breaking an infrastructure definition into many task-specific roles and playbooks. If the Playbook has no or limited dependencies, it is possible to test each role individually in a fresh virtual machine, before you use the role as part of a full infrastructure deployment.
 
-\subsection{Suite for check jobs}
+\textbf{Functional testing}, when there is a complete infrastructure environment, and then run tests against it to make sure everything was successfully installed, deployed, and configured. Ansible’s own reporting is helpful in this kind of testing, and there are external tools available to test infrastructure even more deeply.
+
+That book also show some step useful to test Ansible:
+
+\textbf{using particular moduls}
+One simple way to found error in the execution in the Playbook is print variables and output. About that, it is available a \texttt{debug} module.
+Debug module is useful when verbose message on the jobs inside Ansible is needed.
+If an explicit test on some variable is necessary, Ansible provides the \texttt{fail} and \texttt{assert} module.
+The fail and assert modules when triggered abort the playbook run.
+
+\textbf{using yamllint}
+It is better to pay attention to YAML syntax, even if it is so simple, some common error could do to some wrong spacing.
+One simple way to mitigate that problem is to install a YAML Lint Tool like \textbf{yamllint}.
+
+\textbf{using --syntax-check}
+When playbook is launched with --syntax-check, in reality, the plays are not run. Instead, Ansible loads the entire playbook statically and ensures everything can be loaded without a fatal error. If you are missing an imported task file, misspelled a module name, or are supplying a module with invalid parameters, --syntax-check will quickly identify the problem.
+It requires a few seconds also for very large playbooks.
+
+\textbf{using ansible-lint}
+Linting Ansible content with ansible-lint
+In addition to linting structural YAML issues with yamllint, Ansible tasks and playbooks can be linted using ansible-lint.
+
+\textbf{Ansible Molecules}
+The project Ansible Molecules helps in the development and testing of Ansible content: collections, playbooks and roles\url{https://github.com/ansible/molecule}.
+Also, "Molecule provides support for testing with multiple instances, operating systems and distributions, virtualization providers, test frameworks and testing scenarios." and 
+"Molecule encourages an approach that results in consistently developed roles that are well-written, easily understood and maintained."\cite{ansibleMolecule}
+
+%\subsection{Suite for check syntax}
+%\subsection{Suite for check jobs}
 
 \section{Learning curve}
 Ansible has a very fast learning curve, considering that Ansible that the automation is written in YAML files.
-Also, the project has written in Python, so understanding the project is also simpler than in other languages.
+Also, the project was written in Python, so understanding the project is also simpler than in other languages.
 
-\section{Pros}
+%\section{Pros}
 
-\section{Cons}
+%\section{Cons}
 
-\section{Real project use cases}
+%\section{Real project use cases}
 
 
 \chapter{Conclusion}
