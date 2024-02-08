@@ -8,7 +8,7 @@
 
 \school{\unibo}
 \programme{Corso di Laurea Magistrale in Ingegneria e Scienze Informatiche}
-\title{Study and comparation of automation tools}
+\title{Overview, study and comparison of automation tools}
 \author{Alberto Donati}
 \date{\today}
 \subject{Supervisor's course name}
@@ -240,13 +240,39 @@ Ansible is ideal for managing IT environments, as it can automate tasks on a mul
 
 \section{How the tool is shown to the community}
 
-\section{Who supports and maintains the project}
-\subsection{Statistics [Examples]}
-            \subsubsection{Number of GitHub issues}
-            \subsubsection{Issues that have been resolved}
-            \subsubsection{How active is the community}
-            \subsubsection{Management of user feedback}
-            \subsubsection{Community repository for uploading projects}
+\subsection{Who supports and maintains the project}
+More than 5000 contributors.
+More than 30k of used 
+\subsection{Statistics}
+
+Ansible has 
+\begin{itemize}
+    \item 60.1k stars
+    \item 1.9k watcher
+    \item 24k fork
+    \item >500 issue with >30k closed
+    \item >300 pull request
+    \item >5000 contributors
+    \item 31.8k projects use it as dependecy
+\end{itemize}
+
+We could consider the community very active, considering also that every few days a new issue appear.
+
+\subsection{Community way to help and improve}
+If someone with to be involved in the project there is the official page that explains\cite {ansibleGithub}.
+
+\begin{itemize}
+    \item Read Community Information for all kinds of ways to contribute to and interact with the project, including mailing list information and how to submit bug reports and code to Ansible.
+    \item Join a Working Group, an organized community devoted to a specific technology domain or platform.
+    \item Submit a proposed code update through a pull request to the devel branch.
+    \item Talk to us before making larger changes to avoid duplicate efforts. This not only helps everyone know what is going on, but it also helps save time and effort if we decide some changes are needed.
+    \item For a list of email lists, IRC channels and Working Groups, see the Communication page
+\end{itemize}
+
+There is also a sort of community-based platform to share collections and roles, called Ansible Galaxy\cite{ansibleGalaxy}.
+The documentation of Ansible also includes instructions to use it for its projects.
+
+Ansible-related open-source project is AWX which "provides a web-based user interface, REST API, and task engine built on top of Ansible"\cite{ansibleAWX}.
 
 \section{Main Ansible components}
 
@@ -316,22 +342,37 @@ In the Task \texttt{Uninstall MongoDB}, the apt module takes as input directly t
 \section{Characteristics}
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
+Ansible is natively supported in Unix platforms like Linux distributions and MACOS.
+Windows in the last years supports a Linux layer directly integrated in the machine installing WSL.
+WSL (Windows Subsystem for Linux) allows the installation of a Linux distribution and the use Linux commands on Windows.
+About Ansible, using Windows without WSL "is not natively supported as a control node"\cite{ansibleDocInstallIntro} and also
+"The Windows Subsystem for Linux is not supported by Ansible and should not be used for production systems."\cite{ansibleWinFaq}.
+Besides that, it is possible to use Windows machines as hosts and run automation scripts on those.
 
-\subsection{Operating Systems supported and recommended}
+\subsection{Ansible project}
 
-\subsection{Language of the project}
-
-\subsection{Language for automation definition}
+Ansible project (not considering others project directly related) is available at \url{https://github.com/ansible/ansible}\cite{ansibleGithub}.
+This project is mainly written in Python, and its License is GNU General Public License 3.0.
+The automation is written in YAML, a language invented in 2001, is a very simple language based on lists mixed with dictionaries (created with key-value pairs).
 
 \subsection{Architecture, agent or agentless}
+The architecture of Ansible is agentless, it doesn't need any type of demons or particular configuration in the host machine to be controlled.
+The machine that controls others connects to nodes via ssh connections. The nodes also need (to run almost all Ansible commands) Pyhton installed.
+Without that it is not needed to update and manage nodes. Having an agent allows to know better the state of the machine controlled and the condition of the network .
+If a technology like Ansilbe is entirely based on connection to SSH, it means that also the security of ssh is crucial.
+So, there are some ways to mitigate the risk about ssh like using like instead using password use keys, and insert password for sudo privileges\cite{ansibleSSH}
 
-\subsection{Structure of the project}
+%\subsection{Structure of the project}
+%\subsubsection{Deep structure of the project (how it is the open source internal project)}
+%\subsection{Documentation of the project}
 
-\subsubsection{Deep structure of the project (how it is the open source internal project)}
-
-\subsection{Documentation of the project}
-
-\subsection{Extensions of the project (modules, libraries)}
+\subsection{Extensions of the project}
+In Ansible it is possible to expand functionalities using modules and plugins.
+It is possible to write them. In documentation in explained that:
+Plugins are pieces of code that augment Ansible’s core functionality. Ansible uses a plugin architecture to enable a rich, flexible and expandable feature set.
+Ansible ships with a number of handy plugins, and you can easily write your own."\cite{ansibleDocPlugins}.
+About the creation of modules, Ansible doc explains that:
+"If you need functionality that is not available in any of the thousands of Ansible modules found in collections, you can easily write your own custom module. When you write a module for local use, you can choose any programming language and follow your own rules."\cite{ansibleDocNewModules}
 
 \section{Installation}
 As indicated in the official documentation\cite{ansibleDocInstall}:
@@ -395,6 +436,10 @@ In case of success there will be something like that:
 
 \section{Tecnologies for testing Ansible}
 There are different types of technologies and suites to test Ansible Playbooks in different ways.
+
+
+Considering some steps taken from \textbf{Ansible for DevOps}\cite{ansibleForDevOps}.
+
 \subsection{Suite for check syntax}
 
 \subsection{Suite for check jobs}
