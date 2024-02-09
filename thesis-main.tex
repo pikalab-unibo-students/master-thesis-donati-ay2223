@@ -120,13 +120,13 @@ These automation systems can be particularly useful in environments with a large
 Automation systems aim to simplify the execution of repetitive tasks.
 
 \section{Who uses automation tools}
-Automation tools could be useful from single use who wish to simplify some task in his home running server (or cloud), to IT companies or University from a few to thusands of servers.
-Some automation tools are simple than other, for example starting from the structure of the langague used to create automations.
-Some of them also require specific knowledge(Cobbler require PXE).
-There are some that could be used by beginners in IT, other that require oop languages like Ruby.
+Automation tools could be useful from single-use who wish to simplify some task in his home running server (or cloud), to IT companies or University from a few to thusands of servers.
+Some automation tools are simpler than other, for example starting from the structure of the langague used to create automations.
+Some of them also require specific knowledge(Cobbler requires PXE).
+There are some that could be used by beginners in IT, others that require oop languages like Ruby.
 
 \section{When it makes sense (or doesn't make sense) to automate operations}
-There are questons that helps to understand when an automation tool could be a great choice:
+Some questions helps to understand when an automation tool could be a great choice:
 \begin{itemize}
     \item Does It need to do that job more than once?
     \item How much time did I spend to create that automation?
@@ -220,13 +220,13 @@ Ansible increased and Micheal and others had a good-sized company supporting it 
 
 In 2015 Ansible was acquired from RedHat\cite{ansibleRedHat}.
 
-Now, Ansible is currently one of the most used automation tool.
+Now, Ansible is currently one of the most used automation tools.
 
 \section{Purpose of the technology}
-Ansible is a technology used for automation. It allows from any environment to manage the automation of commands on other machines.
+Ansible is a technology used for automation. It allows any environment to manage the automation of commands on other machines.
 The files used for the description and therefore the execution of the scripts are called Playbooks.
 Ansible is based on the Python language, so it is cross-platform.
-Usually, its use is recommended in a Linux environment, some features are slightly different on a Windows environment.
+Usually, its use is recommended in a Linux environment, but some features are slightly different in a Windows environment.
 Considering that most servers have a Linux kernel, the tests will focus on a Linux environment.
 Ansible is ideal for managing IT environments, as it can automate tasks on a multitude of nodes simultaneously.
 
@@ -235,16 +235,14 @@ Ansible is ideal for managing IT environments, as it can automate tasks on a mul
     \item \textbf{Simple}: As syntax, the files are described in YAML language. YAML is easy to understand by those who have minimal knowledge of programming languages and is often used for configurations. In addition, most configuration management software is characterized by an agent and a server from which to start the orchestration. In this case, Ansible's agentless management makes it easy to manage machines.
     \item \textbf{Fast}: Ansible, in addition to having a low learning curve, has a fast configuration, not having agents that must be constantly active on the host machines. Ansible connects directly to the host machines via ssh, and it is enough to have Python installed on the host machines.
     \item \textbf{Efficient}: Considering that Ansible does not have active agents, this does not consume extra resources in the hosts where the automatisms are executed. Ansible take space and resources only during the execution of the activity on the controlled node.
-    \item \textbf{Secure}: Considering that the connection from manager to controlled node is via ssh, no extra open ports are required.
+    \item \textbf{Secure}: Considering that the connection from the manager to controlled node is via ssh, no extra open ports are required.
 \end{itemize}
 
 \section{How the tool is shown to the community}
 
 \subsection{Who supports and maintains the project}
-More than 5000 contributors.
-More than 30k of used 
-\subsection{Statistics}
 
+\subsection{Statistics}
 Ansible has 
 \begin{itemize}
     \item 60.1k stars
@@ -487,6 +485,91 @@ Also, the project was written in Python, so understanding the project is also si
 
 %\section{Real project use cases}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%SALT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Salt}
+Salt declare itself as "the world's fastest, most intelligent and scalable automation engine"\cite{saltDocAbout}.
+
+\section{The begin of Salt}
+
+\subsection{History}
+Salt was started as a project ideated from Thomas S. Hatch which was not satified with other open source tecnologies available\cite{saltFloss}. He decided to use the fast ZeroMQ for connections and messages between machines.
+
+Some steps could be seen at \url{https://red45.wordpress.com/2011/05/29/salt-configuration-management/}
+For exaple he posted about \textbf{Salt Configuration Management} when he wrote:
+"The Salt configuration management took a big leap forward late last night. The capability to define more complex states in salt from the master became a reality. Salt can now define states on the master file server, and pull those states on the minions. More work still needs to be done, and we still need to write the documentation, but this is a big step forward!".
+The state of machines in Salt are written on YAML, and Salt compile these configurations in Python data structure.
+
+Following the documentation: "The core of the Salt State system is the SLS, or SaLt State file. The SLS is a representation of the state in which a system should be in, and is set up to contain this data in a simple format."\cite{saltDocSLS}.
+
+Also, some improves are written at when he wrote about Documentation creating a post with the title \textbf{Initial Salt Docs Site Up!}.\cite{saltPost}
+Considering that Salt has support also for Windows machines, we could see a first attemps of that in December 2011 with \textbf{Windows is Being Salted!} post \cite{saltPost2}.
+In that post he wrote "There is no escape from the ongoing march of Salt platform support, even Windows is now controllable via Salt! While Salt on Windows is still in its infancy, Dave Boucha has accomplished it and we have pushed the needed patches upstream. This only works on the latest git checkout of Salt and 0.9.5 will include experimental support for Windows!"\cite{saltPost2}.
+
+During years after years, Salt grow,and in the 2020 was acquired by VMware.
+About the acquisition VMware said that "it's committed to preserving SaltStack's open source community after the deal closes, with Singh noting that VMware will fully support SaltStack's work on open source projects."\cite{saltAcq}
+In the blog of VMware it is possible to see the confirmation about the end of the acquisition
+\url{https://blogs.vmware.com/management/2020/10/vmware-completes-saltstack-acquisition-to-bolster-software-configuration-management-and-infrastructure-automation.html}
+
+Some months prior to the acquisition there was a big security issues related to Salt described at \url{https://news.hackreports.com/critical-saltstack-vulnerability-rce-exploit/} enough important to have two CVE related, CVE-2020-11651 and CVE-2020-11652.
+
+\section{Purpose of the technology}
+
+\subsection{Best points of Salt}
+
+\section{How the tool is shown to the community}
+
+\subsection{Who supports and maintains the project}
+
+\subsection{Statistics}
+
+\subsection{Community way to help and improve}
+
+\section{Main Ansible components}
+
+\subsection{Inventory}
+
+\subsubsection{Example Inventory Ansible}
+
+\subsection{Modules}
+\subsection{Play}
+\subsection{Task}
+\subsection{Playbook}
+\subsubsection{Example Playbook Ansible}
+
+\section{Characteristics}
+
+\subsection{Platforms available (Linux, Windows, MacOS)}
+
+\subsection{Salt project}
+
+\subsection{Architecture, agent or agentless}
+
+%\subsection{Structure of the project}
+%\subsubsection{Deep structure of the project (how it is the open source internal project)}
+%\subsection{Documentation of the project}
+
+\subsection{Extensions of the project}
+
+\section{Installation}
+
+\subsection{Example}
+
+\section{Tecnologies for testing Ansible}
+
+%\subsection{Suite for check syntax}
+%\subsection{Suite for check jobs}
+
+\section{Learning curve}
+
+%\section{Pros}
+
+%\section{Cons}
+
+%\section{Real project use cases}
 
 \chapter{Conclusion}
 Scrivere la conclusione
