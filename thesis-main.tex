@@ -492,6 +492,9 @@ Also, the project was written in Python, so understanding the project is also si
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Salt}
 Salt declare itself as "the world's fastest, most intelligent and scalable automation engine"\cite{saltDocAbout}.
+Salt (called also SaltStack or Salt Project) is a Python written and event driven configuration management tool, available at \url{https://saltproject.io/}.
+It describes itself as "SaltStack is a revolutionary approach to infrastructure management that replaces complexity with speed. SaltStack is simple enough to get running in minutes, scalable enough to manage tens of thousands of servers, and fast enough to communicate with each system in seconds."\cite{saltDocStart}
+Salt users can personalizer thier experience writing their own scripts and programs, and also use prebuilt configurations created by the users community.
 
 \section{The begin of Salt}
 
@@ -517,17 +520,37 @@ In the blog of VMware it is possible to see the confirmation about the end of th
 Some months prior to the acquisition there was a big security issues related to Salt described at \url{https://news.hackreports.com/critical-saltstack-vulnerability-rce-exploit/} enough important to have two CVE related, CVE-2020-11651 and CVE-2020-11652.
 
 \section{Purpose of the technology}
+Salt use a central repository to create new servers, managed them and others. It is also possible to use it to install software on them, also on hybrid infrastructures.
+Useful to deploy, configure, and manage complex IT systems, Salt has the scope to ensure that all the components of the built infrastructure are operating in a consistent desired state.
+Salt is useful to simplify and eliminate manual work (and so some errors) when repetitive task is needed on cluster of servers.
 
 \subsection{Best points of Salt}
+%insert!
 
 \section{How the tool is shown to the community}
 
 \subsection{Who supports and maintains the project}
+On the official GitHub repo \url{https://github.com/saltstack/salt} about the sponsor on the Salt as a project is written:
+"Salt powers VMware's VMware Aria Automation Config (previously vRealize Automation SaltStack Config / SaltStack Enterprise), and can be found under the hood of products from Juniper, Cisco, Cloudflare, Nutanix, SUSE, and Tieto, to name a few.
+The original sponsor of our community, SaltStack, was acquired by VMware in 2020. The Salt Project remains an open source ecosystem that VMware supports and contributes to. VMware ensures the code integrity and quality of the Salt modules by acting as the official sponsor and manager of the Salt project. Many of the core Salt Project contributors are also VMware employees. This team carefully reviews and enhances the Salt modules to ensure speed, quality, and security."\cite{saltGitHub}
+Also, there is a good community of more than 2000 contributors and also hundreds of business who use it.
 
 \subsection{Statistics}
+Salt has 
+\begin{itemize}
+    \item 13.7k stars
+    \item >500 watcher
+    \item 5.5k fork
+    \item >2.4k issue with >23k closed
+    \item >100 pull request
+    \item >2000 contributors
+    \item >600 projects use it as dependecy
+\end{itemize}
+
+We could consider the community active, expecially about finding and reporting bugs.
 
 \subsection{Community way to help and improve}
-
+%see gitub project
 \section{Main Ansible components}
 
 \subsection{Inventory}
