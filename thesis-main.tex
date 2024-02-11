@@ -58,34 +58,72 @@
 %----------------------------------------------------------------------------------------
 
 Considering the last decades, the number of servers increased, computing capacity is increasing more and more and technologies are growing.
+
+
 So, now IT companies need also technologies to manage the infrastructure they have, that could simplify and organize the jobs on servers.
+
+
 There are a lot of repetitive tasks when it is needed to install and configure a server, so there are now tools to simplify it a lot and also make an automation on it.
+
+
 These technologies could be called "automation tools".
 
 Considering different DevOps technologies, this document aims to study, present and compare technologies about automation.
+
 That document will be useful for IT students, teachers and enthusiasts who wish to manage their IT environment differently.
+
+
 It will be a starting point to see what is automation tools, different types of ways to automate of these technologies, see some examples and also see and overviews and comparisons.
 
 \section{Metology}
 Starting from some technologies that it is already known, it will search for technologies similar to them.
+
+
 Also, sites and theses that talk about automation will be beginning to see what technologies exist.
+
+
 There will be a focus on "popular" tools in these years. Searching for technologies just created will not be the scope, and also finding technologies too old might result not useful for real use.
+
+
 Technologies with no costs, an open-source project, and Apache or similar license will be preferred.
+
+
 There are some technologies properties of Amazon, Google and Microsoft, even if they might be described, they will not be the focus of the document.
+
+
 That research also searching for tecnologies that could be useful for multipurpose scope, always related to automation.
+
+
 For example, tools might not be able only to start and configure server, but it is better if it is also possible to expand with other functions.
+
+
 These tools must have a solid user base. Also, It does not search for a particular language or a single way to manage machines (for example agent-agentless).
+
+
 Some tools base their automation based on YAML language (Salt, Cobbler, Ansible), and others on Ruby (Chef, Puppet).
 
 \section{Explanation of the structure}
-
 Initially, there will be a brief description of what the automation tools are and who uses them.
+
+
 Also, there will be a brief explanation about Open Source, and its importance for the projects in our use case.
+
+
 For each technology, there will be a little historical view, a little study about the open source project, the trend of the language, the community and the support.
+
+
 There will be a description of the tool and its components.
+
+
 Also, some info on installation and examples.
+
+
 Considering that automation could be easily integrated with CI/CD, it will be searching for some sort of automatic test and checks of the technology.
+
+
 Considering this research and other sources, there will be a little description of pros and cons.
+
+
 At the end, there will be a summary of the research done writing that document, and make tables or similar mixing different technologies.
 
 The structure will be something like that:
@@ -113,16 +151,32 @@ The structure will be something like that:
 
 \section{What are automation tools}
 We could consider in some way that for DevOps purpose all the job we need to execute is expressed in form of code\cite{learnDevOps}.
+
+
 And also the configuration of server and installation of software could do that.
+
+
 Automation tools are software tools that allow you to manage, monitor, and automate operations on a large number of servers. These systems can include features such as automatic provisioning, configuration management, service orchestration, performance monitoring, and troubleshooting.
+
+
 An example of these systems is \textbf{Ansible}, which uses an agentless management model to connect to servers and perform automation tasks. Other examples include Puppet, Chef, and SaltStack, which offer similar features but use different approaches for server management.
+
+
 These automation systems can be particularly useful in environments with a large number of servers, where manual management of each server would be inefficient and prone to errors. Through automation, organizations can improve operational efficiency, reduce errors, and free up IT staff to focus on other works.
+
+
 Automation systems aim to simplify the execution of repetitive tasks.
 
 \section{Who uses automation tools}
 Automation tools could be useful from single-use who wish to simplify some task in his home running server (or cloud), to IT companies or University from a few to thusands of servers.
+
+
 Some automation tools are simpler than other, for example starting from the structure of the langague used to create automations.
+
+
 Some of them also require specific knowledge(Cobbler requires PXE).
+
+
 There are some that could be used by beginners in IT, others that require oop languages like Ruby.
 
 \section{When it makes sense (or doesn't make sense) to automate operations}
@@ -136,9 +190,17 @@ Some questions helps to understand when an automation tool could be a great choi
 \end{itemize}
 
 For example, in the case that building a very particular Linux machine with a list of packages, even if only one is needed, it could be useful because If in the future another installation of the same configuration is needed, it is possible to reinstall all the systyem in a few steps.
+
+
 At the same, if I need to install a number of a few packages on hundreds of server, it will be a saving time procedure.
+
+
 On the other hand, we might consider also the time spend on learn the technology, if I already know that, I could automate also very simple jobs beacuse it is used to automate all.
+
+
 If it is a beginner, there are some stuff that it probability has no sense to automate beacuse the effort and time do not worth it.
+
+
 When someone know a tools enough, it is possible to also expand the automation for more complex jobs.
 
 \section{What are the main tools}
@@ -157,15 +219,27 @@ Every technology has some differences considering for example language to write 
 
 \section{OpenSource and Closed Source, when OpenSource becomes Closed for some use cases}
 Nowadays there are a lot of companies that acquires strategically some important business related to Open Source projects.
+
+
 In the last years, for example, Ansible was acquired by RedHat in 2015, GitHub was acquired by Microsoft in 2018, SaltStack was acquired from VMware in 2020.
+
+
 Even if there are some problems when a company acquires a company related to a big open-source project, it doesn't mean that the technology is worse because there are companies that make a profit on it.
 
 Usually, big tech company that acquires others related to open source contribute to the spreading and improving the technology.
+
+
 It is possible to consider one of the most important examples of that in Ubuntu.
+
+
 Ubuntu is one of the most popular Linux distributions, Ubuntu has great community support and behind it is the company Canonical.
+
+
 Canonical helps and contributes to Ubuntu distribution but also sells some products related like support, differences updates, infrastructures.
 
 About automation tools, for example, Red Hat offers Ansible Automation Platform:"
+
+
 Red Hat Ansible Automation Platform is an end-to-end automation platform to configure systems, deploy software, and orchestrate advanced workflows. It includes resources to create, manage, and scale across the entire enterprise."\cite{ansibleAutomationPlatform}.
 Automation controller it is a part of Ansible Automation Platform, and there is a sort of community-supported alternative called "AWX"\cite{ansibleAwxAAP}.
 Red Hat explains that Automation controller "is produced by taking selected releases of AWX, hardening them for long-term supportability, and making them available to customers as a hosted service within Red Hat Ansible Automation Platform"\cite{ansibleFaq}.
@@ -179,55 +253,86 @@ So, when a company makes a big contribution to an open-source project there coul
 Michael DeHaan define Ansible:
 "Ansible is a configuration management tool, deployment tool, and ad-hoc task execution tool all in one."
 
+
 The observation that formed the basis of Michael DeHaan's idea was that several online stores used separate tools for configuration, deployment, and yet another for task execution. This was because there was not one technology that could perform all these functions.
+
+
 He also wanted Ansible to be as extensible as possible, that is, modules could be written in any language that could return JSON or key-value pairs.
 
 One of the basic concepts that Micheal specified from the beginning was that configuration should be extremely simple, so without using configuration files, daemons and databases. Ansible from the beginning used a file with the machines that were to be managed written on it. Only the machines described in that file were managed, in case they were not included they would not be managed.
 
 Quoting Micheal on his motivations for creating Ansible:
+
+
 "While part of starting Ansible was to show the world there was an easier way -- to take those lessons from Red Hat, the field, and a long history of building systems management applications -- it was mostly to build the tool that (A) I actually wanted to use, and (B) was a tool that you could not use for six months, come back to, and still remember. I couldn't bring myself to be settled with the tools we had to use, it was too frustrating. As a developer myself, I wanted to write development code, I didn't want to spend 50\% of my time fighting with the automation tooling and have the automation itself be a source of frustration. I wanted to help all of these IT environments I was finding myself in, and also help myself as a consumer of those environments."
 
 The motivation of Micheal about the project was:
+
+
 "As a software developer, I myself can emphasize -- the software design/development/testing process is frequently painful, and I would rather think of infrastructure as being data-driven. Data is supposed to be simple, programs are often not. This is why I made Ansible."
 
 \subsection{History}
 In 2006 Michael DeHaan was working at Red Hat's Emerging Technologies group, a research unit under Red Hat. Emerging Tech was created specifically where people could could work on virtually anything they thought people needed.
 
+
 Still those years, RedHat was very interested in configuration management. An early prototype of application virtualization management used Cobbler for provisioning the base operating system and Puppet for configuring virtual machines.
+
 
 This project did not take off and Michael DeHaan attributed the cause to the fact that it was complex to write the detail under virtual applications, but Red Hat virtualization was also still in its early days.
 
+
 Greg DeKoenigsberg was a Fedora community character and created a group with Michael DeHaan, Adrian Likins and Seth Vidal (author of yum). They wanted to create another very democratic open-source project in Red Hat, one that could have a wide variety of contributors and solve new problems. They thought back to busrpc. This project existed because it filled the gaps between Cobbler and Puppet. Cobbler could provide a system, and Puppet could put in configuration files, but because Puppet was too declarative you couldn't use it to do things like restart servers or do all the "ad hoc" tasks. In the past, Red Hat was exploring CIM, but there were not many good implementations of API support for Linux, so it would not be possible to build an open source project that would be able to rescout community success around CIM. The idea that was followed was to create an API-like channel for managing applications to configure systems, This idea was called Func.
+
 
 Func was based on a central server reaching out to a remote node to send automation orders. It was called the central server "overlord" and each of the remote machines "minions." 
 
+
 Other clones of Func were also created. Fabric and Capistrano also existed, but the team of Func wanted something more of an API and less of a script. Func was later used by Tumblr, and Steve Salesvan, who was interning at Red Hat at the time, continued to maintain it for Tumblr.
+
 
 Michael therefore wanted to build a configuration management system on top of Func, tentatively called "Remote Rocket Surgery."
 
+
 Cobbler, Puppet and Func formed some of the earliest DevOps-friendly automation tools, with Cobbler sometimes doing the provisioning and Func being used to launch Puppet.
 
+
 After leaving RedHat and a brief term at Puppet, Micheal saw that the language often divided potential users and that the most important thing in automation tools, simplicity, should be a priority.
+
 
 So Ansible began as a project in the beginning of 2012. It took off quickly due to many sysadmins and developers knowing Micheal.
 Also, people from Fedora Infrastructure, replaced their Puppet automation with Ansible and so Fedora help Ansible to grow and also used as a test platform.
 
+
 Like Func, it pursues a "batteries included" philosophy, allowing everyone to contribute to the main modules and forming an active community of users.
+
 
 After a period when Micheal was working on automation of OpenStack with Puppet, the project started to take off on GitHub, and soon the company was founded.
 
+
 Ansible increased and Micheal and others had a good-sized company supporting it and more importantly, building great products on top of it.
 
+
 In 2015 Ansible was acquired from RedHat\cite{ansibleRedHat}.
+
 
 Now, Ansible is currently one of the most used automation tools.
 
 \section{Purpose of the technology}
 Ansible is a technology used for automation. It allows any environment to manage the automation of commands on other machines.
+
+
 The files used for the description and therefore the execution of the scripts are called Playbooks.
+
+
 Ansible is based on the Python language, so it is cross-platform.
+
+
 Usually, its use is recommended in a Linux environment, but some features are slightly different in a Windows environment.
+
+
 Considering that most servers have a Linux kernel, the tests will focus on a Linux environment.
+
+
 Ansible is ideal for managing IT environments, as it can automate tasks on a multitude of nodes simultaneously.
 
 \subsection{Best points of Ansible}
@@ -268,6 +373,9 @@ If someone with to be involved in the project there is the official page that ex
 \end{itemize}
 
 There is also a sort of community-based platform to share collections and roles, called Ansible Galaxy\cite{ansibleGalaxy}.
+
+
+
 The documentation of Ansible also includes instructions to use it for its projects.
 
 Ansible-related open-source project is AWX which "provides a web-based user interface, REST API, and task engine built on top of Ansible"\cite{ansibleAWX}.
@@ -295,13 +403,23 @@ Ansible-related open-source project is AWX which "provides a web-based user inte
 
 \subsection{Modules}
 Modules are small programs, which are called by tasks to perform operations on machines.
+
+
 There are modules for different jobs we want to perform, some are already provided by default, and can be used from package installation to DevOps workflows.
+
+
 One example is package installation via apt (ansible.builtin.apt).
+
+
 There are also many modules provided by the community. If the community and default modules are not enough, there is the option of creating custom modules\cite{ansibleDocNewModules}.
+
+
 Ansible modules are designed to be idempotent, which means that they will make changes to managed nodes only when necessary. This ensures that managed nodes remain in the desired state, even if the playbook is run multiple times.
 
 \subsection{Play}
 The play contains the list of tasks to be executed (at least one). The play also contains the list of hosts on which the tasks will be executed; it may contain variables and other commands.
+
+
 Plays within the playbook are executed from top to bottom. Considering that playbooks are written in YAML, they are easily readable.
 
 \subsection{Task}
@@ -309,7 +427,11 @@ The Task is the action we need to execute towards the controlled machine. The co
 
 \subsection{Playbook}
 Playbook is a collection of one or more Plays.
+
+
 These are sorts of books that contain different Plays, which depending on the request, will go to be executed. Playbooks use basic programming constructs such as loops and conditionals, which allows for greater flexibility in controlling the code.
+
+
 Playbooks can be reused, so you can create the best combination according to your scenario.
 
 \subsubsection{Example Playbook Ansible}
@@ -318,14 +440,21 @@ Playbooks can be reused, so you can create the best combination according to you
 
 In this example, the names of Plays are \texttt{Package installation} and \texttt{Package uninstallation}.
 
+
 The execution will be targeted to the host group \texttt{campusNord}, with superuser privileges, given by the attribute-value \texttt{become : yes}.
+
 
 In addition, \texttt{vars} defines two variables: \texttt{package\_name\_1} and \texttt{package\_name\_2}, which represent the names of the packages to install.
 
+
 The Tasks called \texttt{Install package 1} and \texttt{Install package 2} install the packages specified by the variables \texttt{package\_name\_1} and \texttt{package\_name\_2}.
 
+
 Considering that Ansible is idempotent,
+
+
 in case the packages were already installed in the system, Ansible will not perform any operation and will not reinstall them either. If instead the packages were not already present in the system, Ansible, through the apt module, will install them.
+
 
 In the Task \texttt{Uninstall MongoDB}, the apt module takes as input directly the value \texttt{mongodb}, and sets the state to \texttt{absent} to make sure that, if present, it is removed.
 
@@ -341,23 +470,46 @@ In the Task \texttt{Uninstall MongoDB}, the apt module takes as input directly t
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
 Ansible is natively supported in Unix platforms like Linux distributions and MACOS.
+
+
 Windows in the last years supports a Linux layer directly integrated in the machine installing WSL.
+
 WSL (Windows Subsystem for Linux) allows the installation of a Linux distribution and the use Linux commands on Windows.
+
+
 About Ansible, using Windows without WSL "is not natively supported as a control node"\cite{ansibleDocInstallIntro} and also
+
+
 "The Windows Subsystem for Linux is not supported by Ansible and should not be used for production systems."\cite{ansibleWinFaq}.
+
+
 Besides that, it is possible to use Windows machines as hosts and run automation scripts on those.
 
 \subsection{Ansible project}
 
 Ansible project (not considering others project directly related) is available at \url{https://github.com/ansible/ansible}\cite{ansibleGithub}.
+
+
 This project is mainly written in Python, and its License is GNU General Public License 3.0.
+
+
 The automation is written in YAML, a language invented in 2001, is a very simple language based on lists mixed with dictionaries (created with key-value pairs).
 
 \subsection{Architecture, agent or agentless}
+
+
 The architecture of Ansible is agentless, it doesn't need any type of demons or particular configuration in the host machine to be controlled.
+
+
 The machine that controls others connects to nodes via ssh connections. The nodes also need (to run almost all Ansible commands) Pyhton installed.
+
+
 Without that it is not needed to update and manage nodes. Having an agent allows to know better the state of the machine controlled and the condition of the network .
+
+
 If a technology like Ansilbe is entirely based on connection to SSH, it means that also the security of ssh is crucial.
+
+
 So, there are some ways to mitigate the risk about ssh like using like instead using password use keys, and insert password for sudo privileges\cite{ansibleSSH}
 
 %\subsection{Structure of the project}
@@ -366,10 +518,20 @@ So, there are some ways to mitigate the risk about ssh like using like instead u
 
 \subsection{Extensions of the project}
 In Ansible it is possible to expand functionalities using modules and plugins.
+
+
 It is possible to write them. In documentation in explained that:
+
+
 Plugins are pieces of code that augment Ansible’s core functionality. Ansible uses a plugin architecture to enable a rich, flexible and expandable feature set.
+
+
 Ansible ships with a number of handy plugins, and you can easily write your own."\cite{ansibleDocPlugins}.
+
+
 About the creation of modules, Ansible doc explains that:
+
+
 "If you need functionality that is not available in any of the thousands of Ansible modules found in collections, you can easily write your own custom module. When you write a module for local use, you can choose any programming language and follow your own rules."\cite{ansibleDocNewModules}
 
 \section{Installation}
@@ -406,7 +568,11 @@ The installation requires only about 80 MegaByte.
 \subsection{Example}
 
 There is a very simple way to make a fast test to see if Ansible is working, following that simple tutorial\cite{ansibleRIP}.
+
+
 First, create a dir to work on it with the \texttt{mkdir} command.
+
+
 After that, create a file \textbf{hosts} and add remote systems how want to manage.
 \begin{lstlisting}
     192.168.1.101
@@ -434,10 +600,15 @@ In case of success there will be something like that:
 
 \section{Tecnologies for testing Ansible}
 There are different types of technologies and suites to test Ansible Playbooks in different ways.
+
+
 Usually it is a good practice execute test in a dev environment. So, if something brokes, we do not need to revert  a production environment.
+
+
 In our case, we need to check the Ansible Playbooks.
 
 Considering some advice taken from \textbf{Ansible for DevOps}\cite{ansibleForDevOps}, there is three type of test:
+
 
 \textbf{Unit testing}, would typically apply to individual playbooks.
 Run individual playbooks in an isolated environment could be done, but it could be not too useful in that case. It is useful to check the playbook syntax
@@ -451,25 +622,41 @@ That book also show some step useful to test Ansible:
 
 \textbf{using particular moduls}
 One simple way to found error in the execution in the Playbook is print variables and output. About that, it is available a \texttt{debug} module.
+
+
 Debug module is useful when verbose message on the jobs inside Ansible is needed.
+
+
 If an explicit test on some variable is necessary, Ansible provides the \texttt{fail} and \texttt{assert} module.
+
+
 The fail and assert modules when triggered abort the playbook run.
 
 \textbf{using yamllint}
 It is better to pay attention to YAML syntax, even if it is so simple, some common error could do to some wrong spacing.
+
+
 One simple way to mitigate that problem is to install a YAML Lint Tool like \textbf{yamllint}.
 
 \textbf{using --syntax-check}
 When playbook is launched with --syntax-check, in reality, the plays are not run. Instead, Ansible loads the entire playbook statically and ensures everything can be loaded without a fatal error. If you are missing an imported task file, misspelled a module name, or are supplying a module with invalid parameters, --syntax-check will quickly identify the problem.
+
+
 It requires a few seconds also for very large playbooks.
 
 \textbf{using ansible-lint}
 Linting Ansible content with ansible-lint
+
+
 In addition to linting structural YAML issues with yamllint, Ansible tasks and playbooks can be linted using ansible-lint.
 
 \textbf{Ansible Molecules}
 The project Ansible Molecules helps in the development and testing of Ansible content: collections, playbooks and roles\url{https://github.com/ansible/molecule}.
+
+
 Also, "Molecule provides support for testing with multiple instances, operating systems and distributions, virtualization providers, test frameworks and testing scenarios." and 
+
+
 "Molecule encourages an approach that results in consistently developed roles that are well-written, easily understood and maintained."\cite{ansibleMolecule}
 
 %\subsection{Suite for check syntax}
@@ -477,6 +664,8 @@ Also, "Molecule provides support for testing with multiple instances, operating 
 
 \section{Learning curve}
 Ansible has a very fast learning curve, considering that Ansible that the automation is written in YAML files.
+
+
 Also, the project was written in Python, so understanding the project is also simpler than in other languages.
 
 %\section{Pros}
@@ -492,8 +681,14 @@ Also, the project was written in Python, so understanding the project is also si
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Salt}
 Salt declare itself as "the world's fastest, most intelligent and scalable automation engine"\cite{saltDocAbout}.
+
+
 Salt (called also SaltStack or Salt Project) is a Python written and event driven configuration management tool, available at \url{https://saltproject.io/}.
+
+
 It describes itself as "SaltStack is a revolutionary approach to infrastructure management that replaces complexity with speed. SaltStack is simple enough to get running in minutes, scalable enough to manage tens of thousands of servers, and fast enough to communicate with each system in seconds."\cite{saltDocStart}
+
+
 Salt users can personalizer thier experience writing their own scripts and programs, and also use prebuilt configurations created by the users community.
 
 \section{The begin of Salt}
@@ -502,18 +697,33 @@ Salt users can personalizer thier experience writing their own scripts and progr
 Salt was started as a project ideated from Thomas S. Hatch which was not satified with other open source tecnologies available\cite{saltFloss}. He decided to use the fast ZeroMQ for connections and messages between machines.
 
 Some steps could be seen at \url{https://red45.wordpress.com/2011/05/29/salt-configuration-management/}
+
+
 For exaple he posted about \textbf{Salt Configuration Management} when he wrote:
+
+
 "The Salt configuration management took a big leap forward late last night. The capability to define more complex states in salt from the master became a reality. Salt can now define states on the master file server, and pull those states on the minions. More work still needs to be done, and we still need to write the documentation, but this is a big step forward!".
+
+
 The state of machines in Salt are written on YAML, and Salt compile these configurations in Python data structure.
+
 
 Following the documentation: "The core of the Salt State system is the SLS, or SaLt State file. The SLS is a representation of the state in which a system should be in, and is set up to contain this data in a simple format."\cite{saltDocSLS}.
 
 Also, some improves are written at when he wrote about Documentation creating a post with the title \textbf{Initial Salt Docs Site Up!}.\cite{saltPost}
+
+
 Considering that Salt has support also for Windows machines, we could see a first attemps of that in December 2011 with \textbf{Windows is Being Salted!} post \cite{saltPost2}.
+
+
 In that post he wrote "There is no escape from the ongoing march of Salt platform support, even Windows is now controllable via Salt! While Salt on Windows is still in its infancy, Dave Boucha has accomplished it and we have pushed the needed patches upstream. This only works on the latest git checkout of Salt and 0.9.5 will include experimental support for Windows!"\cite{saltPost2}.
 
 During years after years, Salt grow,and in the 2020 was acquired by VMware.
+
+
 About the acquisition VMware said that "it's committed to preserving SaltStack's open source community after the deal closes, with Singh noting that VMware will fully support SaltStack's work on open source projects."\cite{saltAcq}
+
+
 In the blog of VMware it is possible to see the confirmation about the end of the acquisition
 \url{https://blogs.vmware.com/management/2020/10/vmware-completes-saltstack-acquisition-to-bolster-software-configuration-management-and-infrastructure-automation.html}
 
@@ -521,18 +731,36 @@ Some months prior to the acquisition there was a big security issues related to 
 
 \section{Purpose of the technology}
 Salt use a central repository to create new servers, managed them and others. It is also possible to use it to install software on them, also on hybrid infrastructures.
+
+
 Useful to deploy, configure, and manage complex IT systems, Salt has the scope to ensure that all the components of the built infrastructure are operating in a consistent desired state.
+
+
 Salt is useful to simplify and eliminate manual work (and so some errors) when repetitive task is needed on cluster of servers.
 
 \subsection{Best points of Salt}
-%insert!
+
+Here are some good points about Salt:
+\begin{itemize}
+    \item \textbf{Flexibility:} It works on Unix and also on Windows systems, but also on different types of network devices such as switches and routers from different brand.
+    \item \textbf{Speed:} It works using ZeroMQ and msgpack, so the comunication in simple, light, and fast between nodes.
+    \item \textbf{Idempotent:} Every time an automation is started , it always has the same end result despite of the state of a system when the run starts.
+    \item \textbf{Robust:} Considering that the system is based on agent who used ZeroMQ to communicate, agent approach with a good technology made the communication where there is a better knowledge about the state of the nodes.
+    \item \textbf{Secure:} It use public keys for authentication and AES encryption for payload communication
+\end{itemize}
 
 \section{How the tool is shown to the community}
 
 \subsection{Who supports and maintains the project}
 On the official GitHub repo \url{https://github.com/saltstack/salt} about the sponsor on the Salt as a project is written:
+
+
 "Salt powers VMware's VMware Aria Automation Config (previously vRealize Automation SaltStack Config / SaltStack Enterprise), and can be found under the hood of products from Juniper, Cisco, Cloudflare, Nutanix, SUSE, and Tieto, to name a few.
+
+
 The original sponsor of our community, SaltStack, was acquired by VMware in 2020. The Salt Project remains an open source ecosystem that VMware supports and contributes to. VMware ensures the code integrity and quality of the Salt modules by acting as the official sponsor and manager of the Salt project. Many of the core Salt Project contributors are also VMware employees. This team carefully reviews and enhances the Salt modules to ensure speed, quality, and security."\cite{saltGitHub}
+
+
 Also, there is a good community of more than 2000 contributors and also hundreds of business who use it.
 
 \subsection{Statistics}
@@ -561,7 +789,7 @@ Salt has the following way to know better and partecipate to Community:
     \item Twitch
     \item Reddit
 \end{itemize}
-On Twitter they declare as "One of the largest, friendliest, and most active open source communities in the world.​"\cite{saltTwitter}
+On Twitter Salt declare itself community as "One of the largest, friendliest, and most active open source communities in the world"\cite{saltTwitter}.
 It is possible ot contact directly the Community Manager, which is Jimmy Chunga, via Slack.
 Also, there are some events about Salt:
 "Every month, there are around a dozen opportunities to meet with other contributors and the Salt Core team and collaborate in real time. The best way to keep track is by subscribing to the Salt Project Community Events Calendar on the main https://saltproject.io website."\cite{saltGitHub}
@@ -584,6 +812,8 @@ Salt is very opened to contribution so they also have a email to contact \texttt
 \subsection{Platforms available (Linux, Windows, MacOS)}
 
 \subsection{Salt project}
+The project is available under the Apache 2.0 license.
+This license include very few restrictions about modification and distribution about the project.
 
 \subsection{Architecture, agent or agentless}
 
@@ -647,7 +877,7 @@ Considerazioni finali
 
 \nocite{*} % comment this to only show the referenced entries from the .bib file
 
-\bibliographystyle{alpha}
+\bibliographystyle{plainnat}
 \bibliography{bibliography}
 
 \end{document}
