@@ -11,16 +11,16 @@
 \title{Overview, study and comparison of automation tools}
 \author{Alberto Donati}
 \date{\today}
-\subject{Supervisor's course name}
-\supervisor{Prof. Supervisor Here}
-\cosupervisor{Dott. CoSupervisor 1}
-\morecosupervisor{Dott. CoSupervisor 2}
+\subject{Distributed Systems}
+\supervisor{Prof. Giovanni Ciatto}
+%\cosupervisor{Dott. CoSupervisor 1}
+%\morecosupervisor{Dott. CoSupervisor 2}
 \session{IV}
 \academicyear{2022-2023}
 
 % Definition of acronyms
-\acrodef{IoT}{Internet of Thing}
-\acrodef{vm}[VM]{Virtual Machine}
+%\acrodef{IoT}{Internet of Thing}
+%\acrodef{vm}[VM]{Virtual Machine}
 
 
 \mainlinespacing{1.241} % line spacing in mainmatter, comment to default (1)
@@ -743,6 +743,7 @@ Salt is useful to simplify and eliminate manual work (and so some errors) when r
 Here are some good points about Salt:
 \begin{itemize}
     \item \textbf{Flexibility:} It works on Unix and also on Windows systems, but also on different types of network devices such as switches and routers from different brand.
+                                It is usually used in a mode with agents called minion, but has also a limited working mode agentless.
     \item \textbf{Speed:} It works using ZeroMQ and msgpack, so the comunication in simple, light, and fast between nodes.
     \item \textbf{Idempotent:} Every time an automation is started , it always has the same end result despite of the state of a system when the run starts.
     \item \textbf{Robust:} Considering that the system is based on agent who used ZeroMQ to communicate, agent approach with a good technology made the communication where there is a better knowledge about the state of the nodes.
@@ -795,17 +796,51 @@ Also, there are some events about Salt:
 "Every month, there are around a dozen opportunities to meet with other contributors and the Salt Core team and collaborate in real time. The best way to keep track is by subscribing to the Salt Project Community Events Calendar on the main https://saltproject.io website."\cite{saltGitHub}
 Salt is very opened to contribution so they also have a email to contact \texttt{saltproject@vmware.com} for questions.
 
-\section{Main Ansible components}
+\section{Main Salt components}
 
-\subsection{Inventory}
+\subsection{Salt Master}
 
-\subsubsection{Example Inventory Ansible}
+Salt Master is used to communicate with other machines to execute commands of various type.
+The technology for Communication used is ZeroMQ. Salt is usually used with agents(minion), but is also possible to make connections with nodes with SSH.
 
-\subsection{Modules}
-\subsection{Play}
-\subsection{Task}
-\subsection{Playbook}
-\subsubsection{Example Playbook Ansible}
+
+Salt ssh is not a substitute of standard communication of Salt, but is is a valid alternative but not fast as ZeroMQ\cite{saltSSH}.
+
+
+\subsubsection{Example Salt Master}
+
+\subsection{Salt Minion}
+When the agent approach is used in Salt, minion is the agent. It receive commands from the Salt Master and communicate with him with the response of them. It has a own configuration file that can be easily setted. In that the location of the Salt Master needs to be indicated so the correct communication between them is correclty targeted.
+Salt is useable also without minion in a agentless way.
+
+
+The configuration file for minion has a lot of parameters that can be setted.
+It is divided in differents parts:
+\begin{itemize}
+    \item Primary configuration settings
+    \item Minion module management
+    \item State Management Settings
+    \item File Directory Settings
+    \item Security settings
+    \item Reactor Settings
+    \item Thread settings
+    \item Logging settings
+    \item Module configuration
+    \item Update settings
+    \item Keepalive settings
+    \item Windows Software settings
+    \item Returner settings
+    \item Miscellaneous settings
+    \end{itemize}
+
+\subsubsection{Example of minion settings}
+
+\lstinputlisting[label={lst:exampleMinionSalt}]{listings/exampleMinionSalt.yaml}
+
+
+
+\subsection{Reactor}
+
 
 \section{Characteristics}
 
