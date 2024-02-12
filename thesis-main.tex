@@ -803,11 +803,35 @@ Salt is very opened to contribution so they also have a email to contact \texttt
 Salt Master is used to communicate with other machines to execute commands of various type.
 The technology for Communication used is ZeroMQ. Salt is usually used with agents(minion), but is also possible to make connections with nodes with SSH.
 
-
 Salt ssh is not a substitute of standard communication of Salt, but is is a valid alternative but not fast as ZeroMQ\cite{saltSSH}.
 
+Salt Manager use also Pillar with minions, that are "tree-like structures of data defined on the Salt Master and passed through to minions. They allow confidential, targeted data to be securely sent only to the relevant minion."\cite{saltDocPillar}
 
-\subsubsection{Example Salt Master}
+The Salt Master configuration file follow the follow parts to be corrected setted.
+\begin{itemize}
+    \item Primary configuration settings
+    \item Large-scale tuning settings
+    \item Security settings
+    \item Salt-SSH Configuration
+    \item Master Module Management
+    \item State System settings
+    \item File Server settings
+    \item Pillar settings
+    \item Reactor Settings
+    \item Syndic settings
+    \item Peer Publish settings
+    \item Mine settings
+    \item Logging settings
+    \item Node Groups
+    \item Range Cluster settings
+    \item Windows Software Repo settings (also for legacy pre 2015.8 version)
+    \item Returner settings
+    \item Miscellaneous settings
+    \item Keepalive settings
+    \item NetAPI settings
+    \end{itemize}
+
+%\subsubsection{Example Salt Master}
 
 \subsection{Salt Minion}
 When the agent approach is used in Salt, minion is the agent. It receive commands from the Salt Master and communicate with him with the response of them. It has a own configuration file that can be easily setted. In that the location of the Salt Master needs to be indicated so the correct communication between them is correclty targeted.
@@ -831,20 +855,41 @@ It is divided in differents parts:
     \item Windows Software settings
     \item Returner settings
     \item Miscellaneous settings
-    \end{itemize}
+\end{itemize}
+
+There is also a \textbf{salt-minion} command with different options:
+
+\begin{itemize}
+    \item \texttt{--version} (version of Salt which is running)
+    \item \texttt{--versions-report} (program's dependencies and version number)
+    \item \texttt{-h, --help} (help message)
+    \item \texttt{-c CONFIG_DIR, --config-dir=CONFIG_dir} (location of the Salt configuration directory.)
+    \item \texttt{-u USER, --user=USER} (user used to run)
+    \item \texttt{-d, --daemon} (run as a daemon)
+    \item \texttt{--pid-file} (PIDFILE)
+\end{itemize}
+
 
 %\subsubsection{Example of minion settings}
 
 %\lstinputlisting[label={lst:exampleMinionSalt}]{listings/exampleMinionSalt.yaml}
 
-
-
 \subsection{Reactor}
+From the documentation:
+"Salt's Reactor system gives Salt the ability to trigger actions in response to an event. It is a simple interface to watching Salt's event bus for event tags that match a given pattern and then running one or more commands in response.
+This system binds sls files to event tags on the master. These sls files then define reactions. This means that the reactor system has two parts. First, the reactor option needs to be set in the master configuration file. The reactor option allows for event tags to be associated with sls reaction files. Second, these reaction files use highdata (like the state system) to define reactions to be executed."\cite{saltDocReactor}
 
+\subsection{Grains}
+From the documentation:
+"Salt comes with an interface to derive information about the underlying system. This is called the grains interface, because it presents salt with grains of information. Grains are collected for the operating system, domain name, IP address, kernel, OS type, memory, and many other system properties.
+The grains interface is made available to Salt modules and components so that the right salt minion commands are automatically available on the right systems."\cite{saltDocGrains}
 
 \section{Characteristics}
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
+Salt is natively supported in many Linux, MacOs and Windows systems.
+Salt create a table with many OS and distribution with the compatibility with Salt.
+That table and also a detailed explanations it is available at \url{https://docs.saltproject.io/salt/install-guide/en/latest/topics/salt-supported-operating-systems.html}.
 
 \subsection{Salt project}
 The project is available under the Apache 2.0 license.
