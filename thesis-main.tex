@@ -981,13 +981,27 @@ This tutorial include some passages like: installing Salt, starting Salt, findin
 There are also others guide like a tutorials about Salt States and Remote Execution and a stepbystep guide for MacOS.
 
 \section{Tecnologies for testing Salt}
-%FINISH
-Salt comes with a powerful integration and unit test suite. The test suite allows for the fully automated run of integration and/or unit tests from a single interface.
-
-Salt's test suite is located under the tests directory in the root of Salt's code base and is divided into two main types of tests: unit tests and integration tests. The unit and integration sub-test-suites are located in the tests directory, which is where the majority of Salt's test cases are housed.
+In the official documentations there are some test indicated, also with examples, available at 
+\url{https://docs.saltproject.io/en/latest/topics/tutorials/writing_tests.html}
 
 
-%guarda in doc e internet che cè di sta roba
+Salt comes with a powerful integration and unit test suite, that are two ways to test Salt with different approaches.
+The test suite allows for the fully automated run of integration and/or unit tests from a single interface.
+Salt's test suite is located under the \textbf{tests} directory in the root of Salt's code base and is divided into two main types described above.
+The \textbf{unit} and \textbf{integration} sub-test-suites are located in the \textbf{tests} directory, which is where the majority of Salt's test cases are housed.\cite{saltDocTest}
+
+
+Integration tests, the preferred way to test Salt, use Salt masters, minions, and a syndic(that is a sort of passthrough/intermediate Minion node) to test salt functionality directly and focus on testing the interaction of these components.
+Salt's integration test runner includes functionality to run Salt execution modules, runners, states, shell commands, salt-ssh commands, salt-api commands, and more.
+Since Salt is used to change the settings and behavior of systems, usually is convenient to run integration test in a subsystem.
+Integration test could be written on purpose to modify the system where they are running, and they are called \texttbf{destructive tests}\cite{saltDocTest}.
+
+
+Unit test try to test a single implementation of a certain function and its logic. Unit tests should be used to test a function's exit points such as any return/raises statements.
+In the part of documentation dedicated to unit tests, there are some example with different complexity: simple, complete, complex.
+Unit tests are also useful in cases where writing an integration test might not be possible.
+Even if the integration test suite is powerful it does not cover all functional areas of Salt's ecosystem (for example Proxy Minions).
+Unit tests can still provide some testing support by testing the logic contained inside Proxy Minion functions.\cite{saltDocTest}.
 
 %\subsection{Suite for check syntax}
 %\subsection{Suite for check jobs}
@@ -1003,6 +1017,72 @@ But it need to be considered that the project is Python based, considered a simp
 %\section{Cons}
 
 %\section{Real project use cases}
+%*****************************************
+%* CHEF
+%*****************************************
+\chapter{Chef}
+
+\section{The begin of Chef}
+
+\subsection{History}
+
+\section{Purpose of the technology}
+
+\subsection{Best points of Chef}
+
+\section{How the tool is shown to the community}
+
+\subsection{Who supports and maintains the project}
+
+\subsection{Statistics}
+
+\subsection{Community way to help and improve}
+
+\section{Main Chef components}
+
+%\subsection{Inventory}
+
+%\subsubsection{Example Inventory Ansible}
+
+%\subsection{Modules}
+%\subsection{Play}
+%\subsection{Task}
+%\subsection{Playbook}
+%\subsubsection{Example Playbook Ansible}
+
+\section{Characteristics}
+
+\subsection{Platforms available (Linux, Windows, MacOS)}
+
+\subsection{Ansible project}
+
+\subsection{Architecture, agent or agentless}
+
+%\subsection{Structure of the project}
+%\subsubsection{Deep structure of the project (how it is the open source internal project)}
+%\subsection{Documentation of the project}
+
+\subsection{Extensions of the project}
+
+\section{Installation}
+
+\subsection{Example}
+
+\section{Tecnologies for testing Chef}
+
+%\subsection{Suite for check syntax}
+%\subsection{Suite for check jobs}
+
+\section{Learning curve}
+
+%\section{Pros}
+
+%\section{Cons}
+
+%\section{Real project use cases}
+
+
+
 
 \chapter{Conclusion}
 Scrivere la conclusione
