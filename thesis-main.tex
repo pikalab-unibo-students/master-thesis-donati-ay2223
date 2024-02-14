@@ -237,12 +237,14 @@ Ubuntu is one of the most popular Linux distributions, Ubuntu has great communit
 
 Canonical helps and contributes to Ubuntu distribution but also sells some products related like support, differences updates, infrastructures.
 
-About automation tools, for example, Red Hat offers Ansible Automation Platform:"
-
-
-Red Hat Ansible Automation Platform is an end-to-end automation platform to configure systems, deploy software, and orchestrate advanced workflows. It includes resources to create, manage, and scale across the entire enterprise."\cite{ansibleAutomationPlatform}.
+About automation tools, for example, Red Hat offers Ansible Automation Platform:"Red Hat Ansible Automation Platform is an end-to-end automation platform to configure systems, deploy software, and orchestrate advanced workflows. It includes resources to create, manage, and scale across the entire enterprise."\cite{ansibleAutomationPlatform}.
 Automation controller it is a part of Ansible Automation Platform, and there is a sort of community-supported alternative called "AWX"\cite{ansibleAwxAAP}.
 Red Hat explains that Automation controller "is produced by taking selected releases of AWX, hardening them for long-term supportability, and making them available to customers as a hosted service within Red Hat Ansible Automation Platform"\cite{ansibleFaq}.
+
+Also Salt has open source versions and an enterprise version. The open source is free and usable via a command-line interface.
+The paid enterprise edition (but the prices are not available for public), SaltStack Enterprise, that adds come features as GUI and support for Windows and MacOS.
+Salt offers professional services to help customers integrate with third-party systems, also, the Salt Enterprise API has many more features than the free version.\cite{saltTechTarget}
+
 
 So, when a company makes a big contribution to an open-source project there could be some negative implications ( for example regarding support or licenses), but the community nonetheless takes benefits.
 
@@ -875,44 +877,126 @@ There is also a \textbf{salt-minion} command with different options:
 %\lstinputlisting[label={lst:exampleMinionSalt}]{listings/exampleMinionSalt.yaml}
 
 \subsection{Reactor}
-From the documentation:
-"Salt's Reactor system gives Salt the ability to trigger actions in response to an event. It is a simple interface to watching Salt's event bus for event tags that match a given pattern and then running one or more commands in response.
-This system binds sls files to event tags on the master. These sls files then define reactions. This means that the reactor system has two parts. First, the reactor option needs to be set in the master configuration file. The reactor option allows for event tags to be associated with sls reaction files. Second, these reaction files use highdata (like the state system) to define reactions to be executed."\cite{saltDocReactor}
+Salt's Reactor system listen for events, and than trigger actions in response to that event.
+
+It is a simple interface to watching Salt's event bus for event tags that match a given pattern and then running one or more commands in response.
+This system binds sls files to event tags on the master.
+
+
+These sls files then define reactions. This means that the reactor system has two parts.
+
+
+First, the reactor option needs to be set in the master configuration file.
+
+
+The reactor option allows for event tags to be associated with sls reaction files.
+
+
+Second, these reaction files use highdata (like the state system) to define reactions to be executed.\cite{saltDocReactor}
 
 \subsection{Grains}
-From the documentation:
-"Salt comes with an interface to derive information about the underlying system. This is called the grains interface, because it presents salt with grains of information. Grains are collected for the operating system, domain name, IP address, kernel, OS type, memory, and many other system properties.
-The grains interface is made available to Salt modules and components so that the right salt minion commands are automatically available on the right systems."\cite{saltDocGrains}
+Salt has the ability to takes information about the target system.
+
+
+This ability is called grains interface, because it presents salt with grains of information.
+
+
+Grains are collected for the operating system, domain name, IP address, kernel, OS type, memory, and many other system properties.
+
+
+The grains interface is made available to Salt modules and components so that the right salt minion commands are automatically available on the right systems.\cite{saltDocGrains}
+
+
+\subsection{modules}
+In Salt, both modules and execution modules are Python (or Cython) files that contain a set of functions which define the functionalities that Salt can perform.
+
+\textbf{execution modules} are the functions called by the \texttt{salt} command, who simply run tasks on a node (minion).
+
+
+\textbf{modules} (or also \texttt{state modules}) are used to get the system into a certain state/configuration, and also contain the logic to check if the system is already in the correct state/configuration.
+
 
 \section{Characteristics}
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
 Salt is natively supported in many Linux, MacOs and Windows systems.
+
+
 Salt create a table with many OS and distribution with the compatibility with Salt.
+
+
 That table and also a detailed explanations it is available at \url{https://docs.saltproject.io/salt/install-guide/en/latest/topics/salt-supported-operating-systems.html}.
 
 \subsection{Salt project}
-The project is available under the Apache 2.0 license.
-This license include very few restrictions about modification and distribution about the project.
+The project is available under the Apache 2.0 license. This license include very few restrictions about modification and distribution about the project.
 
 \subsection{Architecture, agent or agentless}
+The preferred approach that Salt uses, is the master-minion setup, the Salt master sends commands to the Salt minions to execute.
+However, Salt also supports a mode where it can operate without a minion agent, so it is agentless.
+Usually it better to use the agent mode, beacuse Salt is thinked and constructed in a way that make better, faster and more complete the use of minions.
 
 %\subsection{Structure of the project}
 %\subsubsection{Deep structure of the project (how it is the open source internal project)}
 %\subsection{Documentation of the project}
 
 \subsection{Extensions of the project}
+Following the documentation about the creation of Salt execution module\cite{saltDocModules}.
+It is possible to write Salt execution module it prefer, for the docs "A Salt execution module is a Python or Cython module placed in a directory called \_modules/ at the root of the Salt fileserver."
+The module is also to a better management of module, it is possible to use module importing zipped (.zip) archive
+All of the Salt execution modules are available to each other and modules can call functions available in other execution modules.
 
 \section{Installation}
 
-\subsection{Example}
+%Riscrivi meglio,
+In the official documentation\cite{saltDocInstall} there is a table with different passages to correctly install Salt on the system.
 
-\section{Tecnologies for testing Ansible}
+Install the salt-master service on the node that will manage your other nodes, meaning it will send commands to other nodes. Then, install the salt-minion service on the nodes that will be managed by the Salt master.
+
+Following that documentation it is possible to resume it in:
+
+\begin{itemize}
+    \item Before you start the installation, check the system requirements to ensure your platform is supported in the latest version of Salt and open the required network ports. Ensure you also have the correct permissions to install packages on the targeted nodes;
+    \item Install the salt-master service on the node that will manage your other nodes, meaning it will send commands to other nodes. Then, install the salt-minion service on the nodes that will be managed by the Salt master;
+    \item Configure the Salt minions to add the DNS/hostname or IP address of the Salt master they will connect to. You can add additional configurations to the master and minions as needed;
+    \item Start the service on the master, then the minions;
+    \item Accept the minion keys after the minion connects;
+    \item Verify that the installation was successful by sending a test ping;
+    \item Install third-party Python dependencies needed for specific modules.
+\end{itemize}
+
+There are also some other methods, that Salt reserve for users with a previous experience in Salt.
+
+These can be summarized at:
+\begin{itemize}
+    \item Masterless
+    \item Salt cloud
+    \item Proxy minions
+    \item Agentless
+    \item Install Salt for development
+\end{itemize}
+
+\subsection{Example}
+There is a well-written tutorial in the official documentation, available at \url{https://docs.saltproject.io/en/master/topics/tutorials/walkthrough.html}.
+This tutorial include some passages like: installing Salt, starting Salt, finding the Salt master, setting up a salt minion, ecc.
+There are also others guide like a tutorials about Salt States and Remote Execution and a stepbystep guide for MacOS.
+
+\section{Tecnologies for testing Salt}
+%FINISH
+Salt comes with a powerful integration and unit test suite. The test suite allows for the fully automated run of integration and/or unit tests from a single interface.
+
+Salt's test suite is located under the tests directory in the root of Salt's code base and is divided into two main types of tests: unit tests and integration tests. The unit and integration sub-test-suites are located in the tests directory, which is where the majority of Salt's test cases are housed.
+
+
+%guarda in doc e internet che cè di sta roba
 
 %\subsection{Suite for check syntax}
 %\subsection{Suite for check jobs}
 
 \section{Learning curve}
+The learining curve is not the fastes, has some configuration that is not intuitive as a completely agent-less way.
+Also, considering that, even if is allowed, the connection is not passed by SSH; it is better to understand the ZeroMQ messaging technology.
+having a basic understanding of how ZeroMQ works can help you better understand how SaltStack operates under the hood about the communication between nodes (master and minions).
+But it need to be considered that the project is Python based, considered a simple language, and also the state files (to describe state of system components) is written in YAML, a very simple language to make configuration files.
 
 %\section{Pros}
 
