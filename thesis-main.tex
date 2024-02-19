@@ -208,11 +208,9 @@ Some of the tools used by the community for automation, which try to reply to th
 
 \begin{itemize}
     \item Ansible
-    \item Cobbler
-    \item Puppet
-    \item Chef
     \item SaltStack
-    \item Terraform
+    \item Chef
+    \item Puppet
 \end{itemize}
 
 Every technology has some differences considering for example language to write automation, learning curve, necessity of demons, connection with machines and so on.
@@ -701,7 +699,7 @@ Salt was started as a project ideated from Thomas S. Hatch which was not satifie
 Some steps could be seen at \url{https://red45.wordpress.com/2011/05/29/salt-configuration-management/}
 
 
-For exaple he posted about \textbf{Salt Configuration Management} when he wrote:
+For example he posted about \textbf{Salt Configuration Management} when he wrote:
 
 
 "The Salt configuration management took a big leap forward late last night. The capability to define more complex states in salt from the master became a reality. Salt can now define states on the master file server, and pull those states on the minions. More work still needs to be done, and we still need to write the documentation, but this is a big step forward!".
@@ -1030,6 +1028,39 @@ The Chef project is completely free to use, anyway, there are some limitations, 
 \section{The begin of Chef}
 
 \subsection{History}
+The history of Chef start with  Adam Jacob, he create a technology for the company where he worked.
+The company where Adam worked aims to build end-to-end server/deployment tools. Jacob showed Chef to Jesse Robbins, who saw its potential after running operations at Amazon.
+In a Chef blog, in the beginning of 2009, Jesse wrote:
+"I’m pleased to announce the release of Chef, a systems integration framework that brings the benefits of configuration management to your entire infrastructure.
+
+With Chef, you can:
+
+Manage your servers by writing code, not by running commands. 
+
+
+Integrate tightly with your applications, databases, LDAP directories, and more.
+
+
+Easily configure applications that require knowledge about your entire infrastructure."\cite{chefStory}
+
+They founded a new company (Opscode) with Barry Steinglass, Nathen Haneysmith, and Joshua Timberman to turn Chef into a product.
+Considering that this new tools create use a set of recipe, the project was named \textbf{Chef} at the end.
+
+In 2013, there was a post by Bryan McLellan about the new API server written in Erlang:
+"Erchef, the Chef 11 Server
+
+
+The most significant new feature is that the Chef 11 Server is a complete rewrite of the core API server in Erlang, which we call Erchef.
+We learned a lot from running Opscode Hosted Chef, the single largest Chef Server, as well as supporting our Opscode Private Chef customers.
+Using these lessons and experience, we wrote the new server to be faster and more scalable, but still API compatible with the original Ruby based server."\cite{chefStory2}
+
+
+On September 8, 2020, Progress announced the acquisition of Chef in September.\cite{chefStory3}
+
+
+The company created was called as now, \textbf{Progress Chef}.
+
+
 
 \section{Purpose of the technology}
 "Chef is used by companies of all shapes and sizes, from tiny startups to the largest companies in the world, to create businesses where infrastructure moves as fast as software.", Adam Jacob, the main inventor of Chef, declare it about Chef.
@@ -1037,32 +1068,164 @@ Chef aims to speak from small to big business with that quote.
 
 \subsection{Best points of Chef}
 
+\begin{itemize}
+\item{flexibility}: it works on differents Linux distros, MacOS and Windows
+\item{Interoperability}: it works on clouds, on premise and also on hybrid systems.
+\item{Easy repetitive}: it is possible to reuse code written by others to reproduce automation
+\end{itemize}
 
 \section{How the tool is shown to the community}
+It is possible to see a starting point from the Chef community at \url{https://community.chef.io/}, the projects published by Chef are under Apache 2.0 license.
 
 \subsection{Who supports and maintains the project}
+The Chef project is divided into different modules, for that case, it takes the \textbf{Chef Server}\url{https://github.com/chef/chef-server},
+the \textbf{Chef Infra}\url{https://github.com/chef/chef}, the \textbf{Chef Workstation}\url{https://github.com/chef/chef-workstation}.
+
+There is an active community, at now the Project is also sustained by the company who own it, which is \textbf{Progress Chef}.
+A lot of companies like Airbnb, Facebook, and Shopify contribute the Chef technology spreading by using it.
 
 \subsection{Statistics}
+Statistics about Chef Server and Chef Infra:
+
+
+Chef Server
+
+
+\begin{itemize}
+    \item 283 stars
+    \item >70 watcher
+    \item 214 fork
+    \item >150 issue with >700 closed
+    \item >70 pull request
+    \item >140 contributors
+\end{itemize}
+
+
+Chef Infra
+
+
+\begin{itemize}
+    \item 7.4k stars
+    \item >300 watcher
+    \item 2.6k fork
+    \item >300 issue with >3k closed
+    \item >40 pull request
+    \item >650 contributors
+    \item >10k projects use it as dependecy
+\end{itemize}
+
+It is possible to consider the community active, even if with not thousands of contributors, used by thousands of projects.
+
 
 \subsection{Community way to help and improve}
+There is a main link on the Chef site for community, at \url{https://community.chef.io/}.
+There is a link created by Chef on purpose, at \url{https://github.com/chef/chef-oss-practices}.
+Inside that there is a guide at \url{https://github.com/chef/chef-oss-practices/blob/main/CONTRIBUTING.md}.
+Also, that is also defined the communications \url{https://github.com/chef/chef-oss-practices/blob/main/communication/README.md}.
+
+There are four communication channels, each with its own specific purpose\cite{chefGithubOSSCom}:
+
+\begin{itemize}
+    \item \textbf{GitHub}: GitHub is the Chef Community's preferred durable medium for open and transparent development of software. All development conversation must be captured in GitHub. Any decisions made in internal Chef Slack channels, Zoom sessions, or any other communication medium must be summarized in GitHub. Please also link to the GitHub issue or pull request in chat once it is opened.
+    \item \textbf{Community Slack}: Sometimes it will make sense to have a brief, non-durable conversation about the development of a project. Have these exchanges in Community Slack (either in a dev channel or via DM). Then, any development decisions, etc. arising from the Slack interaction should be documented in GitHub. Limit these conversations in Community Slack to development for a given project.
+    \item \textbf{Mailing Lists}: The Chef Community mailing lists are hosted via Discourse. This is the best place to catch up on general and security-related announcements.
+    \item \textbf{Office Hours}: Individual projects may host office hours on a periodic basis. This is a great way to get some face time with other Project Members. Each project should record and archive sessions to a public location; see individual project documentation for more details.
+\end{itemize}
+
+Also, there is some \texttt{interact way}, to know better the community:
+
+\begin{itemize}
+    \item Discourse at \url{https://discourse.chef.io/}
+    \item Slack at \url{https://community.chef.io/slack}
+    \item Chef Community Content Calendar at \url{https://calendar.google.com/calendar/u/0/embed?src=c_b1a1380a6f8d61aa926f1e3a495fca0db6f7094dc605f38bc15a1bfcf3343de6@group.calendar.google.com&ctz=America/New_York&pli=1}
+\end{itemize}
+
+Also, Chef has Twitch \url{https://www.twitch.tv/chefsoftware} and YouTube \url{https://www.youtube.com/getchefdotcom} channels.
 
 \section{Main Chef components}
 
-%\subsection{Inventory}
+\subsection{Structure}
+About the main structure, different from other similar tools, Chef has these 3 components:
 
-%\subsubsection{Example Inventory Ansible}
 
-%\subsection{Modules}
-%\subsection{Play}
-%\subsection{Task}
-%\subsection{Playbook}
-%\subsubsection{Example Playbook Ansible}
+\textbf{Workstation}
+Chef Workstation is described as\cite{chefWorkstation}
+"Chef Workstation gives you everything you need to get started with Chef, so you can automate how you audit, configure, and manage applications end environments".
+The local machine where the automation code is created and pushed to the Server but also do other tasks such as execute remote scanning and configuration tasks.
+
+
+\textbf{Server}
+Chef Server is described as\cite{chefServer}
+"Chef Infra Server is a hub for configuration data; storing cookbooks, node policies and metadata of managed nodes".
+This is where all the code for making automation resides. It also contains all the information about nodes.
+
+
+\textbf{Client}
+Client(s), also called \textbf{Infra} or \textbf{Infra Client}, are usually called node(s). The machines where the code needs to execute.
+Nodes pull the latest code from the Chef Server.
+Chef Infra is described as\cite{chefInfra}
+"Chef Infra, a powerful automation platform that transforms infrastructure into code automating how infrastructure is configured, deployed and managed across any environment, at any scale".
+
+
+It is possible to visualize that in that graphics\cite{chefFreeCodeCamp}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/img_Chef_structure.jpeg}
+    \caption{Chef Structure}
+    \label{fig:random-image}
+\end{figure}
+
+\subsection{Recipe}
+Recipe is the file, written in Ruby, that contains a set of tasks to be executed step by step in the clients. It has to be in a Cookbook.
+
+\subsection{Resource}
+Resource is a piece of code that declares an element of the system and what action should be executed.
+Like a sort of module in Ansible, it is possible to set the \textbf{install} and the \textbf{package} to install, for have the desired package installed.
+
+\subsubsection{Services}
+Services are used to trigger service status changes, like restarting or stopping a service.
+
+\subsection{Cookbook}
+Cookbook is a collection of recipes and other related files organized in a pre-defined way. It is created in a way to simplify the organization and sharing.
+
+\subsection{Attributes}
+Attributes are details about a specific node. Can also be defined inside recipes.
+It also exists \textbf{automatic attributes} for example contain info about system.
+
+
+\subsection{Example of Recipe}
+An example of a recipe\cite{chefDigitalOcean}:
+
+\lstinputlisting[label={lst:exampleRecipeChef}]{listings/exampleRecipeChef.rb}
+
+About the recipe:
+
+The recipe starts with an attribute definition, \texttt{node['main']['doc\_root']} where a directory is defined.
+
+
+At the beginning, there are resources to \texttt{execute} a command (apt-get update), also \texttt{apt\_package} resource to install package apache2.
+
+
+The service resource enables and starts the service apache2.
+
+
+\texttt{directory node['main']['doc\_root'] do [...] end} defines custom attributes for that folder and create it.
+
+A cookbook\_file resource is used to copy a local file to a remote server. This resource will copy \texttt{index.html} file and place it inside the document root created before.
+
+
+In the end, the template resource applies our Apache virtual host template and notifies the service apache2 for a restart.
 
 \section{Characteristics}
+The Chef Server is written almost completely in Erlang and also Ruby.
+
+
+Automation are written in Ruby.
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
 
-\subsection{Ansible project}
 
 \subsection{Architecture, agent or agentless}
 
