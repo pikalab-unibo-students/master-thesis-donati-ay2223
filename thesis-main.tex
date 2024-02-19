@@ -945,7 +945,6 @@ All of the Salt execution modules are available to each other and modules can ca
 
 \section{Installation}
 
-%Riscrivi meglio,
 In the official documentation\cite{saltDocInstall} there is a table with different passages to correctly install Salt on the system.
 
 Install the salt-master service on the node that will manage your other nodes, meaning it will send commands to other nodes. Then, install the salt-minion service on the nodes that will be managed by the Salt master.
@@ -1024,7 +1023,6 @@ Chef even if it is not the simplest, is complete and with a lot of modules. The 
 Also, they create a cloud version that they are to discontinue(30th Nov 2024).
 The Chef project is completely free to use, anyway, there are some limitations, considering that they also offer a premium version expecially created for companies.
 
-
 \section{The begin of Chef}
 
 \subsection{History}
@@ -1075,7 +1073,7 @@ Chef aims to speak from small to big business with that quote.
 \end{itemize}
 
 \section{How the tool is shown to the community}
-It is possible to see a starting point from the Chef community at \url{https://community.chef.io/}, the projects published by Chef are under Apache 2.0 license.
+It is possible to see a starting point from the Chef community at \url{https://community.chef.io/}.
 
 \subsection{Who supports and maintains the project}
 The Chef project is divided into different modules, for that case, it takes the \textbf{Chef Server}\url{https://github.com/chef/chef-server},
@@ -1161,8 +1159,9 @@ This is where all the code for making automation resides. It also contains all t
 
 
 \textbf{Client}
-Client(s), also called \textbf{Infra} or \textbf{Infra Client}, are usually called node(s). The machines where the code needs to execute.
-Nodes pull the latest code from the Chef Server.
+Client(s), also called \textbf{Infra Client}, are strictly related to nodes. The machines where the code needs to execute.
+Chef Infra Client is installed on each node that's managed with Chef Infra. Chef Infra Client configures the node locally by performing the tasks specified in the run-list.
+Chef Infra Client will also pull down any required configuration data from the Chef Infra Server during a Chef Infra Client run.
 Chef Infra is described as\cite{chefInfra}
 "Chef Infra, a powerful automation platform that transforms infrastructure into code automating how infrastructure is configured, deployed and managed across any environment, at any scale".
 
@@ -1174,7 +1173,7 @@ It is possible to visualize that in that graphics\cite{chefFreeCodeCamp}
     \centering
     \includegraphics[width=.8\linewidth]{figures/img_Chef_structure.jpeg}
     \caption{Chef Structure}
-    \label{fig:random-image}
+    \label{fig:chef-structure-image}
 \end{figure}
 
 \subsection{Recipe}
@@ -1219,15 +1218,52 @@ A cookbook\_file resource is used to copy a local file to a remote server. This 
 In the end, the template resource applies our Apache virtual host template and notifies the service apache2 for a restart.
 
 \section{Characteristics}
-The Chef Server is written almost completely in Erlang and also Ruby.
-
-
-Automation are written in Ruby.
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
+At \url{https://docs.chef.io/platforms/} there are written different OSs, with different sections about different Chef modules(like Infra Client, Infra Server, ecc).
+The support is described as \textbf{Commercial Support} and \textbf{Community Support}.
+The commercial support is described in the official Chef documentation as:
+"Commercial support for platforms is part of paid maintenance contracts with Chef Software. Support contracts allow you to open tickets and receive service level agreement (SLA) assistance from our support desk. Commercially supported platforms are extensively tested as part of Chef’s development and release process. Commercial support follows the lifecycle of the underlying operating system vendor.
 
+
+Commercial support is limited to the platforms listed in the “Commercial Support” tables–platforms not listed in these tables are unsupported."\cite{chefDocPlatforms}
+
+Instead, the Community Support is considered but differently:
+"Community support for platforms means that members of the Chef community have contributed to these platforms and Chef doesn’t actively work to maintain this functionality. Chef doesn’t explicitly test community supported platforms as part of the development and release process.
+
+
+Many of these platforms are forks, clones, or otherwise derivative of platforms that Chef commercially supports. Continued functionality for these platforms is likely, but not guaranteed. Unsupported platforms may have missing or non-operative functionality. As always, we welcome community contributions from anyone looking to expand community support for platforms in Chef products."\cite{chefDocPlatforms}
+
+
+There is also support for \textbf{Derived Platforms}, for example for a distribution that is rebuilt on an original supported distribution.
+
+For Example, \texttt{Chef Infra Client} has Commercial Support for Amazon Linux, CentOS, Debian, FreeBSD, Ubuntu, and other Linux distros but also macOS and Windows.
+It has also derived support for AlmaLinux, whose parent is CentOS but also a lot of Community Support platforms like Arch, Kali, Mint and others.
+
+\subsection{Chef project}
+The open source projects published by Chef are under Apache 2.0 license.
+The main repo for Chef open source projects is \url{https://github.com/chef/}.
+The Chef Server is written almost completely in Erlang and also Ruby.
+Automations( inserted in Recipes ) are written in Ruby. Ruby is a free and open-source language that is not the simplest but it used for different uses, its first release was on 1995.
 
 \subsection{Architecture, agent or agentless}
+Chef works on client-server configuration with the addition of a workstation.
+In Chef, there is an architecture where nodes pulls configurations (in Ruby) from the server. Chef has its own server as the source of truth that require uploaded cookbooks.
+The server runs on the master machine, while the client runs as an agent on every node. Chef also has an extra component named “workstation” that stores all of the configurations that are tested then pushed to the central server.
+
+
+A simplified image from the official documentation:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/chef_infra.png}
+    \caption{Chef Infra}
+    \label{fig:chef-infra-image}
+\end{figure}
+
+
+
+%Chef uses a backup server that fills in when the primary server goes down
 
 %\subsection{Structure of the project}
 %\subsubsection{Deep structure of the project (how it is the open source internal project)}
@@ -1245,6 +1281,10 @@ Automation are written in Ruby.
 %\subsection{Suite for check jobs}
 
 \section{Learning curve}
+Even if it is not the simplest, Chef has a good community with actively support the technology and other developers.
+The Infra Client is written in Ruby but the server is a mix of Erlang and Ruby for most of the part.
+Even if the recipes, that are written in Ruby, are not too difficult to set, Ruby is not the simplest language, in fact, in the official documentation it is possible to read about Ruby that the creator, Yukihiro Matsumoto,
+"trying to make Ruby natural, not simple"\cite{rubyDoc}.
 
 %\section{Pros}
 
