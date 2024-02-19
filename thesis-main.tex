@@ -548,7 +548,7 @@ The official method involves pip and then installing Ansible via pip.
 sudo apt install python3-pip
 \end{lstlisting}
 
-\texttt{pip} takes about 250 MegaByte of disk space.
+%\texttt{pip} takes about 250 MegaByte of disk space.
 
 After installing pip, install Ansible(core):
 
@@ -1270,12 +1270,55 @@ A simplified image from the official documentation:
 %\subsection{Documentation of the project}
 
 \subsection{Extensions of the project}
+It is possible to use Cookbooks (and Chef tools) created by the community, uploaded in the \textbf{Supermarket} and public available at \url{https://supermarket.chef.io/}.
+
+
+"Chef Supermarket is the site for community cookbooks. It provides a searchable cookbook repository and a friendly web UI. Cookbooks that are part of the Chef Supermarket are accessible by any Chef user.
+
+
+There are two ways to use Chef Supermarket:
+
+
+The public Chef Supermarket is hosted by Chef Software and is located at Chef Supermarket.
+
+
+A private Chef Supermarket may be installed on-premise behind the firewall on the internal network. Cookbook retrieval from a private Chef Supermarket is often faster than from the public Chef Supermarket because of closer proximity and fewer cookbooks to resolve. A private Chef Supermarket can also help formalize internal cookbook release management processes (e.g. “a cookbook is not released until it is published on the private Chef Supermarket”)."\cite{chefSupermarket}
 
 \section{Installation}
+The Chef Software install script can be used to install any Chef Software, including things like Chef Infra Client, Chef Infra Server, Chef InSpec.
+
+
+This script does the following:
+\begin{itemize}
+    \item Detects the platform, version, and architecture of the machine on which the installer is being executed
+    \item Fetches the appropriate package, for the requested product and version
+    \item Validates the package content by comparing SHA-256 checksums
+    \item Installs the package
+\end{itemize}
+
+
+\cite{chefDocInstall}
 
 \subsection{Example}
 
+For UNIX, Linux, and macOS systems (insert password when required), via terminal:
+
+
+\begin{lstlisting}
+curl -L https://omnitruck.chef.io/install.sh | sudo bash
+\end{lstlisting}
+
+
+For Windows systems, via PowerShell:
+\begin{lstlisting}
+. { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install
+\end{lstlisting}
+
+
+\cite{chefDocInstall}
+
 \section{Tecnologies for testing Chef}
+
 
 %\subsection{Suite for check syntax}
 %\subsection{Suite for check jobs}
@@ -1292,6 +1335,69 @@ Even if the recipes, that are written in Ruby, are not too difficult to set, Rub
 
 %\section{Real project use cases}
 
+%***********************************
+%*** PUPPET
+%***********************************
+\chapter{Puppet}
+
+\section{The begin of Puppet}
+
+\subsection{History}
+
+\section{Purpose of the technology}
+
+\subsection{Best points of Puppet}
+
+\section{How the tool is shown to the community}
+
+\subsection{Who supports and maintains the project}
+
+\subsection{Statistics}
+
+\subsection{Community way to help and improve}
+
+\section{Main Puppet components}
+
+%\subsection{Inventory}
+
+%\subsubsection{Example Inventory Ansible}
+
+%\subsection{Modules}
+%\subsection{Play}
+%\subsection{Task}
+%\subsection{Playbook}
+%\subsubsection{Example Playbook Ansible}
+
+%\section{Characteristics}
+
+%\subsection{Platforms available (Linux, Windows, MacOS)}
+
+%\subsection{Ansible project}
+
+%\subsection{Architecture, agent or agentless}
+
+%\subsection{Structure of the project}
+%\subsubsection{Deep structure of the project (how it is the open source internal project)}
+%\subsection{Documentation of the project}
+
+\subsection{Extensions of the project}
+
+\section{Installation}
+
+\subsection{Example}
+
+\section{Tecnologies for testing Puppet}
+
+%\subsection{Suite for check syntax}
+%\subsection{Suite for check jobs}
+
+\section{Learning curve}
+
+%\section{Pros}
+
+%\section{Cons}
+
+%\section{Real project use cases}
 
 
 
