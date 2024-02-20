@@ -208,7 +208,7 @@ Some of the tools used by the community for automation, which try to reply to th
 
 \begin{itemize}
     \item Ansible
-    \item SaltStack
+    \item Salt
     \item Chef
     \item Puppet
 \end{itemize}
@@ -235,8 +235,9 @@ Ubuntu is one of the most popular Linux distributions, Ubuntu has great communit
 
 Canonical helps and contributes to Ubuntu distribution but also sells some products related like support, differences updates, infrastructures.
 
-About automation tools, for example, Red Hat offers Ansible Automation Platform:"Red Hat Ansible Automation Platform is an end-to-end automation platform to configure systems, deploy software, and orchestrate advanced workflows. It includes resources to create, manage, and scale across the entire enterprise."\cite{ansibleAutomationPlatform}.
-Automation controller it is a part of Ansible Automation Platform, and there is a sort of community-supported alternative called "AWX"\cite{ansibleAwxAAP}.
+An example on an automation tool could be Red Hat which offers Ansible Automation Platform.
+Red Hat describes it as an end-to-end automation platform able to scale across the entire enterprise that is useful to configure systems, deploy software, and orchestrate advanced workflows.\cite{ansibleAutomationPlatform}
+Automation controller is a part of Ansible Automation Platform, and there is a sort of community-supported alternative called "AWX"\cite{ansibleAwxAAP}.
 Red Hat explains that Automation controller "is produced by taking selected releases of AWX, hardening them for long-term supportability, and making them available to customers as a hosted service within Red Hat Ansible Automation Platform"\cite{ansibleFaq}.
 
 Also Salt has open source versions and an enterprise version. The open source is free and usable via a command-line interface.
@@ -383,10 +384,9 @@ Ansible-related open-source project is AWX which "provides a web-based user inte
 \section{Main Ansible components}
 
 \subsection{Inventory}
-            The inventory defines the nodes (also called hosts) of the infrastructure on which Ansible performs automation.
-            Even if you can pass the host names from the terminal, it is good practice to create the inventory file.
-            The hosts are inserted into groups, so that you can run automations on multiple hosts at the same time.
-            According to the Ansible documentation on inventory management\cite{ansibleDocInventory}, you can group the machines according to the following criteria:
+Inventory defines nodes(also called hosts) of the infrastructure on which Ansible performs automations. Even if you can pass the host names from the terminal, it is good practice to create the inventory file.
+The hosts are inserted into groups so that you can run automations on multiple hosts at the same time.
+According to the Ansible documentation on inventory management\cite{ansibleDocInventory}, you can group the machines according to the following criteria:
             
             \begin{itemize}
                 \item \textbf{What:} What purpose they were created for
@@ -1176,6 +1176,8 @@ It is possible to visualize that in that graphics\cite{chefFreeCodeCamp}
     \label{fig:chef-structure-image}
 \end{figure}
 
+The Infra Server communicates with Infra Clients via HTTP(S) connections.
+
 \subsection{Recipe}
 Recipe is the file, written in Ruby, that contains a set of tasks to be executed step by step in the clients. It has to be in a Cookbook.
 
@@ -1318,7 +1320,19 @@ For Windows systems, via PowerShell:
 \cite{chefDocInstall}
 
 \section{Tecnologies for testing Chef}
+In Chef, like others, it is possible to simply check the sintax with a single command via terminal.
+For exemple\cite{chefTestMedium}
+\begin{lstlisting}
+    chef exec ruby -c test-cookbook/recipes/test-recipe.rb
+\end{lstlisting}
 
+
+There is an entire suite for testing, supported directly by Chef, called Test Kitchen \url{https://kitchen.ci/}.
+Test Kitchen provides a test harness to execute infrastructure code on one or more platforms in isolation.\cite{chefTestKit}
+Test Kitchen is used by all Chef-managed community cookbooks and is the integration testing tool of choice for cookbooks.\cite{chefTestKit}
+There is also an official Chef guide, is explains the power of using Chef Workstation and Test Kitchen together, at \url{https://www.chef.io/docs/cheflibraries/product-and-user-guides/chefguide_test_kitchen.pdf}.
+Chef Workstation also includes InSpec, which is an open-source framework for testing and auditing your applications and infrastructure. It compares the actual state of your system with the desired state that you express in easy-to-read and easy-to-write Chef InSpec code. It detects violations and displays findings in the form of a report, but puts you in control of remediation.\cite{chefInSpec}
+Test Kitchen allows you to apply your Chef Infra cookbooks and recipes to a variety of machines. It is immediately possible to verify the results with Chef InSpec, ensuring that those systems are properly deployed and remain in the states you want.\cite{chefTestKitPdf}
 
 %\subsection{Suite for check syntax}
 %\subsection{Suite for check jobs}
@@ -1435,7 +1449,7 @@ Considerazioni finali
 %----------------------------------------------------------------------------------------
 
 \backmatter
-
+ 
 \nocite{*} % comment this to only show the referenced entries from the .bib file
 
 \bibliographystyle{plainnat}
