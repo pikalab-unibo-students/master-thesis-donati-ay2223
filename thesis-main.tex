@@ -65,15 +65,14 @@ So, now IT companies need also technologies to manage the infrastructure they ha
 
 There are a lot of repetitive tasks when it is needed to install and configure a server, so there are now tools to simplify it a lot and also make an automation on it.
 
+These technologies are usually called "automation tools".
 
-These technologies could be called "automation tools".
-
-Considering different DevOps technologies, this document aims to study, present and compare technologies about automation.
+Considering different DevOps technologies, this document aims to study and compare some open source technologies about automation.
 
 That document will be useful for IT students, teachers and enthusiasts who wish to manage their IT environment differently.
 
 
-It will be a starting point to see what is automation tools, different types of ways to automate of these technologies, see some examples and also see and overviews and comparisons.
+It will be a starting point to see what is an automation tool, different types of ways to automate with these technologies, see some examples and also see overviews and comparisons.
 
 \section{Metology}
 Starting from some technologies that it is already known, it will search for technologies similar to them.
@@ -82,25 +81,25 @@ Starting from some technologies that it is already known, it will search for tec
 Also, sites and theses that talk about automation will be beginning to see what technologies exist.
 
 
-There will be a focus on "popular" tools in these years. Searching for technologies just created will not be the scope, and also finding technologies too old might result not useful for real use.
+There will be a focus on "popular" tools in these years. Searching for technologies just created will not be the scope, and also finding technologies too old might result in not being useful for real use.
 
 
-Technologies with no costs, an open-source project, and Apache or similar license will be preferred.
+Technologies based on open source projects, with a free version and a community-oriented license, will be considered.
 
 
 There are some technologies properties of Amazon, Google and Microsoft, even if they might be described, they will not be the focus of the document.
 
 
-That research also searching for tecnologies that could be useful for multipurpose scope, always related to automation.
+That study also searches for technologies that could be useful for multipurpose scope, always related to automation.
 
 
-For example, tools might not be able only to start and configure server, but it is better if it is also possible to expand with other functions.
-
-
+%For example, tools might not be able only to start and configure servers, but it is better if it is also possible to expand with other functions.
+%
+%
 These tools must have a solid user base. Also, It does not search for a particular language or a single way to manage machines (for example agent-agentless).
 
 
-Some tools base their automation based on YAML language (Salt, Cobbler, Ansible), and others on Ruby (Chef, Puppet).
+Some tools base their automation based on YAML language (Salt, Ansible), and others on Ruby (Chef, Puppet).
 
 \section{Explanation of the structure}
 Initially, there will be a brief description of what the automation tools are and who uses them.
@@ -121,12 +120,12 @@ Also, some info on installation and examples.
 Considering that automation could be easily integrated with CI/CD, it will be searching for some sort of automatic test and checks of the technology.
 
 
-Considering this research and other sources, there will be a little description of pros and cons.
+Considering this research and other sources, there will be a little description of the pros and cons.
 
 
-At the end, there will be a summary of the research done writing that document, and make tables or similar mixing different technologies.
+At the end, there will be a summary of the research done writing that document, and tables or similar mixing different technologies.
 
-The structure will be something like that:
+The structure will be something like this:
 
 \begin{itemize}
     \item Introduction
@@ -150,10 +149,10 @@ The structure will be something like that:
 \chapter{State of the art}
 
 \section{What are automation tools}
-We could consider in some way that for DevOps purpose all the job we need to execute is expressed in form of code\cite{learnDevOps}.
+We could consider in some way that for DevOps purposes all the job we need to execute is expressed in the form of code\cite{learnDevOps}.
 
 
-And also the configuration of server and installation of software could do that.
+And also the configuration of servers and installations of software could do that.
 
 
 Automation tools are software tools that allow you to manage, monitor, and automate operations on a large number of servers. These systems can include features such as automatic provisioning, configuration management, service orchestration, performance monitoring, and troubleshooting.
@@ -162,25 +161,25 @@ Automation tools are software tools that allow you to manage, monitor, and autom
 An example of these systems is \textbf{Ansible}, which uses an agentless management model to connect to servers and perform automation tasks. Other examples include Puppet, Chef, and SaltStack, which offer similar features but use different approaches for server management.
 
 
-These automation systems can be particularly useful in environments with a large number of servers, where manual management of each server would be inefficient and prone to errors. Through automation, organizations can improve operational efficiency, reduce errors, and free up IT staff to focus on other works.
+These automation systems can be particularly useful in environments with a large number of servers, where manual management of each server would be inefficient and prone to errors. Through automation, organizations can improve operational efficiency, reduce errors, and free up IT staff to focus on different works.
 
 
 Automation systems aim to simplify the execution of repetitive tasks.
 
 \section{Who uses automation tools}
-Automation tools could be useful from single-use who wish to simplify some task in his home running server (or cloud), to IT companies or University from a few to thusands of servers.
+Automation tools could be useful for a single user who wishes to simplify some tasks in the home running server (or cloud), to IT companies or Universities from a few to thousands of servers.
 
 
-Some automation tools are simpler than other, for example starting from the structure of the langague used to create automations.
+Some automation tools are simpler than others, for example starting from the structure of the language used to create automations.
 
 
 Some of them also require specific knowledge(Cobbler requires PXE).
 
 
-There are some that could be used by beginners in IT, others that require oop languages like Ruby.
+Some could be used by beginners in IT, and others require OOP knowledge of languages like Ruby.
 
 \section{When it makes sense (or doesn't make sense) to automate operations}
-Some questions helps to understand when an automation tool could be a great choice:
+Some questions help to understand when an automation tool could be a great choice:
 \begin{itemize}
     \item Does It need to do that job more than once?
     \item How much time did I spend to create that automation?
@@ -189,19 +188,19 @@ Some questions helps to understand when an automation tool could be a great choi
     \item How much is the ability to use that tool?
 \end{itemize}
 
-For example, in the case that building a very particular Linux machine with a list of packages, even if only one is needed, it could be useful because If in the future another installation of the same configuration is needed, it is possible to reinstall all the systyem in a few steps.
+For example, in the case that building a very particular Linux machine with a list of packages, even if only one is needed, it could be useful because If in the future another installation of the same configuration is needed, it is possible to reinstall all the system in a few steps.
 
 
-At the same, if I need to install a number of a few packages on hundreds of server, it will be a saving time procedure.
+At the same, if I need to install a few packages on hundreds of servers, it will be a saving time procedure.
 
 
-On the other hand, we might consider also the time spend on learn the technology, if I already know that, I could automate also very simple jobs beacuse it is used to automate all.
+On the other hand, we might consider also the time spent on learning the technology, if I already know that, I could automate also very simple jobs because it is used to automate all.
 
 
-If it is a beginner, there are some stuff that it probability has no sense to automate beacuse the effort and time do not worth it.
+If it is a beginner, there are some stuff that probability has no sense to automate because the effort and time are not worth it.
 
 
-When someone know a tools enough, it is possible to also expand the automation for more complex jobs.
+When someone knows a tool enough, it is possible to also expand the automation for more complex jobs.
 
 \section{What are the main tools}
 Some of the tools used by the community for automation, which try to reply to the scope indicated above are:
@@ -222,9 +221,9 @@ Nowadays there are a lot of companies that acquires strategically some important
 In the last years, for example, Ansible was acquired by RedHat in 2015, GitHub was acquired by Microsoft in 2018, SaltStack was acquired from VMware in 2020.
 
 
-Even if there are some problems when a company acquires a company related to a big open-source project, it doesn't mean that the technology is worse because there are companies that make a profit on it.
+Even if there are some problems when a company acquires a company related to a big open-source project, it doesn't mean that the technology is worse because there are companies that make a profit from it.
 
-Usually, big tech company that acquires others related to open source contribute to the spreading and improving the technology.
+Usually, big tech companies that acquire others related to open source contribute to spreading and improving the technology.
 
 
 It is possible to consider one of the most important examples of that in Ubuntu.
@@ -233,15 +232,15 @@ It is possible to consider one of the most important examples of that in Ubuntu.
 Ubuntu is one of the most popular Linux distributions, Ubuntu has great community support and behind it is the company Canonical.
 
 
-Canonical helps and contributes to Ubuntu distribution but also sells some products related like support, differences updates, infrastructures.
+Canonical helps and contributes to Ubuntu distribution but also sells some products related like support, differences updates, and infrastructures.
 
-An example on an automation tool could be Red Hat which offers Ansible Automation Platform.
+An example of an automation tool could be Red Hat which offers Ansible Automation Platform.
 Red Hat describes it as an end-to-end automation platform able to scale across the entire enterprise that is useful to configure systems, deploy software, and orchestrate advanced workflows.\cite{ansibleAutomationPlatform}
 Automation controller is a part of Ansible Automation Platform, and there is a sort of community-supported alternative called "AWX"\cite{ansibleAwxAAP}.
 Red Hat explains that Automation controller "is produced by taking selected releases of AWX, hardening them for long-term supportability, and making them available to customers as a hosted service within Red Hat Ansible Automation Platform"\cite{ansibleFaq}.
 
 Also Salt has open source versions and an enterprise version. The open source is free and usable via a command-line interface.
-The paid enterprise edition (but the prices are not available for public), SaltStack Enterprise, that adds come features as GUI and support for Windows and MacOS.
+The paid enterprise edition (but the prices are not available to the public), SaltStack Enterprise, adds come features such as GUI and support for Windows and MacOS.
 Salt offers professional services to help customers integrate with third-party systems, also, the Salt Enterprise API has many more features than the free version.\cite{saltTechTarget}
 
 
@@ -249,7 +248,7 @@ So, when a company makes a big contribution to an open-source project there coul
 
 \chapter{Ansible}
 
-\section{The begin of Ansible}
+\section{The beginning of Ansible}
 
 Michael DeHaan define Ansible:
 "Ansible is a configuration management tool, deployment tool, and ad-hoc task execution tool all in one."
@@ -273,13 +272,13 @@ The motivation of Micheal about the project was:
 "As a software developer, I myself can emphasize -- the software design/development/testing process is frequently painful, and I would rather think of infrastructure as being data-driven. Data is supposed to be simple, programs are often not. This is why I made Ansible."
 
 \subsection{History}
-In 2006 Michael DeHaan was working at Red Hat's Emerging Technologies group, a research unit under Red Hat. Emerging Tech was created specifically where people could could work on virtually anything they thought people needed.
+In 2006 Michael DeHaan was working at Red Hat's Emerging Technologies group, a research unit under Red Hat. Emerging Tech was created specifically as a place where people could work on virtually anything they thought people needed.
 
 
 Still those years, RedHat was very interested in configuration management. An early prototype of application virtualization management used Cobbler for provisioning the base operating system and Puppet for configuring virtual machines.
 
 
-This project did not take off and Michael DeHaan attributed the cause to the fact that it was complex to write the detail under virtual applications, but Red Hat virtualization was also still in its early days.
+This project did not take off and Michael DeHaan attributed the cause to the fact that it was complex to write the details under virtual applications, but Red Hat virtualization was also still in its early days.
 
 
 Greg DeKoenigsberg was a Fedora community character and created a group with Michael DeHaan, Adrian Likins and Seth Vidal (author of yum). They wanted to create another very democratic open-source project in Red Hat, one that could have a wide variety of contributors and solve new problems. They thought back to busrpc. This project existed because it filled the gaps between Cobbler and Puppet. Cobbler could provide a system, and Puppet could put in configuration files, but because Puppet was too declarative you couldn't use it to do things like restart servers or do all the "ad hoc" tasks. In the past, Red Hat was exploring CIM, but there were not many good implementations of API support for Linux, so it would not be possible to build an open source project that would be able to rescout community success around CIM. The idea that was followed was to create an API-like channel for managing applications to configure systems, This idea was called Func.
@@ -300,14 +299,14 @@ Cobbler, Puppet and Func formed some of the earliest DevOps-friendly automation 
 After leaving RedHat and a brief term at Puppet, Micheal saw that the language often divided potential users and that the most important thing in automation tools, simplicity, should be a priority.
 
 
-So Ansible began as a project in the beginning of 2012. It took off quickly due to many sysadmins and developers knowing Micheal.
-Also, people from Fedora Infrastructure, replaced their Puppet automation with Ansible and so Fedora help Ansible to grow and also used as a test platform.
+So Ansible began as a project at the beginning of 2012. It took off quickly due to many sysadmins and developers knowing Micheal.
+Also, people from Fedora Infrastructure, replaced their Puppet automation with Ansible so Fedora helped Ansible to grow and also used it as a test platform.
 
 
 Like Func, it pursues a "batteries included" philosophy, allowing everyone to contribute to the main modules and forming an active community of users.
 
 
-After a period when Micheal was working on automation of OpenStack with Puppet, the project started to take off on GitHub, and soon the company was founded.
+After a period when Micheal was working on the automation of OpenStack with Puppet, the project started to take off on GitHub, and soon the company was founded.
 
 
 Ansible increased and Micheal and others had a good-sized company supporting it and more importantly, building great products on top of it.
@@ -339,9 +338,9 @@ Ansible is ideal for managing IT environments, as it can automate tasks on a mul
 \subsection{Best points of Ansible}
 \begin{itemize}
     \item \textbf{Simple}: As syntax, the files are described in YAML language. YAML is easy to understand by those who have minimal knowledge of programming languages and is often used for configurations. In addition, most configuration management software is characterized by an agent and a server from which to start the orchestration. In this case, Ansible's agentless management makes it easy to manage machines.
-    \item \textbf{Fast}: Ansible, in addition to having a low learning curve, has a fast configuration, not having agents that must be constantly active on the host machines. Ansible connects directly to the host machines via ssh, and it is enough to have Python installed on the host machines.
-    \item \textbf{Efficient}: Considering that Ansible does not have active agents, this does not consume extra resources in the hosts where the automatisms are executed. Ansible take space and resources only during the execution of the activity on the controlled node.
-    \item \textbf{Secure}: Considering that the connection from the manager to controlled node is via ssh, no extra open ports are required.
+    \item \textbf{Fast}: Ansible, in addition to having a low learning curve, has a fast configuration, not having agents that must be constantly active on the host machines. Ansible connects directly to the host machines via SSH, and it is enough to have Python installed on the host machines.
+    \item \textbf{Efficient}: Considering that Ansible does not have active agents, this does not consume extra resources in the hosts where the automatisms are executed. Ansible takes space and resources only during the execution of the activity on the controlled node.
+    \item \textbf{Secure}: Considering that the connection from the manager to the controlled node is via SSH, no extra open ports are required.
 \end{itemize}
 
 \section{How the tool is shown to the community}
@@ -360,7 +359,7 @@ Ansible has
     \item 31.8k projects use it as dependecy
 \end{itemize}
 
-We could consider the community very active, considering also that every few days a new issue appear.
+We could consider the community very active, considering also that every few days a new issue appears.
 
 \subsection{Community way to help and improve}
 If someone with to be involved in the project there is the official page that explains\cite {ansibleGithub}.
@@ -374,12 +373,8 @@ If someone with to be involved in the project there is the official page that ex
 \end{itemize}
 
 There is also a sort of community-based platform to share collections and roles, called Ansible Galaxy\cite{ansibleGalaxy}.
-
-
-
-The documentation of Ansible also includes instructions to use it for its projects.
-
-Ansible-related open-source project is AWX which "provides a web-based user interface, REST API, and task engine built on top of Ansible"\cite{ansibleAWX}.
+The documentation of Ansible also includes instructions to use Galaxy for the projects.
+An Ansible-related open source project is AWX which "provides a web-based user interface, REST API, and task engine built on top of Ansible"\cite{ansibleAWX}.
 
 \section{Main Ansible components}
 
@@ -394,8 +389,8 @@ According to the Ansible documentation on inventory management\cite{ansibleDocIn
                 \item \textbf{When:} The stage of development they are assigned to
             \end{itemize}
             
-            In addition, you can also make parent-child relationships, in which each machine inserted in a child group is also part of the parent group. All that can be done usingt the \texttt{children} attribute.
-            Another function that might be useful, considering the inventories, are the variables, which can be defined for the groups (and also subgroups), through the \texttt{vars} attribute.
+            In addition, you can also make parent-child relationships, in which each machine inserted in a child group is also part of the parent group. All that can be done using the \texttt{children} attribute.
+            Another function that might be useful, considering the inventories, is the variables, which can be defined for the groups (and also subgroups), through the \texttt{vars} attribute.
 
 \subsubsection{Example Inventory Ansible}
 
@@ -405,7 +400,7 @@ According to the Ansible documentation on inventory management\cite{ansibleDocIn
 Modules are small programs, which are called by tasks to perform operations on machines.
 
 
-There are modules for different jobs we want to perform, some are already provided by default, and can be used from package installation to DevOps workflows.
+There are modules for different jobs we want to perform, some are already provided by default and can be used from package installation to DevOps workflows.
 
 
 One example is package installation via apt (ansible.builtin.apt).
@@ -414,7 +409,7 @@ One example is package installation via apt (ansible.builtin.apt).
 There are also many modules provided by the community. If the community and default modules are not enough, there is the option of creating custom modules\cite{ansibleDocNewModules}.
 
 
-Ansible modules are designed to be idempotent, which means that they will make changes to managed nodes only when necessary. This ensures that managed nodes remain in the desired state, even if the playbook is run multiple times.
+Ansible modules are designed to be idempotent, which means that they will make changes to managed nodes only when necessary. This ensures that managed nodes remain desired, even if the playbook is run multiple times.
 
 \subsection{Play}
 The play contains the list of tasks to be executed (at least one). The play also contains the list of hosts on which the tasks will be executed; it may contain variables and other commands.
@@ -423,7 +418,7 @@ The play contains the list of tasks to be executed (at least one). The play also
 Plays within the playbook are executed from top to bottom. Considering that playbooks are written in YAML, they are easily readable.
 
 \subsection{Task}
-The Task is the action we need to execute towards the controlled machine. The commands will be executed by calling the choosen modules with various parameters.
+The Task is the action we need to execute towards the controlled machine. The commands will be executed by calling the chosen modules with various parameters.
 
 \subsection{Playbook}
 Playbook is a collection of one or more Plays.
@@ -447,16 +442,13 @@ The execution will be targeted to the host group \texttt{campusNord}, with super
 In addition, \texttt{vars} defines two variables: \texttt{package\_name\_1} and \texttt{package\_name\_2}, which represent the names of the packages to install.
 
 
-The Tasks called \texttt{Install package 1} and \texttt{Install package 2} install the packages specified by the variables \texttt{package\_name\_1} and \texttt{package\_name\_2}.
+Tasks called \texttt{Install package 1} and \texttt{Install package 2} install the packages specified by the variables \texttt{package\_name\_1} and \texttt{package\_name\_2}.
 
 
-Considering that Ansible is idempotent,
+Considering that Ansible is idempotent, in case the packages were already installed in the system, Ansible will not perform any operation and will not reinstall them either. If instead, the packages were not already present in the system, Ansible, through the apt module, will install them.
 
 
-in case the packages were already installed in the system, Ansible will not perform any operation and will not reinstall them either. If instead the packages were not already present in the system, Ansible, through the apt module, will install them.
-
-
-In the Task \texttt{Uninstall MongoDB}, the apt module takes as input directly the value \texttt{mongodb}, and sets the state to \texttt{absent} to make sure that, if present, it is removed.
+In the Task \texttt{Uninstall MongoDB}, the apt module takes as input directly the value \texttt{mongodb} and sets the state to \texttt{absent} to make sure that, if present, it is removed.
 
 %commento
 %paragraph{Roles}
@@ -474,7 +466,7 @@ Ansible is natively supported in Unix platforms like Linux distributions and MAC
 
 Windows in the last years supports a Linux layer directly integrated in the machine installing WSL.
 
-WSL (Windows Subsystem for Linux) allows the installation of a Linux distribution and the use Linux commands on Windows.
+WSL (Windows Subsystem for Linux) allows the installation of a Linux distribution and the use of Linux commands on Windows.
 
 
 About Ansible, using Windows without WSL "is not natively supported as a control node"\cite{ansibleDocInstallIntro} and also
@@ -487,13 +479,13 @@ Besides that, it is possible to use Windows machines as hosts and run automation
 
 \subsection{Ansible project}
 
-Ansible project (not considering others project directly related) is available at \url{https://github.com/ansible/ansible}\cite{ansibleGithub}.
+Ansible project (not considering other projects directly related) is available at \url{https://github.com/ansible/ansible}\cite{ansibleGithub}.
 
 
 This project is mainly written in Python, and its License is GNU General Public License 3.0.
 
 
-The automation is written in YAML, a language invented in 2001, is a very simple language based on lists mixed with dictionaries (created with key-value pairs).
+The automation is written in YAML, a language invented in 2001, which is a very simple language based on lists mixed with dictionaries (created with key-value pairs).
 
 \subsection{Architecture, agent or agentless}
 
@@ -501,16 +493,15 @@ The automation is written in YAML, a language invented in 2001, is a very simple
 The architecture of Ansible is agentless, it doesn't need any type of demons or particular configuration in the host machine to be controlled.
 
 
-The machine that controls others connects to nodes via ssh connections. The nodes also need (to run almost all Ansible commands) Pyhton installed.
+The machine that controls others connects to nodes via SSH connections. The nodes also need (to run almost all Ansible commands) Python installed.
 
 
-Without that it is not needed to update and manage nodes. Having an agent allows to know better the state of the machine controlled and the condition of the network .
+Without that, it is not needed to update and manage nodes. Having an agent allows the user to know better the state of the machine-controlled and the condition of the network.
 
 
-If a technology like Ansilbe is entirely based on connection to SSH, it means that also the security of ssh is crucial.
+If a technology like Ansilbe is entirely based on connection to SSH, it means that also the security of SSH is crucial.
 
-
-So, there are some ways to mitigate the risk about ssh like using like instead using password use keys, and insert password for sudo privileges\cite{ansibleSSH}
+Anyway, it is possible to mitigate the risk of SSH. For example, instead of using a password use keys for authentication and insert a password for sudo privileges\cite{ansibleSSH}.
 
 %\subsection{Structure of the project}
 %\subsubsection{Deep structure of the project (how it is the open source internal project)}
@@ -520,10 +511,10 @@ So, there are some ways to mitigate the risk about ssh like using like instead u
 In Ansible it is possible to expand functionalities using modules and plugins.
 
 
-It is possible to write them. In documentation in explained that:
+It is possible to write them. In the documentation is explained that:
 
 
-Plugins are pieces of code that augment Ansible’s core functionality. Ansible uses a plugin architecture to enable a rich, flexible and expandable feature set.
+Plugins are pieces of code that augment Ansible's core functionality. Ansible uses a plugin architecture to enable a rich, flexible and expandable feature set.
 
 
 Ansible ships with a number of handy plugins, and you can easily write your own."\cite{ansibleDocPlugins}.
@@ -543,7 +534,7 @@ Ansible community packages are distributed in two ways:
 
 - \textbf{ansible}: a much larger package that adds a curated selection from the Ansible Collections community to automate a wide range of devices.
 
-The official method involves pip and then installing Ansible via pip.
+The official method involves \textbf{pip} and then installing Ansible via pip.
 \begin{lstlisting}
 sudo apt install python3-pip
 \end{lstlisting}
@@ -602,7 +593,7 @@ In case of success there will be something like that:
 There are different types of technologies and suites to test Ansible Playbooks in different ways.
 
 
-Usually it is a good practice execute test in a dev environment. So, if something brokes, we do not need to revert  a production environment.
+Usually, it is a good practice to execute tests in a dev environment. So, if something breaks, we do not need to revert to a production environment.
 
 
 In our case, we need to check the Ansible Playbooks.
@@ -618,28 +609,28 @@ Breaking an infrastructure definition into many task-specific roles and playbook
 
 \textbf{Functional testing}, when there is a complete infrastructure environment, and then run tests against it to make sure everything was successfully installed, deployed, and configured. Ansible’s own reporting is helpful in this kind of testing, and there are external tools available to test infrastructure even more deeply.
 
-That book also show some step useful to test Ansible:
+That book also shows some steps useful to test Ansible:
 
 \textbf{using particular moduls}
-One simple way to found error in the execution in the Playbook is print variables and output. About that, it is available a \texttt{debug} module.
+One simple way to find errors in the execution in the Playbook is to print variables and output. About that, it is available as a \texttt{debug} module.
 
 
-Debug module is useful when verbose message on the jobs inside Ansible is needed.
+The \textbf{debug} module is useful when a verbose message on the jobs inside Ansible is needed.
 
 
-If an explicit test on some variable is necessary, Ansible provides the \texttt{fail} and \texttt{assert} module.
+If an explicit test on some variable is necessary, Ansible provides the \texttt{fail} and \texttt{assert} modules.
 
 
 The fail and assert modules when triggered abort the playbook run.
 
 \textbf{using yamllint}
-It is better to pay attention to YAML syntax, even if it is so simple, some common error could do to some wrong spacing.
+It is better to pay attention to YAML syntax, even if it is so simple, some common errors could be due to some wrong spacing.
 
 
 One simple way to mitigate that problem is to install a YAML Lint Tool like \textbf{yamllint}.
 
 \textbf{using --syntax-check}
-When playbook is launched with --syntax-check, in reality, the plays are not run. Instead, Ansible loads the entire playbook statically and ensures everything can be loaded without a fatal error. If you are missing an imported task file, misspelled a module name, or are supplying a module with invalid parameters, --syntax-check will quickly identify the problem.
+When the playbook is launched with --syntax-check, in reality, the plays are not run. Instead, Ansible loads the entire playbook statically and ensures everything can be loaded without a fatal error. If you are missing an imported task file, misspelled a module name, or are supplying a module with invalid parameters, --syntax-check will quickly identify the problem.
 
 
 It requires a few seconds also for very large playbooks.
@@ -666,7 +657,7 @@ Also, "Molecule provides support for testing with multiple instances, operating 
 Ansible has a very fast learning curve, considering that Ansible that the automation is written in YAML files.
 
 
-Also, the project was written in Python, so understanding the project is also simpler than in other languages.
+Also, the project was written in Python, so understanding the project is simpler than other languages.
 
 %\section{Pros}
 
@@ -680,57 +671,56 @@ Also, the project was written in Python, so understanding the project is also si
 %SALT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Salt}
-Salt declare itself as "the world's fastest, most intelligent and scalable automation engine"\cite{saltDocAbout}.
+Salt declares itself as "the world's fastest, most intelligent and scalable automation engine"\cite{saltDocAbout}.
 
 
-Salt (called also SaltStack or Salt Project) is a Python written and event driven configuration management tool, available at \url{https://saltproject.io/}.
+Salt (called also SaltStack or Salt Project) is a Python-written and event-driven configuration management tool, available at \url{https://saltproject.io/}.
 
 
 It describes itself as "SaltStack is a revolutionary approach to infrastructure management that replaces complexity with speed. SaltStack is simple enough to get running in minutes, scalable enough to manage tens of thousands of servers, and fast enough to communicate with each system in seconds."\cite{saltDocStart}
 
 
-Salt users can personalizer thier experience writing their own scripts and programs, and also use prebuilt configurations created by the users community.
+Salt users can personalize their experience by writing their scripts and programs, and also use prebuilt configurations created by the user community.
 
 \section{The begin of Salt}
 
 \subsection{History}
-Salt was started as a project ideated from Thomas S. Hatch which was not satified with other open source tecnologies available\cite{saltFloss}. He decided to use the fast ZeroMQ for connections and messages between machines.
+Salt was started as a project ideated by Thomas S. Hatch which was not satisfied with other open source technologies available\cite{saltFloss}. He decided to use the fast ZeroMQ for connections and messages between machines.
 
-Some steps could be seen at \url{https://red45.wordpress.com/2011/05/29/salt-configuration-management/}
+Some steps can be seen at \url{https://red45.wordpress.com/2011/05/29/salt-configuration-management/}
 
 
-For example he posted about \textbf{Salt Configuration Management} when he wrote:
+For example, he posted about \textbf{Salt Configuration Management} when he wrote:
 
 
 "The Salt configuration management took a big leap forward late last night. The capability to define more complex states in salt from the master became a reality. Salt can now define states on the master file server, and pull those states on the minions. More work still needs to be done, and we still need to write the documentation, but this is a big step forward!".
 
 
-The state of machines in Salt are written on YAML, and Salt compile these configurations in Python data structure.
+The states of machines in Salt are written on YAML, and Salt compiles these configurations in Python data structure.
 
 
-Following the documentation: "The core of the Salt State system is the SLS, or SaLt State file. The SLS is a representation of the state in which a system should be in, and is set up to contain this data in a simple format."\cite{saltDocSLS}.
+Following the documentation: "The core of the Salt State system is the SLS, or Salt State file. The SLS is a representation of the state in which a system should be in, and is set up to contain this data in a simple format."\cite{saltDocSLS}.
 
-Also, some improves are written at when he wrote about Documentation creating a post with the title \textbf{Initial Salt Docs Site Up!}.\cite{saltPost}
-
-
-Considering that Salt has support also for Windows machines, we could see a first attemps of that in December 2011 with \textbf{Windows is Being Salted!} post \cite{saltPost2}.
+Also, some improvements are written about documentation publishing a post with the title \textbf{Initial Salt Docs Site Up!}\cite{saltPost}.
 
 
-In that post he wrote "There is no escape from the ongoing march of Salt platform support, even Windows is now controllable via Salt! While Salt on Windows is still in its infancy, Dave Boucha has accomplished it and we have pushed the needed patches upstream. This only works on the latest git checkout of Salt and 0.9.5 will include experimental support for Windows!"\cite{saltPost2}.
-
-During years after years, Salt grow,and in the 2020 was acquired by VMware.
+Considering that Salt has support also for Windows machines, we could see a first attempt of that in December 2011 with \textbf{Windows is Being Salted!} post \cite{saltPost2}.
 
 
-About the acquisition VMware said that "it's committed to preserving SaltStack's open source community after the deal closes, with Singh noting that VMware will fully support SaltStack's work on open source projects."\cite{saltAcq}
+In that post, he wrote "There is no escape from the ongoing march of Salt platform support, even Windows is now controllable via Salt! While Salt on Windows is still in its infancy, Dave Boucha has accomplished it and we have pushed the needed patches upstream. This only works on the latest git checkout of Salt and 0.9.5 will include experimental support for Windows!"\cite{saltPost2}.
+
+During years after years, Salt grew, and in 2020 was acquired by VMware.
 
 
-In the blog of VMware it is possible to see the confirmation about the end of the acquisition
-\url{https://blogs.vmware.com/management/2020/10/vmware-completes-saltstack-acquisition-to-bolster-software-configuration-management-and-infrastructure-automation.html}
+About the acquisition, VMware said that "it's committed to preserving SaltStack's open source community after the deal closes, with Singh noting that VMware will fully support SaltStack's work on open source projects"\cite{saltAcq}.
 
-Some months prior to the acquisition there was a big security issues related to Salt described at \url{https://news.hackreports.com/critical-saltstack-vulnerability-rce-exploit/} enough important to have two CVE related, CVE-2020-11651 and CVE-2020-11652.
+
+In the blog of VMware, it is possible to see the confirmation about the end of the acquisition \url{https://blogs.vmware.com/management/2020/10/vmware-completes-saltstack-acquisition-to-bolster-software-configuration-management-and-infrastructure-automation.html}.
+
+Some months prior to the acquisition there were big security issues related to Salt described at \url{https://news.hackreports.com/critical-saltstack-vulnerability-rce-exploit/} enough important to have two CVE-related, CVE-2020-11651 and CVE-2020-11652.
 
 \section{Purpose of the technology}
-Salt use a central repository to create new servers, managed them and others. It is also possible to use it to install software on them, also on hybrid infrastructures.
+Salt uses a central repository to create new servers, and manage them and others. It is also possible to use it to install software on them, also on hybrid infrastructures.
 
 
 Useful to deploy, configure, and manage complex IT systems, Salt has the scope to ensure that all the components of the built infrastructure are operating in a consistent desired state.
@@ -743,11 +733,11 @@ Salt is useful to simplify and eliminate manual work (and so some errors) when r
 Here are some good points about Salt:
 \begin{itemize}
     \item \textbf{Flexibility:} It works on Unix and also on Windows systems, but also on different types of network devices such as switches and routers from different brand.
-                                It is usually used in a mode with agents called minion, but has also a limited working mode agentless.
-    \item \textbf{Speed:} It works using ZeroMQ and msgpack, so the comunication in simple, light, and fast between nodes.
-    \item \textbf{Idempotent:} Every time an automation is started , it always has the same end result despite of the state of a system when the run starts.
-    \item \textbf{Robust:} Considering that the system is based on agent who used ZeroMQ to communicate, agent approach with a good technology made the communication where there is a better knowledge about the state of the nodes.
-    \item \textbf{Secure:} It use public keys for authentication and AES encryption for payload communication
+                                It is usually used in a mode with agents called minions, but has also a limited working mode agentless.
+    \item \textbf{Speed:} It works using ZeroMQ and msgpack, so the communication is simple, light, and fast between nodes.
+    \item \textbf{Idempotent:} Every time automation is started, it always has the same result despite the state of a system when the run starts.
+    \item \textbf{Robust:} Considering that the system is based on agents who used ZeroMQ to communicate, the agent approach with good technology made the communication where there is better knowledge about the state of the nodes.
+    \item \textbf{Secure:} It uses public keys for authentication and AES encryption for payload communication
 \end{itemize}
 
 \section{How the tool is shown to the community}
@@ -776,12 +766,12 @@ Salt has
     \item >600 projects use it as dependecy
 \end{itemize}
 
-We could consider the community active, expecially about finding and reporting bugs.
+We could consider the community active, especially in finding and reporting bugs.
 
 \subsection{Community way to help and improve}
 
 
-Salt has the following way to know better and partecipate to Community:
+Salt has the following channels to being known better and to invite to participate in the community:
 \begin{itemize}
     \item Wiki
     \item Slack
@@ -790,24 +780,24 @@ Salt has the following way to know better and partecipate to Community:
     \item Twitch
     \item Reddit
 \end{itemize}
-On Twitter Salt declare itself community as "One of the largest, friendliest, and most active open source communities in the world"\cite{saltTwitter}.
-It is possible ot contact directly the Community Manager, which is Jimmy Chunga, via Slack.
+On Twitter Salt declares itself community as "One of the largest, friendliest, and most active open source communities in the world"\cite{saltTwitter}.
+It is possible to contact directly the Community Manager, which is Jimmy Chunga, via Slack.
 Also, there are some events about Salt:
-"Every month, there are around a dozen opportunities to meet with other contributors and the Salt Core team and collaborate in real time. The best way to keep track is by subscribing to the Salt Project Community Events Calendar on the main https://saltproject.io website."\cite{saltGitHub}
-Salt is very opened to contribution so they also have a email to contact \texttt{saltproject@vmware.com} for questions.
+"Every month, there are around a dozen opportunities to meet with other contributors and the Salt Core team and collaborate in real-time. The best way to keep track is by subscribing to the Salt Project Community Events Calendar on the main https://saltproject.io website."\cite{saltGitHub}
+Salt is very open to contribution so they also have an email to contact \texttt{saltproject@vmware.com} for questions.
 
 \section{Main Salt components}
 
 \subsection{Salt Master}
 
-Salt Master is used to communicate with other machines to execute commands of various type.
-The technology for Communication used is ZeroMQ. Salt is usually used with agents(minion), but is also possible to make connections with nodes with SSH.
+Salt Master is used to communicate with other machines to execute commands of various types.
+The technology for Communication used is ZeroMQ. Salt is usually used with agents(minions), but is also possible to make connections with nodes with SSH.
 
-Salt ssh is not a substitute of standard communication of Salt, but is is a valid alternative but not fast as ZeroMQ\cite{saltSSH}.
+Salt SSH is not a substitute for standard communication of Salt, but it is a valid alternative but not as fast as ZeroMQ\cite{saltSSH}.
 
-Salt Manager use also Pillar with minions, that are "tree-like structures of data defined on the Salt Master and passed through to minions. They allow confidential, targeted data to be securely sent only to the relevant minion."\cite{saltDocPillar}
+Salt Manager uses also Pillar with minions, these are "tree-like structures of data defined on the Salt Master and passed through to minions. They allow confidential, targeted data to be securely sent only to the relevant minion."\cite{saltDocPillar}
 
-The Salt Master configuration file follow the follow parts to be corrected setted.
+The Salt Master configuration file follows these parts to be correctly set.
 \begin{itemize}
     \item Primary configuration settings
     \item Large-scale tuning settings
@@ -824,7 +814,7 @@ The Salt Master configuration file follow the follow parts to be corrected sette
     \item Logging settings
     \item Node Groups
     \item Range Cluster settings
-    \item Windows Software Repo settings (also for legacy pre 2015.8 version)
+    \item Windows Software Repo settings (also for legacy pre-2015.8 version)
     \item Returner settings
     \item Miscellaneous settings
     \item Keepalive settings
@@ -834,12 +824,12 @@ The Salt Master configuration file follow the follow parts to be corrected sette
 %\subsubsection{Example Salt Master}
 
 \subsection{Salt Minion}
-When the agent approach is used in Salt, minion is the agent. It receive commands from the Salt Master and communicate with him with the response of them. It has a own configuration file that can be easily setted. In that the location of the Salt Master needs to be indicated so the correct communication between them is correclty targeted.
-Salt is useable also without minion in a agentless way.
+When the agent approach is used in Salt, a minion is an agent. It receives commands from the Salt Master and communicates with it with the response of them. It has a configuration file that can be easily set. In that, the location of the Salt Master needs to be indicated so the correct communication between them is correctly targeted.
+Salt is useable also without minions in an agentless mode.
 
 
-The configuration file for minion has a lot of parameters that can be setted.
-It is divided in differents parts:
+The configuration file for minions has a lot of parameters that can be set.
+It is divided in different parts:
 \begin{itemize}
     \item Primary configuration settings
     \item Minion module management
@@ -875,40 +865,40 @@ There is also a \textbf{salt-minion} command with different options:
 %\lstinputlisting[label={lst:exampleMinionSalt}]{listings/exampleMinionSalt.yaml}
 
 \subsection{Reactor}
-Salt's Reactor system listen for events, and than trigger actions in response to that event.
+Salt's Reactor system listens for events and then triggers actions in response to that event.
 
-It is a simple interface to watching Salt's event bus for event tags that match a given pattern and then running one or more commands in response.
-This system binds sls files to event tags on the master.
+It is a simple interface to watch Salt's event bus for event tags that match a given pattern and then run one or more commands in response.
+This system binds SLS files to event tags on the master.
 
 
-These sls files then define reactions. This means that the reactor system has two parts.
+These SLS files then define reactions. This means that the reactor system has two parts.
 
 
 First, the reactor option needs to be set in the master configuration file.
 
 
-The reactor option allows for event tags to be associated with sls reaction files.
+The reactor option allows for event tags to be associated with SLS reaction files.
 
 
 Second, these reaction files use highdata (like the state system) to define reactions to be executed.\cite{saltDocReactor}
 
 \subsection{Grains}
-Salt has the ability to takes information about the target system.
+Salt can take information about the target system.
 
 
-This ability is called grains interface, because it presents salt with grains of information.
+This ability is called the Grains interface because it presents salt with grains of information.
 
 
 Grains are collected for the operating system, domain name, IP address, kernel, OS type, memory, and many other system properties.
 
 
-The grains interface is made available to Salt modules and components so that the right salt minion commands are automatically available on the right systems.\cite{saltDocGrains}
+The grains interface is made available to Salt modules and components so that the right salt-minion commands are automatically available on the right systems.\cite{saltDocGrains}
 
 
 \subsection{modules}
-In Salt, both modules and execution modules are Python (or Cython) files that contain a set of functions which define the functionalities that Salt can perform.
+In Salt, both modules and execution modules are Python (or Cython) files that contain a set of functions that define the functionalities that Salt can perform.
 
-\textbf{execution modules} are the functions called by the \texttt{salt} command, who simply run tasks on a node (minion).
+\textbf{execution modules} are the functions called by the \texttt{salt} command, which simply run tasks on a node (minion).
 
 
 \textbf{modules} (or also \texttt{state modules}) are used to get the system into a certain state/configuration, and also contain the logic to check if the system is already in the correct state/configuration.
@@ -917,30 +907,29 @@ In Salt, both modules and execution modules are Python (or Cython) files that co
 \section{Characteristics}
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
-Salt is natively supported in many Linux, MacOs and Windows systems.
+Salt is natively supported in many Linux, MacOS and Windows systems.
 
 
-Salt create a table with many OS and distribution with the compatibility with Salt.
+Salt creates a table with many OS and distributions with compatibility with Salt.
 
 
-That table and also a detailed explanations it is available at \url{https://docs.saltproject.io/salt/install-guide/en/latest/topics/salt-supported-operating-systems.html}.
+That table has also a detailed explanation that is available at \url{https://docs.saltproject.io/salt/install-guide/en/latest/topics/salt-supported-operating-systems.html}.
 
 \subsection{Salt project}
-The project is available under the Apache 2.0 license. This license include very few restrictions about modification and distribution about the project.
+The project is available under the Apache 2.0 license. This license includes very few restrictions on the modification and distribution of the project.
 
 \subsection{Architecture, agent or agentless}
 The preferred approach that Salt uses, is the master-minion setup, the Salt master sends commands to the Salt minions to execute.
 However, Salt also supports a mode where it can operate without a minion agent, so it is agentless.
-Usually it better to use the agent mode, beacuse Salt is thinked and constructed in a way that make better, faster and more complete the use of minions.
+Usually, it is better to use the agent mode because Salt is thought and constructed in a way that makes better, faster and more complete the use of minions.
 
 %\subsection{Structure of the project}
 %\subsubsection{Deep structure of the project (how it is the open source internal project)}
 %\subsection{Documentation of the project}
 
 \subsection{Extensions of the project}
-Following the documentation about the creation of Salt execution module\cite{saltDocModules}.
-It is possible to write Salt execution module it prefer, for the docs "A Salt execution module is a Python or Cython module placed in a directory called \_modules/ at the root of the Salt fileserver."
-The module is also to a better management of module, it is possible to use module importing zipped (.zip) archive
+Following the documentation about the creation of Salt execution module\cite{saltDocModules}, it is possible to write the Salt execution module it prefers, for the docs "A Salt execution module is a Python or Cython module placed in a directory called \_modules/ at the root of the Salt fileserver."
+Salt has a way to better module managed modules, that consist in the use of imported modules zipped (.zip) archive.
 All of the Salt execution modules are available to each other and modules can call functions available in other execution modules.
 
 \section{Installation}
@@ -949,7 +938,7 @@ In the official documentation\cite{saltDocInstall} there is a table with differe
 
 Install the salt-master service on the node that will manage your other nodes, meaning it will send commands to other nodes. Then, install the salt-minion service on the nodes that will be managed by the Salt master.
 
-Following that documentation it is possible to resume it in:
+Following that documentation it is possible to resume it:
 
 \begin{itemize}
     \item Before you start the installation, check the system requirements to ensure your platform is supported in the latest version of Salt and open the required network ports. Ensure you also have the correct permissions to install packages on the targeted nodes;
@@ -961,7 +950,7 @@ Following that documentation it is possible to resume it in:
     \item Install third-party Python dependencies needed for specific modules.
 \end{itemize}
 
-There are also some other methods, that Salt reserve for users with a previous experience in Salt.
+There are also some other methods, that Salt "reserves" for users with a previous experience in Salt.
 
 These can be summarized at:
 \begin{itemize}
@@ -974,28 +963,28 @@ These can be summarized at:
 
 \subsection{Example}
 There is a well-written tutorial in the official documentation, available at \url{https://docs.saltproject.io/en/master/topics/tutorials/walkthrough.html}.
-This tutorial include some passages like: installing Salt, starting Salt, finding the Salt master, setting up a salt minion, ecc.
+This tutorial includes some passages like installing Salt, starting Salt, finding the Salt master, setting up a salt minion, etc.
 There are also others guide like a tutorials about Salt States and Remote Execution and a stepbystep guide for MacOS.
 
 \section{Tecnologies for testing Salt}
-In the official documentations there are some test indicated, also with examples, available at 
+In the official documentation, there are some tests indicated, also with examples, available at 
 \url{https://docs.saltproject.io/en/latest/topics/tutorials/writing_tests.html}
 
 
-Salt comes with a powerful integration and unit test suite, that are two ways to test Salt with different approaches.
+Salt comes with a powerful integration and unit test suite, which are two ways to test Salt with different approaches.
 The test suite allows for the fully automated run of integration and/or unit tests from a single interface.
 Salt's test suite is located under the \textbf{tests} directory in the root of Salt's code base and is divided into two main types described above.
 The \textbf{unit} and \textbf{integration} sub-test-suites are located in the \textbf{tests} directory, which is where the majority of Salt's test cases are housed.\cite{saltDocTest}
 
 
-Integration tests, the preferred way to test Salt, use Salt masters, minions, and a syndic(that is a sort of passthrough/intermediate Minion node) to test salt functionality directly and focus on testing the interaction of these components.
+Integration tests, the preferred way to test Salt, use Salt masters, minions, and a syndic(that is a sort of passthrough/intermediate Minion node) to test Salt functionality directly and focus on testing the interaction of these components.
 Salt's integration test runner includes functionality to run Salt execution modules, runners, states, shell commands, salt-ssh commands, salt-api commands, and more.
-Since Salt is used to change the settings and behavior of systems, usually is convenient to run integration test in a subsystem.
-Integration test could be written on purpose to modify the system where they are running, and they are called \textbf{destructive tests}\cite{saltDocTest}.
+Since Salt is used to change the settings and behavior of systems, usually is convenient to run integration tests in a subsystem.
+Integration tests could be written on purpose to modify the system where they are running, and they are called \textbf{destructive tests}\cite{saltDocTest}.
 
 
-Unit test try to test a single implementation of a certain function and its logic. Unit tests should be used to test a function's exit points such as any return/raises statements.
-In the part of documentation dedicated to unit tests, there are some example with different complexity: simple, complete, complex.
+Unit tests try to test a single implementation of a certain function and its logic. Unit tests should be used to test a function's exit points such as any return/raise statements.
+In the part of documentation dedicated to unit tests, there are some examples with different complexity: simple, complete, and complex.
 Unit tests are also useful in cases where writing an integration test might not be possible.
 Even if the integration test suite is powerful it does not cover all functional areas of Salt's ecosystem (for example Proxy Minions).
 Unit tests can still provide some testing support by testing the logic contained inside Proxy Minion functions.\cite{saltDocTest}.
@@ -1004,10 +993,10 @@ Unit tests can still provide some testing support by testing the logic contained
 %\subsection{Suite for check jobs}
 
 \section{Learning curve}
-The learining curve is not the fastes, has some configuration that is not intuitive as a completely agent-less way.
+The learning curve is not the fastest, has some configurations that are not intuitive in a completely agent-less way.
 Also, considering that, even if is allowed, the connection is not passed by SSH; it is better to understand the ZeroMQ messaging technology.
-having a basic understanding of how ZeroMQ works can help you better understand how SaltStack operates under the hood about the communication between nodes (master and minions).
-But it need to be considered that the project is Python based, considered a simple language, and also the state files (to describe state of system components) is written in YAML, a very simple language to make configuration files.
+Having a basic understanding of how ZeroMQ works can help you better understand how SaltStack operates under the hood about the communication between nodes (master and minions).
+But it needs to be considered that the project is Python based, considered a simple language, and also the state files (to describe the state of system components) are written in YAML, a very simple language to make configuration files.
 
 %\section{Pros}
 
@@ -1023,13 +1012,13 @@ Chef even if it is not the simplest, is complete and with a lot of modules. The 
 Also, they create a cloud version that they are to discontinue(30th Nov 2024).
 The Chef project is completely free to use, anyway, there are some limitations, considering that they also offer a premium version expecially created for companies.
 
-\section{The begin of Chef}
+\section{The beginning of Chef}
 
 \subsection{History}
-The history of Chef start with  Adam Jacob, he create a technology for the company where he worked.
+The history of Chef starts with Adam Jacob, who created a technology for the company where he worked.
 The company where Adam worked aims to build end-to-end server/deployment tools. Jacob showed Chef to Jesse Robbins, who saw its potential after running operations at Amazon.
-In a Chef blog, in the beginning of 2009, Jesse wrote:
-"I’m pleased to announce the release of Chef, a systems integration framework that brings the benefits of configuration management to your entire infrastructure.
+In a Chef blog, at the beginning of 2009, Jesse wrote:
+"I'm pleased to announce the release of Chef, a systems integration framework that brings the benefits of configuration management to your entire infrastructure.
 
 With Chef, you can:
 
@@ -1149,7 +1138,7 @@ About the main structure, different from other similar tools, Chef has these 3 c
 \textbf{Workstation}
 Chef Workstation is described as\cite{chefWorkstation}
 "Chef Workstation gives you everything you need to get started with Chef, so you can automate how you audit, configure, and manage applications end environments".
-The local machine where the automation code is created and pushed to the Server but also do other tasks such as execute remote scanning and configuration tasks.
+The local machine where the automation code is created and pushed to the Server also does other tasks such as executing remote scanning and configuration tasks.
 
 
 \textbf{Server}
@@ -1159,7 +1148,7 @@ This is where all the code for making automation resides. It also contains all t
 
 
 \textbf{Client}
-Client(s), also called \textbf{Infra Client}, are strictly related to nodes. The machines where the code needs to execute.
+Client(s), also called \textbf{Infra Client}, are strictly related to nodes. The machines where the code needs to be executed.
 Chef Infra Client is installed on each node that's managed with Chef Infra. Chef Infra Client configures the node locally by performing the tasks specified in the run-list.
 Chef Infra Client will also pull down any required configuration data from the Chef Infra Server during a Chef Infra Client run.
 Chef Infra is described as\cite{chefInfra}
@@ -1193,7 +1182,7 @@ Cookbook is a collection of recipes and other related files organized in a pre-d
 
 \subsection{Attributes}
 Attributes are details about a specific node. Can also be defined inside recipes.
-It also exists \textbf{automatic attributes} for example contain info about system.
+It also exists \textbf{automatic attributes} for example contain info about the system.
 
 
 \subsection{Example of Recipe}
@@ -1222,16 +1211,16 @@ In the end, the template resource applies our Apache virtual host template and n
 \section{Characteristics}
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
-At \url{https://docs.chef.io/platforms/} there are written different OSs, with different sections about different Chef modules(like Infra Client, Infra Server, ecc).
+At \url{https://docs.chef.io/platforms/} there are written different OSs, with different sections about different Chef modules(like Infra Client, Infra Server, etc.).
 The support is described as \textbf{Commercial Support} and \textbf{Community Support}.
 The commercial support is described in the official Chef documentation as:
 "Commercial support for platforms is part of paid maintenance contracts with Chef Software. Support contracts allow you to open tickets and receive service level agreement (SLA) assistance from our support desk. Commercially supported platforms are extensively tested as part of Chef’s development and release process. Commercial support follows the lifecycle of the underlying operating system vendor.
 
 
-Commercial support is limited to the platforms listed in the “Commercial Support” tables–platforms not listed in these tables are unsupported."\cite{chefDocPlatforms}
+Commercial support is limited to the platforms listed in the “Commercial Support” tables-platforms not listed in these tables are unsupported."\cite{chefDocPlatforms}
 
 Instead, the Community Support is considered but differently:
-"Community support for platforms means that members of the Chef community have contributed to these platforms and Chef doesn’t actively work to maintain this functionality. Chef doesn’t explicitly test community supported platforms as part of the development and release process.
+"Community support for platforms means that members of the Chef community have contributed to these platforms and Chef doesn't actively work to maintain this functionality. Chef doesn't explicitly test community-supported platforms as part of the development and release process.
 
 
 Many of these platforms are forks, clones, or otherwise derivative of platforms that Chef commercially supports. Continued functionality for these platforms is likely, but not guaranteed. Unsupported platforms may have missing or non-operative functionality. As always, we welcome community contributions from anyone looking to expand community support for platforms in Chef products."\cite{chefDocPlatforms}
@@ -1246,12 +1235,12 @@ It has also derived support for AlmaLinux, whose parent is CentOS but also a lot
 The open source projects published by Chef are under Apache 2.0 license.
 The main repo for Chef open source projects is \url{https://github.com/chef/}.
 The Chef Server is written almost completely in Erlang and also Ruby.
-Automations( inserted in Recipes ) are written in Ruby. Ruby is a free and open-source language that is not the simplest but it used for different uses, its first release was on 1995.
+Automations( inserted in Recipes ) are written in Ruby. Ruby is a free and open-source language that is not the simplest but it is used for different uses, its first release was in 1995.
 
 \subsection{Architecture, agent or agentless}
 Chef works on client-server configuration with the addition of a workstation.
-In Chef, there is an architecture where nodes pulls configurations (in Ruby) from the server. Chef has its own server as the source of truth that require uploaded cookbooks.
-The server runs on the master machine, while the client runs as an agent on every node. Chef also has an extra component named “workstation” that stores all of the configurations that are tested then pushed to the central server.
+In Chef, there is an architecture where nodes pulls configurations (in Ruby) from the server. Chef has its own server as the source of truth that requires uploaded cookbooks.
+The server runs on the master machine, while the client runs as an agent on every node. Chef also has an extra component named “workstation” that stores all of the configurations that are tested and then pushed to the central server.
 
 
 A simplified image from the official documentation:
@@ -1272,7 +1261,7 @@ A simplified image from the official documentation:
 %\subsection{Documentation of the project}
 
 \subsection{Extensions of the project}
-It is possible to use Cookbooks (and Chef tools) created by the community, uploaded in the \textbf{Supermarket} and public available at \url{https://supermarket.chef.io/}.
+It is possible to use Cookbooks (and Chef tools) created by the community, uploaded in the \textbf{Supermarket} and publicly available at \url{https://supermarket.chef.io/}.
 
 
 "Chef Supermarket is the site for community cookbooks. It provides a searchable cookbook repository and a friendly web UI. Cookbooks that are part of the Chef Supermarket are accessible by any Chef user.
@@ -1287,7 +1276,7 @@ The public Chef Supermarket is hosted by Chef Software and is located at Chef Su
 A private Chef Supermarket may be installed on-premise behind the firewall on the internal network. Cookbook retrieval from a private Chef Supermarket is often faster than from the public Chef Supermarket because of closer proximity and fewer cookbooks to resolve. A private Chef Supermarket can also help formalize internal cookbook release management processes (e.g. “a cookbook is not released until it is published on the private Chef Supermarket”)."\cite{chefSupermarket}
 
 \section{Installation}
-The Chef Software install script can be used to install any Chef Software, including things like Chef Infra Client, Chef Infra Server, Chef InSpec.
+The Chef Software install script can be used to install any Chef Software, including things like Chef Infra Client, Chef Infra Server, and Chef InSpec.
 
 
 This script does the following:
@@ -1320,7 +1309,7 @@ For Windows systems, via PowerShell:
 \cite{chefDocInstall}
 
 \section{Tecnologies for testing Chef}
-In Chef, like others, it is possible to simply check the sintax with a single command via terminal.
+In Chef, like others, it is possible to simply check the syntax with a single command via the terminal.
 For exemple\cite{chefTestMedium}
 \begin{lstlisting}
     chef exec ruby -c test-cookbook/recipes/test-recipe.rb
@@ -1338,7 +1327,7 @@ Test Kitchen allows you to apply your Chef Infra cookbooks and recipes to a vari
 %\subsection{Suite for check jobs}
 
 \section{Learning curve}
-Even if it is not the simplest, Chef has a good community with actively support the technology and other developers.
+Even if it is not the simplest, Chef has a good community with actively supports the technology and other developers.
 The Infra Client is written in Ruby but the server is a mix of Erlang and Ruby for most of the part.
 Even if the recipes, that are written in Ruby, are not too difficult to set, Ruby is not the simplest language, in fact, in the official documentation it is possible to read about Ruby that the creator, Yukihiro Matsumoto,
 "trying to make Ruby natural, not simple"\cite{rubyDoc}.
@@ -1354,7 +1343,7 @@ Even if the recipes, that are written in Ruby, are not too difficult to set, Rub
 %***********************************
 \chapter{Puppet}
 
-\section{The begin of Puppet}
+\section{The beginning of Puppet}
 
 \subsection{History}
 
