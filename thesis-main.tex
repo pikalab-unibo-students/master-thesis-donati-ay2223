@@ -84,7 +84,7 @@ Also, sites and theses that talk about automation will be beginning to see what 
 There will be a focus on "popular" tools in these years. Searching for technologies just created will not be the scope, and also finding technologies too old might result in not being useful for real use.
 
 
-Technologies based on open source projects, with a free version and a community-oriented license, will be considered.
+Technologies based on open source projects with a free version and a community oriented license will be considered.
 
 
 There are some technologies properties of Amazon, Google and Microsoft, even if they might be described, they will not be the focus of the document.
@@ -143,8 +143,7 @@ The structure will be something like this:
     \item Conclusions (Considerations and comparisons)
 \end{itemize}
 
-
-\note{At the end, describe the structure of the paper}
+%\note{At the end, describe the structure of the paper}
 
 \chapter{State of the art}
 
@@ -281,7 +280,7 @@ Still those years, RedHat was very interested in configuration management. An ea
 This project did not take off and Michael DeHaan attributed the cause to the fact that it was complex to write the details under virtual applications, but Red Hat virtualization was also still in its early days.
 
 
-Greg DeKoenigsberg was a Fedora community character and created a group with Michael DeHaan, Adrian Likins and Seth Vidal (author of yum). They wanted to create another very democratic open-source project in Red Hat, one that could have a wide variety of contributors and solve new problems. They thought back to busrpc. This project existed because it filled the gaps between Cobbler and Puppet. Cobbler could provide a system, and Puppet could put in configuration files, but because Puppet was too declarative you couldn't use it to do things like restart servers or do all the "ad hoc" tasks. In the past, Red Hat was exploring CIM, but there were not many good implementations of API support for Linux, so it would not be possible to build an open source project that would be able to rescout community success around CIM. The idea that was followed was to create an API-like channel for managing applications to configure systems, This idea was called Func.
+Greg DeKoenigsberg was a Fedora community character and created a group with Michael DeHaan, Adrian Likins and Seth Vidal (author of yum). They wanted to create another very democratic open-source project in Red Hat, one that could have a wide variety of contributors and solve new problems. They thought back to busrpc. This project existed because it filled the gaps between Cobbler and Puppet. Cobbler could provide a system, and Puppet could put in configuration files, but because Puppet was too declarative you couldn't use it to do things like restart servers or do all the "ad hoc" tasks. In the past, Red Hat was exploring CIM, but there were not many good implementations of API support for Linux, so it would not be possible to build an open source project that would be able to have community success around CIM. The idea that was followed was to create an API-like channel for managing applications to configure systems, This idea was called Func.
 
 
 Func was based on a central server reaching out to a remote node to send automation orders. It was called the central server "overlord" and each of the remote machines "minions." 
@@ -598,8 +597,7 @@ Usually, it is a good practice to execute tests in a dev environment. So, if som
 
 In our case, we need to check the Ansible Playbooks.
 
-Considering some advice taken from \textbf{Ansible for DevOps}\cite{ansibleForDevOps}, there is three type of test:
-
+Considering some advice taken from \textbf{Ansible for DevOps} \cite{ansibleForDevOps}, there is three type of test:
 
 \textbf{Unit testing}, would typically apply to individual playbooks.
 Run individual playbooks in an isolated environment could be done, but it could be not too useful in that case. It is useful to check the playbook syntax
@@ -685,9 +683,8 @@ Salt users can personalize their experience by writing their scripts and program
 \section{The begin of Salt}
 
 \subsection{History}
-Salt was started as a project ideated by Thomas S. Hatch which was not satisfied with other open source technologies available\cite{saltFloss}. He decided to use the fast ZeroMQ for connections and messages between machines.
-
-Some steps can be seen at \url{https://red45.wordpress.com/2011/05/29/salt-configuration-management/}
+Salt was started as a project ideated by Thomas S. Hatch which was not satisfied with other open source technologies available\cite{saltFloss}. He decided to use the fast ZeroMQ for connections and messages between machines. Some steps can be seen at \url{https://red45.wordpress.com/2011/05/29/
+salt-configuration-management/}
 
 
 For example, he posted about \textbf{Salt Configuration Management} when he wrote:
@@ -711,13 +708,10 @@ In that post, he wrote "There is no escape from the ongoing march of Salt platfo
 
 During years after years, Salt grew, and in 2020 was acquired by VMware.
 
-
-About the acquisition, VMware said that "it's committed to preserving SaltStack's open source community after the deal closes, with Singh noting that VMware will fully support SaltStack's work on open source projects"\cite{saltAcq}.
-
-
-In the blog of VMware, it is possible to see the confirmation about the end of the acquisition \url{https://blogs.vmware.com/management/2020/10/vmware-completes-saltstack-acquisition-to-bolster-software-configuration-management-and-infrastructure-automation.html}.
-
-Some months prior to the acquisition there were big security issues related to Salt described at \url{https://news.hackreports.com/critical-saltstack-vulnerability-rce-exploit/} enough important to have two CVE-related, CVE-2020-11651 and CVE-2020-11652.
+About the acquisition, VMware said that "it's committed to preserving SaltStack's open source community after the deal closes"\cite{saltAcq}.
+In VMware's blog, it is possible to see the confirmation about the end of the acquisition \url{https://blogs.vmware.com/management/2020/10/vmware-completes-saltstack-acquisition-to-bolster-software-configuration-management-and-infrastructure-automation.html}.
+Some months before the acquisition there were big security issues related to Salt that is described at \url{https://news.hackreports.com/critical-saltstack-vulnerability-rce-exploit/}.
+These issue were enough important to have two CVE-related, CVE-2020-11651 and CVE-2020-11652.
 
 \section{Purpose of the technology}
 Salt uses a central repository to create new servers, and manage them and others. It is also possible to use it to install software on them, also on hybrid infrastructures.
@@ -726,13 +720,13 @@ Salt uses a central repository to create new servers, and manage them and others
 Useful to deploy, configure, and manage complex IT systems, Salt has the scope to ensure that all the components of the built infrastructure are operating in a consistent desired state.
 
 
-Salt is useful to simplify and eliminate manual work (and so some errors) when repetitive task is needed on cluster of servers.
+Salt is useful to simplify and eliminate manual work (and so some errors) when repetitive tasks are needed on a group of servers.
 
 \subsection{Best points of Salt}
 
 Here are some good points about Salt:
 \begin{itemize}
-    \item \textbf{Flexibility:} It works on Unix and also on Windows systems, but also on different types of network devices such as switches and routers from different brand.
+    \item \textbf{Flexibility:} It works on Unix and also on Windows systems, but also on different types of network devices such as switches and routers from different brands.
                                 It is usually used in a mode with agents called minions, but has also a limited working mode agentless.
     \item \textbf{Speed:} It works using ZeroMQ and msgpack, so the communication is simple, light, and fast between nodes.
     \item \textbf{Idempotent:} Every time automation is started, it always has the same result despite the state of a system when the run starts.
@@ -752,7 +746,7 @@ On the official GitHub repo \url{https://github.com/saltstack/salt} about the sp
 The original sponsor of our community, SaltStack, was acquired by VMware in 2020. The Salt Project remains an open source ecosystem that VMware supports and contributes to. VMware ensures the code integrity and quality of the Salt modules by acting as the official sponsor and manager of the Salt project. Many of the core Salt Project contributors are also VMware employees. This team carefully reviews and enhances the Salt modules to ensure speed, quality, and security."\cite{saltGitHub}
 
 
-Also, there is a good community of more than 2000 contributors and also hundreds of business who use it.
+Also, there is a good community of more than 2000 contributors and also hundreds of businesses who use it.
 
 \subsection{Statistics}
 Salt has 
@@ -783,7 +777,7 @@ Salt has the following channels to being known better and to invite to participa
 On Twitter Salt declares itself community as "One of the largest, friendliest, and most active open source communities in the world"\cite{saltTwitter}.
 It is possible to contact directly the Community Manager, which is Jimmy Chunga, via Slack.
 Also, there are some events about Salt:
-"Every month, there are around a dozen opportunities to meet with other contributors and the Salt Core team and collaborate in real-time. The best way to keep track is by subscribing to the Salt Project Community Events Calendar on the main https://saltproject.io website."\cite{saltGitHub}
+"Every month, there are around a dozen opportunities to meet with other contributors and the Salt Core team and collaborate in real time. The best way to keep track is by subscribing to the Salt Project Community Events Calendar on the main https://saltproject.io website."\cite{saltGitHub}
 Salt is very open to contribution so they also have an email to contact \texttt{saltproject@vmware.com} for questions.
 
 \section{Main Salt components}
@@ -795,7 +789,9 @@ The technology for Communication used is ZeroMQ. Salt is usually used with agent
 
 Salt SSH is not a substitute for standard communication of Salt, but it is a valid alternative but not as fast as ZeroMQ\cite{saltSSH}.
 
-Salt Manager uses also Pillar with minions, these are "tree-like structures of data defined on the Salt Master and passed through to minions. They allow confidential, targeted data to be securely sent only to the relevant minion."\cite{saltDocPillar}
+Salt Manager uses also Pillar with minions as
+"tree-like structures of data defined on the Salt Master and passed through to minions.
+They allow confidential, targeted data to be securely sent only to the relevant minion."\cite{saltDocPillar}
 
 The Salt Master configuration file follows these parts to be correctly set.
 \begin{itemize}
@@ -912,8 +908,7 @@ Salt is natively supported in many Linux, MacOS and Windows systems.
 
 Salt creates a table with many OS and distributions with compatibility with Salt.
 
-
-That table has also a detailed explanation that is available at \url{https://docs.saltproject.io/salt/install-guide/en/latest/topics/salt-supported-operating-systems.html}.
+That compatility table has also a detailed explanation which is available at \url{https://docs.saltproject.io/salt/install-guide/en/latest/topics/salt-supported-operating-systems.html}.
 
 \subsection{Salt project}
 The project is available under the Apache 2.0 license. This license includes very few restrictions on the modification and distribution of the project.
@@ -928,7 +923,9 @@ Usually, it is better to use the agent mode because Salt is thought and construc
 %\subsection{Documentation of the project}
 
 \subsection{Extensions of the project}
-Following the documentation about the creation of Salt execution module\cite{saltDocModules}, it is possible to write the Salt execution module it prefers, for the docs "A Salt execution module is a Python or Cython module placed in a directory called \_modules/ at the root of the Salt fileserver."
+About the creation of Salt execution module, it is possible to write the Salt execution module it prefers,
+for the docs "A Salt execution module is a Python or Cython module
+placed in a directory called \_modules/ at the root of the Salt fileserver".\cite{saltDocModules}
 Salt has a way to better module managed modules, that consist in the use of imported modules zipped (.zip) archive.
 All of the Salt execution modules are available to each other and modules can call functions available in other execution modules.
 
@@ -962,15 +959,16 @@ These can be summarized at:
 \end{itemize}
 
 \subsection{Example}
-There is a well-written tutorial in the official documentation, available at \url{https://docs.saltproject.io/en/master/topics/tutorials/walkthrough.html}.
-This tutorial includes some passages like installing Salt, starting Salt, finding the Salt master, setting up a salt minion, etc.
-There are also others guide like a tutorials about Salt States and Remote Execution and a stepbystep guide for MacOS.
+Thereis a written tutorial in the Salt documentation available at \url{https://docs.saltproject.io/en/master/topics/tutorials/walkthrough.html}.
+This tutorial includes some passages like installing Salt, starting Salt, finding the Salt master, setting up a Salt minion, etc.
+There are also other guides like a tutorial about Salt States and Remote Execution and a step-by-step guide for MacOS.
 
 \section{Tecnologies for testing Salt}
-In the official documentation, there are some tests indicated, also with examples, available at 
-\url{https://docs.saltproject.io/en/latest/topics/tutorials/writing_tests.html}
+In the docs there are some tests, also with examples, at
 
 
+https://docs.saltproject.io/en/
+latest/topics/tutorials/writing\_tests.html
 Salt comes with a powerful integration and unit test suite, which are two ways to test Salt with different approaches.
 The test suite allows for the fully automated run of integration and/or unit tests from a single interface.
 Salt's test suite is located under the \textbf{tests} directory in the root of Salt's code base and is divided into two main types described above.
@@ -993,10 +991,10 @@ Unit tests can still provide some testing support by testing the logic contained
 %\subsection{Suite for check jobs}
 
 \section{Learning curve}
-The learning curve is not the fastest, has some configurations that are not intuitive in a completely agent-less way.
+The learning curve is not the fastest and has some configurations that are not intuitive in a completely agent-less way.
 Also, considering that, even if is allowed, the connection is not passed by SSH; it is better to understand the ZeroMQ messaging technology.
 Having a basic understanding of how ZeroMQ works can help you better understand how SaltStack operates under the hood about the communication between nodes (master and minions).
-But it needs to be considered that the project is Python based, considered a simple language, and also the state files (to describe the state of system components) are written in YAML, a very simple language to make configuration files.
+But it needs to be considered that the project is Python-based, considered a simple language, and also the state files (to describe the state of system components) are written in YAML, a very simple language to make configuration files.
 
 %\section{Pros}
 
@@ -1028,10 +1026,11 @@ Manage your servers by writing code, not by running commands.
 Integrate tightly with your applications, databases, LDAP directories, and more.
 
 
-Easily configure applications that require knowledge about your entire infrastructure."\cite{chefStory}
+Easily configure applications that require knowledge about your entire infrastructure."
+\cite{chefStory}
 
 They founded a new company (Opscode) with Barry Steinglass, Nathen Haneysmith, and Joshua Timberman to turn Chef into a product.
-Considering that this new tools create use a set of recipe, the project was named \textbf{Chef} at the end.
+Considering that this new tool used a set of recipes, the project was named \textbf{Chef} at the end.
 
 In 2013, there was a post by Bryan McLellan about the new API server written in Erlang:
 "Erchef, the Chef 11 Server
@@ -1041,12 +1040,11 @@ The most significant new feature is that the Chef 11 Server is a complete rewrit
 We learned a lot from running Opscode Hosted Chef, the single largest Chef Server, as well as supporting our Opscode Private Chef customers.
 Using these lessons and experience, we wrote the new server to be faster and more scalable, but still API compatible with the original Ruby based server."\cite{chefStory2}
 
+On 8th of September 2020
 
-On September 8, 2020, Progress announced the acquisition of Chef in September.\cite{chefStory3}
-
+Progress announced the acquisition of Chef \cite{chefStory3}.
 
 The company created was called as now, \textbf{Progress Chef}.
-
 
 
 \section{Purpose of the technology}
@@ -1056,8 +1054,8 @@ Chef aims to speak from small to big business with that quote.
 \subsection{Best points of Chef}
 
 \begin{itemize}
-\item{flexibility}: it works on differents Linux distros, MacOS and Windows
-\item{Interoperability}: it works on clouds, on premise and also on hybrid systems.
+\item{Flexibility}: it works on different Linux distros, MacOS and Windows
+\item{Interoperability}: it works on clouds, on-premise and also on hybrid systems.
 \item{Easy repetitive}: it is possible to reuse code written by others to reproduce automation
 \end{itemize}
 
@@ -1105,12 +1103,18 @@ It is possible to consider the community active, even if with not thousands of c
 
 
 \subsection{Community way to help and improve}
-There is a main link on the Chef site for community, at \url{https://community.chef.io/}.
-There is a link created by Chef on purpose, at \url{https://github.com/chef/chef-oss-practices}.
-Inside that there is a guide at \url{https://github.com/chef/chef-oss-practices/blob/main/CONTRIBUTING.md}.
+There is a part of the Chef site which is dedicated to the community.
+It is available at \url{https://community.chef.io/}.
+
+
+About open source Chef practice, there is a GitHub repo created by Chef on purpose.
+That is available at \url{https://github.com/chef/chef-oss-practices}. It is also available a guide at \url{https://github.com/chef/chef-oss-practices/blob/main/CONTRIBUTING.md}.
+
+
 Also, that is also defined the communications \url{https://github.com/chef/chef-oss-practices/blob/main/communication/README.md}.
 
-There are four communication channels, each with its own specific purpose\cite{chefGithubOSSCom}:
+There are four communication channels each with its own specific purpose \cite{chefGithubOSSCom}:
+
 
 \begin{itemize}
     \item \textbf{GitHub}: GitHub is the Chef Community's preferred durable medium for open and transparent development of software. All development conversation must be captured in GitHub. Any decisions made in internal Chef Slack channels, Zoom sessions, or any other communication medium must be summarized in GitHub. Please also link to the GitHub issue or pull request in chat once it is opened.
@@ -1122,9 +1126,12 @@ There are four communication channels, each with its own specific purpose\cite{c
 Also, there is some \texttt{interact way}, to know better the community:
 
 \begin{itemize}
-    \item Discourse at \url{https://discourse.chef.io/}
-    \item Slack at \url{https://community.chef.io/slack}
-    \item Chef Community Content Calendar at \url{https://calendar.google.com/calendar/u/0/embed?src=c_b1a1380a6f8d61aa926f1e3a495fca0db6f7094dc605f38bc15a1bfcf3343de6@group.calendar.google.com&ctz=America/New_York&pli=1}
+    \item Discourse\newline
+    at \url{https://discourse.chef.io/}
+    \item Slack\newline
+    at \url{https://community.chef.io/slack}
+    \item Google Calendar\newline
+    at the end of \url{https://community.chef.io/}
 \end{itemize}
 
 Also, Chef has Twitch \url{https://www.twitch.tv/chefsoftware} and YouTube \url{https://www.youtube.com/getchefdotcom} channels.
@@ -1132,31 +1139,31 @@ Also, Chef has Twitch \url{https://www.twitch.tv/chefsoftware} and YouTube \url{
 \section{Main Chef components}
 
 \subsection{Structure}
-About the main structure, different from other similar tools, Chef has these 3 components:
+About the main structure Chef has these 3 components.
+This structure is different from other similar tools.
 
-
-\textbf{Workstation}
+\textbf{Workstation}\newline
 Chef Workstation is described as\cite{chefWorkstation}
 "Chef Workstation gives you everything you need to get started with Chef, so you can automate how you audit, configure, and manage applications end environments".
 The local machine where the automation code is created and pushed to the Server also does other tasks such as executing remote scanning and configuration tasks.
 
 
-\textbf{Server}
+\textbf{Server}\newline
 Chef Server is described as\cite{chefServer}
 "Chef Infra Server is a hub for configuration data; storing cookbooks, node policies and metadata of managed nodes".
 This is where all the code for making automation resides. It also contains all the information about nodes.
 
 
-\textbf{Client}
+\textbf{Client}\newline
 Client(s), also called \textbf{Infra Client}, are strictly related to nodes. The machines where the code needs to be executed.
 Chef Infra Client is installed on each node that's managed with Chef Infra. Chef Infra Client configures the node locally by performing the tasks specified in the run-list.
 Chef Infra Client will also pull down any required configuration data from the Chef Infra Server during a Chef Infra Client run.
 Chef Infra is described as\cite{chefInfra}
 "Chef Infra, a powerful automation platform that transforms infrastructure into code automating how infrastructure is configured, deployed and managed across any environment, at any scale".
+\newline
 
-
-It is possible to visualize that in that graphics\cite{chefFreeCodeCamp}
-
+It is possible to visualize in that graphic \cite{chefFreeCodeCamp}
+\newline
 
 \begin{figure}[h]
     \centering
@@ -1200,8 +1207,8 @@ At the beginning, there are resources to \texttt{execute} a command (apt-get upd
 
 The service resource enables and starts the service apache2.
 
-
-\texttt{directory node['main']['doc\_root'] do [...] end} defines custom attributes for that folder and create it.
+\texttt
+{directory node['main']['doc\_root'] do [...] end} defines custom attributes for that folder and create it.
 
 A cookbook\_file resource is used to copy a local file to a remote server. This resource will copy \texttt{index.html} file and place it inside the document root created before.
 
@@ -1217,13 +1224,17 @@ The commercial support is described in the official Chef documentation as:
 "Commercial support for platforms is part of paid maintenance contracts with Chef Software. Support contracts allow you to open tickets and receive service level agreement (SLA) assistance from our support desk. Commercially supported platforms are extensively tested as part of Chef’s development and release process. Commercial support follows the lifecycle of the underlying operating system vendor.
 
 
-Commercial support is limited to the platforms listed in the “Commercial Support” tables-platforms not listed in these tables are unsupported."\cite{chefDocPlatforms}
+Commercial support is limited to the platforms listed in the "Commercial Support" tables.
+Platforms not listed in those are unsupported"\cite{chefDocPlatforms}.
 
 Instead, the Community Support is considered but differently:
 "Community support for platforms means that members of the Chef community have contributed to these platforms and Chef doesn't actively work to maintain this functionality. Chef doesn't explicitly test community-supported platforms as part of the development and release process.
 
-
-Many of these platforms are forks, clones, or otherwise derivative of platforms that Chef commercially supports. Continued functionality for these platforms is likely, but not guaranteed. Unsupported platforms may have missing or non-operative functionality. As always, we welcome community contributions from anyone looking to expand community support for platforms in Chef products."\cite{chefDocPlatforms}
+Many of these are forks, clones, or otherwise derivative of platforms that Chef commercially supports.
+Continued functionality for these platforms is likely, but not guaranteed.
+Unsupported platforms may have missing or non-operative functionality.
+As always, we welcome community contributions from anyone
+looking to expand community support for platforms in Chef products"\cite{chefDocPlatforms}.
 
 
 There is also support for \textbf{Derived Platforms}, for example for a distribution that is rebuilt on an original supported distribution.
@@ -1264,7 +1275,7 @@ A simplified image from the official documentation:
 It is possible to use Cookbooks (and Chef tools) created by the community, uploaded in the \textbf{Supermarket} and publicly available at \url{https://supermarket.chef.io/}.
 
 
-"Chef Supermarket is the site for community cookbooks. It provides a searchable cookbook repository and a friendly web UI. Cookbooks that are part of the Chef Supermarket are accessible by any Chef user.
+"Chef Supermarket is the site for community cookbooks. It provides a searchable cookbook repository and a friendly web UI. Cookbooks that are part of the Chef Supermarket are accessible to any Chef user.
 
 
 There are two ways to use Chef Supermarket:
@@ -1316,7 +1327,7 @@ For exemple\cite{chefTestMedium}
 \end{lstlisting}
 
 
-There is an entire suite for testing, supported directly by Chef, called Test Kitchen \url{https://kitchen.ci/}.
+There is an entire suite for testing called Test Kitchen \url{https://kitchen.ci/} directly supported by Chef.
 Test Kitchen provides a test harness to execute infrastructure code on one or more platforms in isolation.\cite{chefTestKit}
 Test Kitchen is used by all Chef-managed community cookbooks and is the integration testing tool of choice for cookbooks.\cite{chefTestKit}
 There is also an official Chef guide, is explains the power of using Chef Workstation and Test Kitchen together, at \url{https://www.chef.io/docs/cheflibraries/product-and-user-guides/chefguide_test_kitchen.pdf}.
@@ -1441,6 +1452,7 @@ Considerazioni finali
  
 \nocite{*} % comment this to only show the referenced entries from the .bib file
 
+\suppressfloats{bibliography}
 \bibliographystyle{plainnat}
 \bibliography{bibliography}
 
