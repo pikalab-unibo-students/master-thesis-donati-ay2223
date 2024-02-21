@@ -60,7 +60,7 @@
 Considering the last decades, the number of servers increased, computing capacity is increasing more and more and technologies are growing.
 
 
-So, now IT companies need also technologies to manage the infrastructure they have, that could simplify and organize the jobs on servers.
+So, now IT companies need also technologies to manage the infrastructure they have, which could simplify and organize the jobs on servers.
 
 
 There are a lot of repetitive tasks when it is needed to install and configure a server, so there are now tools to simplify it a lot and also make an automation on it.
@@ -70,7 +70,6 @@ These technologies are usually called "automation tools".
 Considering different DevOps technologies, this document aims to study and compare some open source technologies about automation.
 
 That document will be useful for IT students, teachers and enthusiasts who wish to manage their IT environment differently.
-
 
 It will be a starting point to see what is an automation tool, different types of ways to automate with these technologies, see some examples and also see overviews and comparisons.
 
@@ -84,7 +83,7 @@ Also, sites and theses that talk about automation will be beginning to see what 
 There will be a focus on "popular" tools in these years. Searching for technologies just created will not be the scope, and also finding technologies too old might result in not being useful for real use.
 
 
-Technologies based on open source projects with a free version and a community oriented license will be considered.
+Technologies based on open source projects with a free version and a community-oriented license will be considered.
 
 
 There are some technologies properties of Amazon, Google and Microsoft, even if they might be described, they will not be the focus of the document.
@@ -217,7 +216,7 @@ Every technology has some differences considering for example language to write 
 Nowadays there are a lot of companies that acquires strategically some important business related to Open Source projects.
 
 
-In the last years, for example, Ansible was acquired by RedHat in 2015, GitHub was acquired by Microsoft in 2018, SaltStack was acquired from VMware in 2020.
+In the last years, for example, Ansible was acquired by RedHat in 2015, GitHub was acquired by Microsoft in 2018, Salt was acquired from VMware in 2020.
 
 
 Even if there are some problems when a company acquires a company related to a big open-source project, it doesn't mean that the technology is worse because there are companies that make a profit from it.
@@ -239,7 +238,7 @@ Automation controller is a part of Ansible Automation Platform, and there is a s
 Red Hat explains that Automation controller "is produced by taking selected releases of AWX, hardening them for long-term supportability, and making them available to customers as a hosted service within Red Hat Ansible Automation Platform"\cite{ansibleFaq}.
 
 Also Salt has open source versions and an enterprise version. The open source is free and usable via a command-line interface.
-The paid enterprise edition (but the prices are not available to the public), SaltStack Enterprise, adds come features such as GUI and support for Windows and MacOS.
+The paid enterprise edition (but the prices are not available to the public), SaltStack Enterprise, adds some features such as GUI and support for Windows and MacOS.
 Salt offers professional services to help customers integrate with third-party systems, also, the Salt Enterprise API has many more features than the free version.\cite{saltTechTarget}
 
 
@@ -355,7 +354,7 @@ Ansible has
     \item >500 issue with >30k closed
     \item >300 pull request
     \item >5000 contributors
-    \item 31.8k projects use it as dependecy
+    \item 31.8k projects use it as a dependency
 \end{itemize}
 
 We could consider the community very active, considering also that every few days a new issue appears.
@@ -463,7 +462,7 @@ In the Task \texttt{Uninstall MongoDB}, the apt module takes as input directly t
 Ansible is natively supported in Unix platforms like Linux distributions and MACOS.
 
 
-Windows in the last years supports a Linux layer directly integrated in the machine installing WSL.
+Windows in the last years supports a Linux layer directly integrated into the machine installing WSL.
 
 WSL (Windows Subsystem for Linux) allows the installation of a Linux distribution and the use of Linux commands on Windows.
 
@@ -605,7 +604,7 @@ Run individual playbooks in an isolated environment could be done, but it could 
 \textbf{Integration testing}, is the testing of small groupings of individual units of code, to make sure they work correctly together.
 Breaking an infrastructure definition into many task-specific roles and playbooks. If the Playbook has no or limited dependencies, it is possible to test each role individually in a fresh virtual machine, before you use the role as part of a full infrastructure deployment.
 
-\textbf{Functional testing}, when there is a complete infrastructure environment, and then run tests against it to make sure everything was successfully installed, deployed, and configured. Ansible’s own reporting is helpful in this kind of testing, and there are external tools available to test infrastructure even more deeply.
+\textbf{Functional testing}, when there is a complete infrastructure environment, and then run tests against it to make sure everything was successfully installed, deployed, and configured. Ansible's reporting is helpful in this kind of testing, and there are external tools available to test infrastructure even more deeply.
 
 That book also shows some steps useful to test Ansible:
 
@@ -710,8 +709,8 @@ During years after years, Salt grew, and in 2020 was acquired by VMware.
 
 About the acquisition, VMware said that "it's committed to preserving SaltStack's open source community after the deal closes"\cite{saltAcq}.
 In VMware's blog, it is possible to see the confirmation about the end of the acquisition \url{https://blogs.vmware.com/management/2020/10/vmware-completes-saltstack-acquisition-to-bolster-software-configuration-management-and-infrastructure-automation.html}.
-Some months before the acquisition there were big security issues related to Salt that is described at \url{https://news.hackreports.com/critical-saltstack-vulnerability-rce-exploit/}.
-These issue were enough important to have two CVE-related, CVE-2020-11651 and CVE-2020-11652.
+Some months before the acquisition there were big security issues related to Salt that are described at \url{https://news.hackreports.com/critical-saltstack-vulnerability-rce-exploit/}.
+These issues were enough important to have two CVE-related, CVE-2020-11651 and CVE-2020-11652.
 
 \section{Purpose of the technology}
 Salt uses a central repository to create new servers, and manage them and others. It is also possible to use it to install software on them, also on hybrid infrastructures.
@@ -746,7 +745,7 @@ On the official GitHub repo \url{https://github.com/saltstack/salt} about the sp
 The original sponsor of our community, SaltStack, was acquired by VMware in 2020. The Salt Project remains an open source ecosystem that VMware supports and contributes to. VMware ensures the code integrity and quality of the Salt modules by acting as the official sponsor and manager of the Salt project. Many of the core Salt Project contributors are also VMware employees. This team carefully reviews and enhances the Salt modules to ensure speed, quality, and security."\cite{saltGitHub}
 
 
-Also, there is a good community of more than 2000 contributors and also hundreds of businesses who use it.
+Also, there is a good community of more than 2000 contributors and there are hundreds of businesses who use it.
 
 \subsection{Statistics}
 Salt has 
@@ -825,7 +824,7 @@ Salt is useable also without minions in an agentless mode.
 
 
 The configuration file for minions has a lot of parameters that can be set.
-It is divided in different parts:
+It is divided into different parts:
 \begin{itemize}
     \item Primary configuration settings
     \item Minion module management
@@ -908,7 +907,7 @@ Salt is natively supported in many Linux, MacOS and Windows systems.
 
 Salt creates a table with many OS and distributions with compatibility with Salt.
 
-That compatility table has also a detailed explanation which is available at \url{https://docs.saltproject.io/salt/install-guide/en/latest/topics/salt-supported-operating-systems.html}.
+That compatibility table has also a detailed explanation which is available at \url{https://docs.saltproject.io/salt/install-guide/en/latest/topics/salt-supported-operating-systems.html}.
 
 \subsection{Salt project}
 The project is available under the Apache 2.0 license. This license includes very few restrictions on the modification and distribution of the project.
@@ -1008,7 +1007,7 @@ But it needs to be considered that the project is Python-based, considered a sim
 Chef is a tool for automation and configuration management that allows you to define and apply the desired state of a system or an infrastructure.
 Chef even if it is not the simplest, is complete and with a lot of modules. The project is proud to be open-source.
 Also, they create a cloud version that they are to discontinue(30th Nov 2024).
-The Chef project is completely free to use, anyway, there are some limitations, considering that they also offer a premium version expecially created for companies.
+The Chef project is completely free to use, anyway, there are some limitations, considering that they also offer a premium version especially created for companies.
 
 \section{The beginning of Chef}
 
@@ -1111,16 +1110,16 @@ About open source Chef practice, there is a GitHub repo created by Chef on purpo
 That is available at \url{https://github.com/chef/chef-oss-practices}. It is also available a guide at \url{https://github.com/chef/chef-oss-practices/blob/main/CONTRIBUTING.md}.
 
 
-Also, that is also defined the communications \url{https://github.com/chef/chef-oss-practices/blob/main/communication/README.md}.
+Also, there are defined communications \url{https://github.com/chef/chef-oss-practices/blob/main/communication/README.md}.
 
-There are four communication channels each with its own specific purpose \cite{chefGithubOSSCom}:
+There are four communication channels each with its specific purpose \cite{chefGithubOSSCom}:
 
 
 \begin{itemize}
-    \item \textbf{GitHub}: GitHub is the Chef Community's preferred durable medium for open and transparent development of software. All development conversation must be captured in GitHub. Any decisions made in internal Chef Slack channels, Zoom sessions, or any other communication medium must be summarized in GitHub. Please also link to the GitHub issue or pull request in chat once it is opened.
+    \item \textbf{GitHub}: GitHub is the Chef Community's preferred durable medium for open and transparent development of software. All development conversations must be captured in GitHub. Any decisions made in internal Chef Slack channels, Zoom sessions, or any other communication medium must be summarized in GitHub. Please also link to the GitHub issue or pull request in chat once it is opened.
     \item \textbf{Community Slack}: Sometimes it will make sense to have a brief, non-durable conversation about the development of a project. Have these exchanges in Community Slack (either in a dev channel or via DM). Then, any development decisions, etc. arising from the Slack interaction should be documented in GitHub. Limit these conversations in Community Slack to development for a given project.
     \item \textbf{Mailing Lists}: The Chef Community mailing lists are hosted via Discourse. This is the best place to catch up on general and security-related announcements.
-    \item \textbf{Office Hours}: Individual projects may host office hours on a periodic basis. This is a great way to get some face time with other Project Members. Each project should record and archive sessions to a public location; see individual project documentation for more details.
+    \item \textbf{Office Hours}: Individual projects may host office hours periodically. This is a great way to get some face time with other Project Members. Each project should record and archive sessions to a public location; see individual project documentation for more details.
 \end{itemize}
 
 Also, there is some \texttt{interact way}, to know better the community:
@@ -1139,7 +1138,7 @@ Also, Chef has Twitch \url{https://www.twitch.tv/chefsoftware} and YouTube \url{
 \section{Main Chef components}
 
 \subsection{Structure}
-About the main structure Chef has these 3 components.
+About the main structure, Chef has these 3 components.
 This structure is different from other similar tools.
 
 \textbf{Workstation}\newline
@@ -1250,7 +1249,7 @@ Automations( inserted in Recipes ) are written in Ruby. Ruby is a free and open-
 
 \subsection{Architecture, agent or agentless}
 Chef works on client-server configuration with the addition of a workstation.
-In Chef, there is an architecture where nodes pulls configurations (in Ruby) from the server. Chef has its own server as the source of truth that requires uploaded cookbooks.
+In Chef, there is an architecture where nodes pull configurations (in Ruby) from the server. Chef has its server as the source of truth that requires uploaded cookbooks.
 The server runs on the master machine, while the client runs as an agent on every node. Chef also has an extra component named “workstation” that stores all of the configurations that are tested and then pushed to the central server.
 
 
