@@ -8,7 +8,7 @@
 
 \school{\unibo}
 \programme{Corso di Laurea Magistrale in Ingegneria e Scienze Informatiche}
-\title{Overview, study and comparison of automation tools}
+\title{Overview, study, and comparison of open source automation tools: Ansible, Salt, Chef, Puppet}
 \author{Alberto Donati}
 \date{\today}
 \subject{Distributed Systems}
@@ -351,9 +351,9 @@ Ansible has
     \item 60.1k stars
     \item 1.9k watcher
     \item 24k fork
-    \item >500 issue with >30k closed
-    \item >300 pull request
-    \item >5000 contributors
+    \item \>500 issue with \>30k closed
+    \item \>300 pull request
+    \item \>5000 contributors
     \item 31.8k projects use it as a dependency
 \end{itemize}
 
@@ -751,12 +751,12 @@ Also, there is a good community of more than 2000 contributors and there are hun
 Salt has 
 \begin{itemize}
     \item 13.7k stars
-    \item >500 watcher
+    \item \>500 watcher
     \item 5.5k fork
-    \item >2.4k issue with >23k closed
-    \item >100 pull request
-    \item >2000 contributors
-    \item >600 projects use it as dependecy
+    \item \>2.4k issue with \>23k closed
+    \item \>100 pull request
+    \item \>2000 contributors
+    \item \>600 projects use it as a dependency
 \end{itemize}
 
 We could consider the community active, especially in finding and reporting bugs.
@@ -1077,11 +1077,11 @@ Chef Server
 
 \begin{itemize}
     \item 283 stars
-    \item >70 watcher
+    \item \>70 watcher
     \item 214 fork
-    \item >150 issue with >700 closed
-    \item >70 pull request
-    \item >140 contributors
+    \item \>150 issue with \>700 closed
+    \item \>70 pull request
+    \item \>140 contributors
 \end{itemize}
 
 
@@ -1090,12 +1090,12 @@ Chef Infra
 
 \begin{itemize}
     \item 7.4k stars
-    \item >300 watcher
+    \item \>300 watcher
     \item 2.6k fork
-    \item >300 issue with >3k closed
-    \item >40 pull request
-    \item >650 contributors
-    \item >10k projects use it as dependecy
+    \item \>300 issue with \>3k closed
+    \item \>40 pull request
+    \item \>650 contributors
+    \item \>10k projects use it as a dependency
 \end{itemize}
 
 It is possible to consider the community active, even if with not thousands of contributors, used by thousands of projects.
@@ -1352,10 +1352,54 @@ Even if the recipes, that are written in Ruby, are not too difficult to set, Rub
 %*** PUPPET
 %***********************************
 \chapter{Puppet}
+Puppet is an open source project, with an active community, that invites you to engage with the community to share knowledge and expertise.
+Puppet works defining a desired state. Different from other languages, Puppet uses its language Puppet's Domain-Specific Language (DSL), called Puppet code.
+It has a high flexibility in the system where it can be used, so it has compatibility with different platforms.
+\textbf{Puppet code} is a declarative language, and Puppet works defining the state desired. Puppet then automates putting the system into the state described.
+The Puppet Server stores the code that defines your desired state and the Puppet agent translates your code into commands and then executes it on the systems you specify, in what is called a Puppet run.
+\cite{puppetDocIndex}
+\cite{puppetDocWhatIs}
 
+%guarda qui per sta cosa
+%https://web.archive.org/web/20160320040505/https://docs.puppetlabs.com/guides/faq.html
+%Why does Puppet have its own language?
+%Why not use XML or YAML as the configuration format? Why not use Ruby as the input language?
+%
+%The language used for manifests is ultimately Puppet’s human interface, and XML and YAML, being data formats developed around the processing capabilities of computers, are horrible human interfaces. While some people are comfortable reading and writing them, there’s a reason why we use web browsers instead of just reading the HTML directly. Also, using XML or YAML would limit any assurance that the interface was declarative — one process might treat an XML configuration differently from another.
+%
 \section{The beginning of Puppet}
 
 \subsection{History}
+Puppet began in 2005 by Luke Kanies
+"Luke Kanies is the Founder and CEO of Clickety. He also founded Puppet and Puppet Labs in 2005 out of fear and desperation, with the goal of producing better operations tools and changing how we manage systems.
+
+
+He has been publishing and speaking on his work in system administration since 1997, focusing on development since 2001. He has developed and published multiple simple sysadmin tools and contributed to established products like Cfengine, and has presented on Puppet and other tools around the world, including at OSCON, LISA, Linux.Conf.au, and FOSS.in. His work with Puppet has been an important part of DevOps and delivering on the promise of cloud computing".\cite{puppetStory1}
+
+
+In 2010, "Data center automation company Puppet Labs has acquired an open source project called The Marionette Collective. The project, also known as the Mcollective, is a framework to build server orchestration or parallel job execution systems".\cite{puppetStory2}
+The open source project acquired aims to programmatically execute actions on clusters of servers.
+This acquisition wishes to help provide multi-server and multi-datacenter orchestration for the companies that use Puppet Labs framework for systems management.
+The Marionette Collective's real-time capabilities for networking made it simpler to schedule complex sequences of activities using data available from the Puppet platform.\cite{puppetStory2}
+
+
+In 2011 version 2.0 of Puppet was announced with some interesting features. These include new orchestration capabilities that give systems administrators “command and control”
+power to efficiently make parallel changes across clusters of nodes with just a single
+command. Also, there were new baselining capabilities that enabled systems administrators to monitor their
+infrastructure's compliance against a desired state, a critical input to comprehensive
+change management and auditing processes\cite{puppetStory3}.
+
+
+In 2017, Puppet announced that it had acquired Distelli, a Seattle startup founded in 2015 by Singh that helps software engineers deploy code more efficiently.\cite{puppetStory4}
+About that acquisition, Puppet Chief Product Officer that was at that time Omri Gazitt who said “We quickly realized Distelli represented the best of everything that we were hoping to get” and “matched perfectly with our philosophy”\cite{puppetStory4}.
+
+
+In 2022, Perforce acquired Puppet, as described on the official Perforce site:
+"Perforce Software (“Perforce”), a provider of solutions to enterprise teams requiring productivity, visibility, and scale along the development lifecycle, backed by Francisco Partners and Clearlake Capital Group, L.P. (together with its affiliates, “Clearlake”), announced today that it has signed a definitive agreement to acquire Puppet (or “the Company”), an infrastructure automation software platform which enables users to deliver, update, monitor, and secure software across physical and virtual machines"\cite{puppetStory5}.
+
+
+Over the years, Puppet has grown raising money and growing its set of technological partners.
+Now it has its 8.4.x version.
 
 \section{Purpose of the technology}
 
