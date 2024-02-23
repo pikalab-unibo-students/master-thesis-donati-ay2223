@@ -8,7 +8,7 @@
 
 \school{\unibo}
 \programme{Corso di Laurea Magistrale in Ingegneria e Scienze Informatiche}
-\title{Overview, study, and comparison of open source automation tools: Ansible, Salt, Chef, Puppet}
+\title{Overview, study, and comparison of open source automation tools:\newline Ansible, Salt, Chef, Puppet}
 \author{Alberto Donati}
 \date{\today}
 \subject{Distributed Systems}
@@ -351,9 +351,9 @@ Ansible has
     \item 60.1k stars
     \item 1.9k watcher
     \item 24k fork
-    \item 500 issue with \[>30\]k closed
-    \item \[>300\] pull request
-    \item \[>5000\] contributors
+    \item 500 issue with $>$30k closed
+    \item $>$300 pull request
+    \item $>$5000 contributors
     \item 31.8k projects use it as a dependency
 \end{itemize}
 
@@ -751,12 +751,12 @@ Also, there is a good community of more than 2000 contributors and there are hun
 Salt has 
 \begin{itemize}
     \item 13.7k stars
-    \item \[>500\] watcher
+    \item $>$500 watcher
     \item 5.5k fork
-    \item \[>2.4\]k issue with \[>23\]k closed
-    \item \[>100\] pull request
-    \item \[>2000\] contributors
-    \item \[>600\] projects use it as a dependency
+    \item $>$2.4k issue with $>$23k closed
+    \item $>$100 pull request
+    \item $>$2000 contributors
+    \item $>$600 projects use it as a dependency
 \end{itemize}
 
 We could consider the community active, especially in finding and reporting bugs.
@@ -1077,11 +1077,11 @@ Chef Server
 
 \begin{itemize}
     \item 283 stars
-    \item \[>70\] watcher
+    \item $>$70 watcher
     \item 214 fork
-    \item \[>150\] issue with \[>700\] closed
-    \item \[>70\] pull request
-    \item \[>140\] contributors
+    \item $>$150 issue with $>$700 closed
+    \item $>$70 pull request
+    \item $>$140 contributors
 \end{itemize}
 
 
@@ -1090,12 +1090,12 @@ Chef Infra
 
 \begin{itemize}
     \item 7.4k stars
-    \item \[>300\] watcher
+    \item $>$300 watcher
     \item 2.6k fork
-    \item \[>300\] issue with \[>3\]k closed
-    \item \[>40\] pull request
-    \item \[>650\] contributors
-    \item \[>10\]k projects use it as a dependency
+    \item $>$300 issue with $>$3k closed
+    \item $>$40 pull request
+    \item $>$650 contributors
+    \item $>$10k projects use it as a dependency
 \end{itemize}
 
 It is possible to consider the community active, even if with not thousands of contributors, used by thousands of projects.
@@ -1429,21 +1429,71 @@ There are some Puppet use cases, for example, Alex Zbarcea, DevOps Engineer III,
 
 \subsection{Best points of Puppet}
 
+Some Puppet key features:
+
+\begin{itemize}
+    \item \textbf{Idempotency}: Execute automations code once, is equal to executing hundreds of times. When the state is defined, the system forces to obtain(or maintain) the state desired of the system.
+    \item \textbf{Promote community}: Puppet gives some benefits (like discount, contents, stickers) to the contributors that are in a "group" called Puppet Champion".
+    There is also a special group called "The League of Extraordinary Puppeteers" that can you enter on it only by community nomination (and offers additional benefits).
+    \item \textbf{DevOps oriented}: Puppet wishes to work in a agile style inviting system administration to use devops technologies and practice
+    \item \textbf{Mature industry-proven technology} It has a strong user base, used by from community users to big tech companies (Accenture, Uber, Twich), it has been created years before different competitors and has great documentation on itself sources and also on others related online resources.
+\end{itemize}
 
 \section{How the tool is shown to the community}
 
-
 \subsection{Who supports and maintains the project}
-%SM
+The general Puppet project is available at \url{https://github.com/puppetlabs/}.
+The part related to the Puppet main project at \url{https://github.com/puppetlabs/puppet}
+The project is supported by the community and also by the company that acquired it some years ago \textbf{Perforce}.
 
 \subsection{Statistics}
-%SP
+
+Puppet has 
+\begin{itemize}
+    \item 7.2k stars
+    \item $>$450 watcher
+    \item 2.2k fork
+    \item 19 issue with 7 closed
+    \item $>$30 pull request
+    \item $>$580 contributors
+    \item 12.2k projects use it as a dependency
+\end{itemize}
+\cite{puppetGitHubProject}
+We could consider the community active as contributors and very used as a dependency. There are not a lot of issues and pull requests. Anyway, it has a lot of stars and forks.
 
 \subsection{Community way to help and improve}
-%DM
+The main GitHub community page has a photo and also a description of the Puppet community:
+"At Puppet, open source software is in our DNA. From the earliest days of Facter to the latest version of Bolt, we've always been firm believers in the power of open source. We have a supportive, active community of thousands of people just like you who are making Puppet better — and making IT a better place to work"\cite{puppetGitHubGeneral}.
+
+There are also many channels available to contribute/participate in the community:
+\begin{itemize}
+    \item Slack at \url{https://slack.puppet.com}
+    \item Tickets at \url{https://tickets.puppet.com}
+    \item Forge at \url{https://forge.puppet.com}
+    \item Voxpupuli at \url{https://voxpupuli.org} (described as "collective of Puppet module, tooling and documentation authors all working together to ensure continued development on the code we maintain")\cite{puppetVox}
+    \item dev.to and dev.to feed at \url{https://dev.to/puppet}, \url{https://dev.to/feed/tag/puppet}
+    \item Mastodon at \url{https://fosstodon.org/@puppet}
+    \item GitHub discussion at \url{https://github.com/puppetlabs/community/discussions}
+\end{itemize}
+
+
+Also, there are other opportunities described at \url{https://www.puppet.com/community}.
+For example, three Mailing List on Google Groups at \url{https://groups.google.com/g/puppet-users?pli=1}, \url{https://groups.google.com/g/puppet-announce}, \url{https://groups.google.com/g/puppet-security-announce}.
+
+
+There is a calendar with meetings, streams, etc. at \url{https://www.puppet.com/community/calendar}.
+There is a dedicated customer experience research program for the community, called Puppet Test Pilots. It offers benefits like gift cards or charity donations for participating, at \url{https://www.puppet.com/community/puppet-test-pilots}.
+There is a Puppet Dev Kit at \url{https://www.puppet.com/community/open-source} to develop and test Puppet modules by providing a simple, unified interface to a set of helpful tools for anyone who writes or consumes Puppet code\cite{puppetDocDevKit}.
+
+Other particular programs are Puppet Champions and The League of Extraordinary Puppeteers.
+Puppet Champions is a group that allows you to have some benefits like Puppet presentations, demos, Puppet store discounts, stickers, etc.
+The Extraordinary Puppeteer is a distinction that is available only by peer nomination for the most passionate Champions. It includes additional benefits like advisory board participation, travel scholarships, etc.
+
+
+Some of those ideas are not present in other automation tools, and that means that Puppet is not only open but also willing to take contributions.
 
 \section{Main Puppet components}
-%D
+%S
 
 %\subsection{Inventory}
 
@@ -1468,12 +1518,12 @@ There are some Puppet use cases, for example, Alex Zbarcea, DevOps Engineer III,
 %\subsection{Documentation of the project}
 
 \subsection{Extensions of the project}
-%%L
+%D
 
 \section{Installation}
 %L
 \subsection{Example}
-
+%L
 \section{Tecnologies for testing Puppet}
 %M
 
