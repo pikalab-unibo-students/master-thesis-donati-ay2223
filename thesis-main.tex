@@ -351,9 +351,9 @@ Ansible has
     \item 60.1k stars
     \item 1.9k watcher
     \item 24k fork
-    \item \>500 issue with \>30k closed
-    \item \>300 pull request
-    \item \>5000 contributors
+    \item 500 issue with \[>30\]k closed
+    \item \[>300\] pull request
+    \item \[>5000\] contributors
     \item 31.8k projects use it as a dependency
 \end{itemize}
 
@@ -751,12 +751,12 @@ Also, there is a good community of more than 2000 contributors and there are hun
 Salt has 
 \begin{itemize}
     \item 13.7k stars
-    \item \>500 watcher
+    \item \[>500\] watcher
     \item 5.5k fork
-    \item \>2.4k issue with \>23k closed
-    \item \>100 pull request
-    \item \>2000 contributors
-    \item \>600 projects use it as a dependency
+    \item \[>2.4\]k issue with \[>23\]k closed
+    \item \[>100\] pull request
+    \item \[>2000\] contributors
+    \item \[>600\] projects use it as a dependency
 \end{itemize}
 
 We could consider the community active, especially in finding and reporting bugs.
@@ -1077,11 +1077,11 @@ Chef Server
 
 \begin{itemize}
     \item 283 stars
-    \item \>70 watcher
+    \item \[>70\] watcher
     \item 214 fork
-    \item \>150 issue with \>700 closed
-    \item \>70 pull request
-    \item \>140 contributors
+    \item \[>150\] issue with \[>700\] closed
+    \item \[>70\] pull request
+    \item \[>140\] contributors
 \end{itemize}
 
 
@@ -1090,12 +1090,12 @@ Chef Infra
 
 \begin{itemize}
     \item 7.4k stars
-    \item \>300 watcher
+    \item \[>300\] watcher
     \item 2.6k fork
-    \item \>300 issue with \>3k closed
-    \item \>40 pull request
-    \item \>650 contributors
-    \item \>10k projects use it as a dependency
+    \item \[>300\] issue with \[>3\]k closed
+    \item \[>40\] pull request
+    \item \[>650\] contributors
+    \item \[>10\]k projects use it as a dependency
 \end{itemize}
 
 It is possible to consider the community active, even if with not thousands of contributors, used by thousands of projects.
@@ -1402,18 +1402,48 @@ Over the years, Puppet has grown raising money and growing its set of technologi
 Now it has its 8.4.x version.
 
 \section{Purpose of the technology}
+Puppet is a project proud to be open source, it encourages a lot of the participation of the community.
+It creates a sort of group to thank with some benefits dedicated to that, called "Puppet Champion", and also a special group called "The League of Extraordinary Puppeteers"\cite{puppetDocChampions}.
+
+
+Puppet is built on the concept of IaS (Infrastructure as Code), meaning that the infrastructure is created by writing code by the system administrator adopting practices that are traditionally associated with software developers.
+It enables system administrators to define infrastructure using code written in the Puppet Descriptive Language, eliminating the need for custom scripts.
+
+
+Idempotency is considered a key feature of Puppet, allowing Puppet to run continuously, obtaining the same system state result every time.
+It ensures that the state of the infrastructure always matches the desired state.
+If there are any changes not made on purpose to the system's state described, Puppet can rectify those changes and restore the system to its desired state.
+
+
+Puppet offers a scalable solution, that allows the system administrators to centralize and streamline automations across multiple machines.
+
+
+When adopting a tool like Puppet, Puppet itself advises using it with an agile methodology in mind (making incremental units of work and reusing code).
+With more familiarity with Puppet, more scalability is possible. And also agile invites colleagues to spread the work between them.
+Sharing common Puppet methodology and language between colleagues allows the business to work more efficiently.
+\cite{puppetIntroMedium}\cite{puppetDocIntro}
+
+
+There are some Puppet use cases, for example, Alex Zbarcea, DevOps Engineer III, Fannie Mae said "Puppet forces you to have accountability for each artifact managed in production. You'll know nothing is being missed, nothing is not being tracked. Puppet brings a lot of health into configuration management, giving visibility to teams across silos so they know the lifecycle of each artifact for services required for other services. Puppet is great at answering: Are the services configured as they should be? Did anything change? Is there a conflict between configuration processes? Puppet brings consistency and predictability into the environment. When you have to upgrade a service, it's so much easier"\cite{puppetDocUseCase}.
+
 
 \subsection{Best points of Puppet}
 
+
 \section{How the tool is shown to the community}
 
+
 \subsection{Who supports and maintains the project}
+%SM
 
 \subsection{Statistics}
+%SP
 
 \subsection{Community way to help and improve}
+%DM
 
 \section{Main Puppet components}
+%D
 
 %\subsection{Inventory}
 
@@ -1438,17 +1468,20 @@ Now it has its 8.4.x version.
 %\subsection{Documentation of the project}
 
 \subsection{Extensions of the project}
+%%L
 
 \section{Installation}
-
+%L
 \subsection{Example}
 
 \section{Tecnologies for testing Puppet}
+%M
 
 %\subsection{Suite for check syntax}
 %\subsection{Suite for check jobs}
 
 \section{Learning curve}
+%M
 
 %\section{Pros}
 
@@ -1492,10 +1525,9 @@ Considerazioni finali
 %----------------------------------------------------------------------------------------
 
 \backmatter
- 
+
 \nocite{*} % comment this to only show the referenced entries from the .bib file
 
-\suppressfloats{bibliography}
 \bibliographystyle{plainnat}
 \bibliography{bibliography}
 
