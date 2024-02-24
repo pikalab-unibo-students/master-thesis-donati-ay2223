@@ -5,6 +5,7 @@
 \usepackage{notes}
 \usepackage{shortcuts}
 \usepackage{acronym}
+\usepackage{float}
 
 \school{\unibo}
 \programme{Corso di Laurea Magistrale in Ingegneria e Scienze Informatiche}
@@ -1164,7 +1165,7 @@ Chef Infra is described as\cite{chefInfra}
 It is possible to visualize in that graphic \cite{chefFreeCodeCamp}
 \newline
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=.8\linewidth]{figures/img_Chef_structure.jpeg}
     \caption{Chef Structure}
@@ -1255,7 +1256,7 @@ The server runs on the master machine, while the client runs as an agent on ever
 
 A simplified image from the official documentation:
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=.8\linewidth]{figures/chef_infra.png}
     \caption{Chef Infra}
@@ -1545,14 +1546,14 @@ Puppet apply is an application that compiles and manages configurations on nodes
 \textbf{Puppet reports}
 Puppet creates a report about its actions and your infrastructure each time it applies a catalog during a Puppet run. You can create and use report processors to generate insightful information or alerts from those reports. \cite{puppetDocReports}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=.8\linewidth]{figures/puppetplatform.png}
+    \includegraphics[width=.8\linewidth]{figures/puppetplatformjpeg.png}
     \caption{Puppet Platform}
     \label{fig:puppet-platform-image}
 \end{figure}\cite{puppetDocPlatform}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=.8\linewidth]{figures/puppetfunctioning.png}
     \caption{Puppet Functioning}
@@ -1560,7 +1561,21 @@ Puppet creates a report about its actions and your infrastructure each time it a
 \end{figure}\cite{puppetImgFunctioning}
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
-%TODO
+
+About Puppet Server, Puppet provides official packages that install Puppet Server and all of its prerequisites for the following platforms:
+
+\begin{itemize}
+    \item Red Hat Enterprise Linux vers. 7,8,9
+    \item Debian vers. 9,10,11
+    \item Utuntu vers. 16.04 (amd64 only), 18.04, 20.04, 22.04
+    \item SUSE Enterprise Linux vers. 12 SP1, 15 (x86\_64)
+\end{itemize}
+
+If Puppet doesn't provide a package for your system, you can run Puppet Server from source on any x86\_64 Linux server with JDK 1.8 or 11.
+\cite{puppetDocSupportServer}
+
+About Puppet agent, the installation is instead available for *nix, Windows, or macOS.
+\cite{puppetDocSupportAgents}
 
 \subsection{Puppet project}
 The general Puppet project is available at \url{https://github.com/puppetlabs/}.
@@ -1578,9 +1593,9 @@ The Puppet primary server is the server that stores the code that defines your d
 The Puppet agent translates your code into commands and then executes it on the systems you specify, in what is called a Puppet run\cite{puppetDocWhatIs}.
 In Puppet servers and agents communicate by HTTPS using SSL certificates. Puppet includes a built-in certificate authority for managing certificates.Puppet Server performs the role of the primary node and also runs an agent to configure itself\cite{puppetDocPlatform}.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=.8\linewidth]{figures/puppetagentserver.png}
+    \includegraphics[width=.8\linewidth]{figures/puppetagentserverjpeg.png}
     \caption{Puppet Agent Server}
     \label{fig:chef-agent-server-image}
 \end{figure}\cite{puppetDocWhatIs}
@@ -1590,20 +1605,20 @@ In Puppet servers and agents communicate by HTTPS using SSL certificates. Puppet
 %\subsection{Documentation of the project}
 
 \subsection{Extensions of the project}
-%D
+%TBDM
 
 \section{Installation}
-%L
+%TBDP
 \subsection{Example}
-%L
+%TBDP
 \section{Tecnologies for testing Puppet}
-%M
+%L
 
 %\subsection{Suite for check syntax}
 %\subsection{Suite for check jobs}
 
 \section{Learning curve}
-%M
+%L
 
 %\section{Pros}
 
