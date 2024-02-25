@@ -93,13 +93,10 @@ There are some technologies properties of Amazon, Google and Microsoft, even if 
 That study also searches for technologies that could be useful for multipurpose scope, always related to automation.
 
 
-%For example, tools might not be able only to start and configure servers, but it is better if it is also possible to expand with other functions.
-%
-%
 These tools must have a solid user base. Also, It does not search for a particular language or a single way to manage machines (for example agent-agentless).
 
 
-Some tools base their automation based on YAML language (Salt, Ansible), and others on Ruby (Chef, Puppet).
+There are no limitations about the languages used in the tools for automation or abot the language for the tool project itself. Some base automations on YAML language (Salt, Ansible), and others on Ruby and/or relative DSL (Chef, Puppet).
 
 \section{Explanation of the structure}
 Initially, there will be a brief description of what the automation tools are and who uses them.
@@ -143,7 +140,6 @@ The structure will be something like this:
     \item Conclusions (Considerations and comparisons)
 \end{itemize}
 
-%\note{At the end, describe the structure of the paper}
 
 \chapter{State of the art}
 
@@ -168,14 +164,9 @@ Automation systems aim to simplify the execution of repetitive tasks.
 \section{Who uses automation tools}
 Automation tools could be useful for a single user who wishes to simplify some tasks in the home running server (or cloud), to IT companies or Universities from a few to thousands of servers.
 
-
 Some automation tools are simpler than others, for example starting from the structure of the language used to create automations.
 
-
-Some of them also require specific knowledge(Cobbler requires PXE).
-
-
-Some could be used by beginners in IT, and others require OOP knowledge of languages like Ruby.
+Some could be used by beginners in IT and others require OOP knowledge of languages like Ruby.
 
 \section{When it makes sense (or doesn't make sense) to automate operations}
 Some questions help to understand when an automation tool could be a great choice:
@@ -449,14 +440,6 @@ Considering that Ansible is idempotent, in case the packages were already instal
 
 In the Task \texttt{Uninstall MongoDB}, the apt module takes as input directly the value \texttt{mongodb} and sets the state to \texttt{absent} to make sure that, if present, it is removed.
 
-%commento
-%paragraph{Roles}
-
-%Roles: i roles (ruoli) sono dei componenti dei playbook che raggruppano operazioni legate tra di loro con uno scopo specifico. Queste vengono di solito unificate per avere più riusabilità delle stesse. Se il ruolo definito è processo standard, è facile che qualcuno lo abbia già implementato e lo si può scaricare da Ansible Galaxy!.
-
-%differenzeeee plugin e modules
-%https://docs.ansible.com/ansible/latest/dev_guide/developing_locally.html#developing-locally
-
 \section{Characteristics}
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
@@ -502,10 +485,6 @@ If a technology like Ansilbe is entirely based on connection to SSH, it means th
 
 Anyway, it is possible to mitigate the risk of SSH. For example, instead of using a password use keys for authentication and insert a password for sudo privileges\cite{ansibleSSH}.
 
-%\subsection{Structure of the project}
-%\subsubsection{Deep structure of the project (how it is the open source internal project)}
-%\subsection{Documentation of the project}
-
 \subsection{Extensions of the project}
 In Ansible it is possible to expand functionalities using modules and plugins.
 
@@ -537,8 +516,6 @@ The official method involves \textbf{pip} and then installing Ansible via pip.
 \begin{lstlisting}
 sudo apt install python3-pip
 \end{lstlisting}
-
-%\texttt{pip} takes about 250 MegaByte of disk space.
 
 After installing pip, install Ansible(core):
 
@@ -648,22 +625,11 @@ Also, "Molecule provides support for testing with multiple instances, operating 
 
 "Molecule encourages an approach that results in consistently developed roles that are well-written, easily understood and maintained."\cite{ansibleMolecule}
 
-%\subsection{Suite for check syntax}
-%\subsection{Suite for check jobs}
-
 \section{Learning curve}
 Ansible has a very fast learning curve, considering that Ansible that the automation is written in YAML files.
 
 
 Also, the project was written in Python, so understanding the project is simpler than other languages.
-
-%\section{Pros}
-
-%\section{Cons}
-
-%\section{Real project use cases}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %SALT
@@ -817,8 +783,6 @@ The Salt Master configuration file follows these parts to be correctly set.
     \item NetAPI settings
     \end{itemize}
 
-%\subsubsection{Example Salt Master}
-
 \subsection{Salt Minion}
 When the agent approach is used in Salt, a minion is an agent. It receives commands from the Salt Master and communicates with it with the response of them. It has a configuration file that can be easily set. In that, the location of the Salt Master needs to be indicated so the correct communication between them is correctly targeted.
 Salt is useable also without minions in an agentless mode.
@@ -854,11 +818,6 @@ There is also a \textbf{salt-minion} command with different options:
     \item \texttt{-d, --daemon} (run as a daemon)
     \item \texttt{--pid-file} (PIDFILE)
 \end{itemize}
-
-
-%\subsubsection{Example of minion settings}
-
-%\lstinputlisting[label={lst:exampleMinionSalt}]{listings/exampleMinionSalt.yaml}
 
 \subsection{Reactor}
 Salt's Reactor system listens for events and then triggers actions in response to that event.
@@ -917,10 +876,6 @@ The project is available under the Apache 2.0 license. This license includes ver
 The preferred approach that Salt uses, is the master-minion setup, the Salt master sends commands to the Salt minions to execute.
 However, Salt also supports a mode where it can operate without a minion agent, so it is agentless.
 Usually, it is better to use the agent mode because Salt is thought and constructed in a way that makes better, faster and more complete the use of minions.
-
-%\subsection{Structure of the project}
-%\subsubsection{Deep structure of the project (how it is the open source internal project)}
-%\subsection{Documentation of the project}
 
 \subsection{Extensions of the project}
 About the creation of Salt execution module, it is possible to write the Salt execution module it prefers,
@@ -987,20 +942,12 @@ Unit tests are also useful in cases where writing an integration test might not 
 Even if the integration test suite is powerful it does not cover all functional areas of Salt's ecosystem (for example Proxy Minions).
 Unit tests can still provide some testing support by testing the logic contained inside Proxy Minion functions.\cite{saltDocTest}.
 
-%\subsection{Suite for check syntax}
-%\subsection{Suite for check jobs}
-
 \section{Learning curve}
 The learning curve is not the fastest and has some configurations that are not intuitive in a completely agent-less way.
 Also, considering that, even if is allowed, the connection is not passed by SSH; it is better to understand the ZeroMQ messaging technology.
 Having a basic understanding of how ZeroMQ works can help you better understand how SaltStack operates under the hood about the communication between nodes (master and minions).
 But it needs to be considered that the project is Python-based, considered a simple language, and also the state files (to describe the state of system components) are written in YAML, a very simple language to make configuration files.
 
-%\section{Pros}
-
-%\section{Cons}
-
-%\section{Real project use cases}
 %*****************************************
 %* CHEF
 %*****************************************
@@ -1175,7 +1122,7 @@ It is possible to visualize in that graphic \cite{chefFreeCodeCamp}
 The Infra Server communicates with Infra Clients via HTTP(S) connections.
 
 \subsection{Recipe}
-Recipe is the file, written in Ruby, that contains a set of tasks to be executed step by step in the clients. It has to be in a Cookbook.
+Recipe is the file that contains a set of tasks to be executed step by step in the clients. It has to be in a Cookbook.
 
 \subsection{Resource}
 Resource is a piece of code that declares an element of the system and what action should be executed.
@@ -1246,11 +1193,12 @@ It has also derived support for AlmaLinux, whose parent is CentOS but also a lot
 The open source projects published by Chef are under Apache 2.0 license.
 The main repo for Chef open source projects is \url{https://github.com/chef/}.
 The Chef Server is written almost completely in Erlang and also Ruby.
-Automations( inserted in Recipes ) are written in Ruby. Ruby is a free and open-source language that is not the simplest but it is used for different uses, its first release was in 1995.
+The Chef Infra Language is a comprehensive systems configuration language, based on Ruby, with resources and helpers for configuring operating systems. The language is primarily used in Chef Infra recipes and custom resources to tell the Chef Infra Client what action(s) to take to configure a system\cite{chefDocInfraLanguage}.
+Ruby is a free and open-source language that is not the simplest but it is used for different uses, its first release was in 1995.
 
 \subsection{Architecture, agent or agentless}
 Chef works on client-server configuration with the addition of a workstation.
-In Chef, there is an architecture where nodes pull configurations (in Ruby) from the server. Chef has its server as the source of truth that requires uploaded cookbooks.
+In Chef, there is an architecture where nodes pull configurations from the server. Chef has its server as the source of truth that requires uploaded cookbooks.
 The server runs on the master machine, while the client runs as an agent on every node. Chef also has an extra component named “workstation” that stores all of the configurations that are tested and then pushed to the central server.
 
 
@@ -1262,14 +1210,6 @@ A simplified image from the official documentation:
     \caption{Chef Infra}
     \label{fig:chef-infra-image}
 \end{figure}
-
-
-
-%Chef uses a backup server that fills in when the primary server goes down
-
-%\subsection{Structure of the project}
-%\subsubsection{Deep structure of the project (how it is the open source internal project)}
-%\subsection{Documentation of the project}
 
 \subsection{Extensions of the project}
 It is possible to use Cookbooks (and Chef tools) created by the community, uploaded in the \textbf{Supermarket} and publicly available at \url{https://supermarket.chef.io/}.
@@ -1334,20 +1274,10 @@ There is also an official Chef guide, is explains the power of using Chef Workst
 Chef Workstation also includes InSpec, which is an open-source framework for testing and auditing your applications and infrastructure. It compares the actual state of your system with the desired state that you express in easy-to-read and easy-to-write Chef InSpec code. It detects violations and displays findings in the form of a report, but puts you in control of remediation.\cite{chefInSpec}
 Test Kitchen allows you to apply your Chef Infra cookbooks and recipes to a variety of machines. It is immediately possible to verify the results with Chef InSpec, ensuring that those systems are properly deployed and remain in the states you want.\cite{chefTestKitPdf}
 
-%\subsection{Suite for check syntax}
-%\subsection{Suite for check jobs}
-
 \section{Learning curve}
 Even if it is not the simplest, Chef has a good community with actively supports the technology and other developers.
 The Infra Client is written in Ruby but the server is a mix of Erlang and Ruby for most of the part.
-Even if the recipes, that are written in Ruby, are not too difficult to set, Ruby is not the simplest language, in fact, in the official documentation it is possible to read about Ruby that the creator, Yukihiro Matsumoto,
-"trying to make Ruby natural, not simple"\cite{rubyDoc}.
-
-%\section{Pros}
-
-%\section{Cons}
-
-%\section{Real project use cases}
+The Chef Infra Language, based on Ruby, is not difficult to understand but it is not the simplest language, in fact, in the official documentation of Ruby it is possible to read about Ruby that the creator, Yukihiro Matsumoto, "trying to make Ruby natural, not simple"\cite{rubyDoc}.
 
 %***********************************
 %*** PUPPET
@@ -1361,13 +1291,6 @@ The Puppet Server stores the code that defines your desired state and the Puppet
 \cite{puppetDocIndex}
 \cite{puppetDocWhatIs}
 
-%guarda qui per sta cosa
-%https://web.archive.org/web/20160320040505/https://docs.puppetlabs.com/guides/faq.html
-%Why does Puppet have its own language?
-%Why not use XML or YAML as the configuration format? Why not use Ruby as the input language?
-%
-%The language used for manifests is ultimately Puppet’s human interface, and XML and YAML, being data formats developed around the processing capabilities of computers, are horrible human interfaces. While some people are comfortable reading and writing them, there’s a reason why we use web browsers instead of just reading the HTML directly. Also, using XML or YAML would limit any assurance that the interface was declarative — one process might treat an XML configuration differently from another.
-%
 \section{The beginning of Puppet}
 
 \subsection{History}
@@ -1585,6 +1508,7 @@ The general Puppet project is available at \url{https://github.com/puppetlabs/}.
 The part related to the Puppet main project at \url{https://github.com/puppetlabs/puppet}.
 
 This project is written in Ruby, available with Apache License 2.0\cite{puppetGitHubProject}.
+About the choice to write Puppet in Ruby instead in a language as Python, Luke Kanies, the author of Puppet said "I tried Python, because this was around 2003 and Python was the next new thing and everyone was saying how great it is, but I just can't seem to write in Python at all. A friend had said he'd heard Ruby was cool, so I gave it a try, and in four hours I went from never having seen a line of it to having a working prototype. I haven't looked back since then, and haven't regretted the choice"\cite{puppetDocOldFAQ}.
 
 Puppet automations is defined in a declarative language derived from Ruby (Ruby DSL) called Puppet Code.
 
@@ -1602,10 +1526,6 @@ In Puppet servers and agents communicate by HTTPS using SSL certificates. Puppet
     \caption{Puppet Agent Server}
     \label{fig:chef-agent-server-image}
 \end{figure}\cite{puppetDocWhatIs}
-
-%\subsection{Structure of the project}
-%\subsubsection{Deep structure of the project (how it is the open source internal project)}
-%\subsection{Documentation of the project}
 
 \subsection{Extensions of the project}
 It is possible to create custom code and modules, using the \textbf{Puppet Development Kit (PDK)}.
@@ -1625,53 +1545,28 @@ About the way it works this project "We work under a shared name and namespace a
 \subsection{Example}
 
 \section{Tecnologies for testing Puppet}
-%L
-
-%\subsection{Suite for check syntax}
-%\subsection{Suite for check jobs}
 
 \section{Learning curve}
 It is possible to consider Puppet learning curve not one of the fastest.
-Puppet is written in Ruby, which is not as simple as language for beginners like Python.
-Puppet automation is not written in Ruby but in a Ruby DSL which adds another little difficulty to start with Puppet.
+Puppet project is written in Ruby, which is not as simple as language for beginners like Python.
+Puppet automations are not written in Ruby but in a Ruby DSL which adds another little difficulty to start with Puppet.
+About the fact that Puppet wish not to use XML/YAML for automations, it is beacuse "using XML or YAML would limit any assurance that the interface was declarative - one process might treat an XML configuration differently from another"\cite{puppetDocOldFAQ}.
 Considering also that the Puppet structure is not a standard agent-server structure it is not the best for beginners in automations, but has good support from the community.
 
-%\section{Pros}
-
-%\section{Cons}
-
-%\section{Real project use cases}
-
-
-
 \chapter{Conclusion}
-Scrivere la conclusione
 
-\section{Comparison}
-Esempio comparazione tecnologie
+\subsection{Comparison}
+%Make table with comparison about
+%differences and similarity
+%(modification are possible)
+%structure
+%learning curve
+%languages used
+%community
 
-\section{Consideration}
-Considerazioni finali
+\subsection{Consideration}
+%Consideration about the thesis and what I learned
 
-
-%\section{Some cool topic}
-
-\chapter{Contribution}
-
-%You may also put some code snippet (which is NOT float by default), eg: \cref{lst:random-code}.
-
-%\lstinputlisting[float,language=Java,label={lst:random-code}]{listings/HelloWorld.java}
-
-%\section{Fancy formulas here}
-
-%I suggest referencing stuff as follows: \cref{fig:random-image} or \Cref{fig:random-image}
-
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=.8\linewidth]{figures/random-image.pdf}
-%    \caption{Some random image}
-%    \label{fig:random-image}
-%\end{figure}
 
 %----------------------------------------------------------------------------------------
 % BIBLIOGRAPHY
