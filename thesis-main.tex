@@ -16,7 +16,7 @@
 \supervisor{Prof. Giovanni Ciatto}
 %\cosupervisor{Dott. CoSupervisor 1}
 %\morecosupervisor{Dott. CoSupervisor 2}
-\session{IV}
+%\session{IV}
 \academicyear{2022-2023}
 
 % Definition of acronyms
@@ -1193,7 +1193,7 @@ It has also derived support for AlmaLinux, whose parent is CentOS but also a lot
 The open source projects published by Chef are under Apache 2.0 license.
 The main repo for Chef open source projects is \url{https://github.com/chef/}.
 The Chef Server is written almost completely in Erlang and also Ruby.
-The Chef Infra Language is a comprehensive systems configuration language, based on Ruby, with resources and helpers for configuring operating systems. The language is primarily used in Chef Infra recipes and custom resources to tell the Chef Infra Client what action(s) to take to configure a system\cite{chefDocInfraLanguage}.
+The Chef Infra Language is a comprehensive systems configuration language, based on Ruby, with resources and helpers for configuring operating systems. The language is primarily used in Chef Infra recipes and custom resources to tell the Chef Infra Client what action(s) to take to configure a system\cite{chefInfraLanguage}.
 Ruby is a free and open-source language that is not the simplest but it is used for different uses, its first release was in 1995.
 
 \subsection{Architecture, agent or agentless}
@@ -1366,6 +1366,7 @@ Some Puppet key features:
 \section{How the tool is shown to the community}
 
 \subsection{Who supports and maintains the project}
+The project is supported by the community and also by the company that acquired it some years ago \textbf{Perforce}.
 
 \subsection{Statistics}
 
@@ -1396,8 +1397,6 @@ There are also many channels available to contribute/participate in the communit
     \item Mastodon at \url{https://fosstodon.org/@puppet}
     \item GitHub discussion at \url{https://github.com/puppetlabs/community/discussions}
 \end{itemize}
-
-The project is supported by the community and also by the company that acquired it some years ago \textbf{Perforce}.
 
 There are some different opportunities described at \url{https://www.puppet.com/community}.
 For example, three Mailing List on Google Groups at \url{https://groups.google.com/g/puppet-users?pli=1}, \url{https://groups.google.com/g/puppet-announce}, \url{https://groups.google.com/g/puppet-security-announce}.
@@ -1534,17 +1533,117 @@ PDK is "a framework to successfully build, test and validate your modules"\cite{
 
 There is also a sort of collection of modules called \textbf{Puppet Forge}\url{https://forge.puppet.com/}.
 "Puppet Forge is a catalogue of modules created by Puppet, our partners, and community that helps IT ops practitioners supercharge and simplify their automation processes. With step-by-step guides and tutorials, Puppet Forge provides a platform for you to grow your skills with Puppet, whatever your current level."\cite{puppetForge}
-In Puppet Forge modules could have different badges like "Supported" or "Approved" by Puppet.
+Puppet Forge modules could have different badges like "Supported" or "Approved" by Puppet.
 There are more than 7k modules available and about 2.5k community contributors.
 
 Considering the Puppet community and related channels, there is a project called Vox Populi, which defines itself as "We are a collective of Puppet module, tooling and documentation authors all working together to ensure continued development on the code we maintain"\cite{puppetVox}.
-About the way it works this project "We work under a shared name and namespace and synchronize our efforts. Having no official relation to Puppet Inc. allows us to maintain our own pace and direction when it comes to how we work and develop"\cite{voxpupuli}.
+About the way works this project "We work under a shared name and namespace and synchronize our efforts. Having no official relation to Puppet Inc. allows us to maintain our own pace and direction when it comes to how we work and develop"\cite{puppetVox}.
 
 \section{Installation}
 
-\subsection{Example}
+\subsection{Enable the Puppet platform repository}
+First of all, to install Puppet on the system is necessary to enable the Puppet platform repository.
+Enabling the Puppet platform repository makes the components needed for installation available on your system.
+The enabling of the repository depends on which package management system the system uses: \texttt{yum} or \texttt{apt}.
+It is important to search the correct URL of the package to enable based on the operating system and version, located in \url{yum.puppet.com} and \url{apt.puppet.com}.
+\cite{puppetDocInstall}
+
+\subsubsection{Example for Yum}
+Logged in as root, run the RPM tool in upgrade mode.
+\begin{lstlisting}
+sudo rpm -U <PACKAGE_URL>
+\end{lstlisting}
+
+Example to enable the Enterprise Linux 8 repository. 
+\begin{lstlisting}
+sudo rpm -Uvh https://yum.puppet.com/puppet8-release-el-8.noarch.rpm
+\end{lstlisting}
+
+\subsubsection{Example for apt}
+Logged in as root, download the package and run the dpkg tool in install mode.
+\begin{lstlisting}
+wget <PACKAGE_URL>
+sudo dpkg -i <FILE_NAME>.deb
+\end{lstlisting}
+
+Example to enable the Ubuntu 20.04 focal repository.
+\begin{lstlisting}
+wget https://apt.puppet.com/puppet8-release-focal.deb
+sudo dpkg -i puppet7-release-focal.deb
+\end{lstlisting}
+
+Update the apt package lists.
+\begin{lstlisting}
+sudo apt-get update
+\end{lstlisting}
+
+\cite{puppetDocInstall}
+
+\subsection{Install Puppet Server}
+Install the Puppet Server package.
+
+
+On Red Hat OS:
+\begin{lstlisting}
+yum install puppetserver
+\end{lstlisting}
+
+On Debian and Ubuntu OS:
+\begin{lstlisting}
+apt-get install puppetserver
+\end{lstlisting}
+
+Start the Puppet Server service.
+\begin{lstlisting}
+sudo systemctl start puppetserver
+\end{lstlisting}
+
+Open a new shell, or use \texttt{exec bash} to update your PATH (or \texttt{bash -l} on Ubuntu).
+
+
+Check if Puppet Server is installed correctly.
+\begin{lstlisting}
+puppetserver -v
+\end{lstlisting}
+
+
+Puppet Server is configured to use 2GB of RAM. However, it is possible to test it also on a VM, allocating as little as 512MB of memory. 
+
+\cite{puppetDocSupportServer}
+
+\subsection{Install Puppet agents}
+There are different ways to install Puppent agents, also considering that there is possible to install them not only in Linux but also in Windows and MacOS.
+
+%TOCHECK
+
+%\begin{itemize}
+%\item Install *nix agents
+%\item Install Windows agents
+%\begin{itemize}
+%\item Install Windows agents with the .msi package
+%\item Install Windows agents with the installer
+%\item Install Windows agents using msiexec from the command line
+%\begin{itemize}
+%\item MSI properties
+%\end{itemize}
+%\item Upgrading or downgrading between 32-bit and 64-bit Puppet on Windows
+%\begin{itemize}
+%\item Upgrading to 64-bit
+%\item Downgrading to 32-bit
+%\end{itemize}
+%\end{itemize}
+%\item Install macOS agents
+%\begin{itemize}
+%\item Add full disk access for Puppet on macOS 10.14 and newer
+%\item Install macOS agents from Finder
+%\item Install macOS agents from the command line
+%\item Install macOS agents with Homebrew
+%\end{itemize}
+
+\cite{puppetDocSupportAgents}
 
 \section{Tecnologies for testing Puppet}
+%TBD
 
 \section{Learning curve}
 It is possible to consider Puppet learning curve not one of the fastest.
