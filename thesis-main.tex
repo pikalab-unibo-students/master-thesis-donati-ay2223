@@ -16,7 +16,7 @@
 \supervisor{Prof. Giovanni Ciatto}
 %\cosupervisor{Dott. CoSupervisor 1}
 %\morecosupervisor{Dott. CoSupervisor 2}
-\session{Single}
+\session{Unica}
 \academicyear{2022-2023}
 
 % Definition of acronyms
@@ -443,7 +443,7 @@ In the Task \texttt{Uninstall MongoDB}, the apt module takes as input directly t
 \section{Characteristics}
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
-Ansible is natively supported in Unix platforms like Linux distributions and MACOS.
+Ansible is natively supported in Unix platforms like Linux distributions and MacOS.
 
 
 Windows in the last years supports a Linux layer directly integrated into the machine installing WSL.
@@ -675,7 +675,7 @@ In that post, he wrote "There is no escape from the ongoing march of Salt platfo
 During years after years, Salt grew, and in 2020 was acquired by VMware.
 
 About the acquisition, VMware said that "it's committed to preserving SaltStack's open source community after the deal closes"\cite{saltAcq}.
-In VMware's blog, it is possible to see the confirmation about the end of the acquisition \url{https://blogs.vmware.com/management/2020/10/vmware-completes-saltstack-acquisition-to-bolster-software-configuration-management-and-infrastructure-automation.html}.
+In VMware's blog, it is possible to read the confirmation about the end of the acquisition\cite{saltAcqEnd}.
 Some months before the acquisition there were big security issues related to Salt that are described at \url{https://news.hackreports.com/critical-saltstack-vulnerability-rce-exploit/}.
 These issues were enough important to have two CVE-related, CVE-2020-11651 and CVE-2020-11652.
 
@@ -863,11 +863,7 @@ In Salt, both modules and execution modules are Python (or Cython) files that co
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
 Salt is natively supported in many Linux, MacOS and Windows systems.
-
-
-Salt creates a table with many OS and distributions with compatibility with Salt.
-
-That compatibility table has also a detailed explanation which is available at \url{https://docs.saltproject.io/salt/install-guide/en/latest/topics/salt-supported-operating-systems.html}.
+Salt has created a table, with detailed explanations, with many OS and distributions with relative Salt compatibility\cite{saltDocTable}.
 
 \subsection{Salt project}
 The project is available under the Apache 2.0 license. This license includes very few restrictions on the modification and distribution of the project.
@@ -1186,7 +1182,7 @@ looking to expand community support for platforms in Chef products"\cite{chefDoc
 
 There is also support for \textbf{Derived Platforms}, for example for a distribution that is rebuilt on an original supported distribution.
 
-For Example, \texttt{Chef Infra Client} has Commercial Support for Amazon Linux, CentOS, Debian, FreeBSD, Ubuntu, and other Linux distros but also macOS and Windows.
+For Example, \texttt{Chef Infra Client} has Commercial Support for Amazon Linux, CentOS, Debian, FreeBSD, Ubuntu, and other Linux distros but also MacOS and Windows.
 It has also derived support for AlmaLinux, whose parent is CentOS but also a lot of Community Support platforms like Arch, Kali, Mint and others.
 
 \subsection{Chef project}
@@ -1243,7 +1239,7 @@ This script does the following:
 
 \subsection{Example}
 
-For UNIX, Linux, and macOS systems (insert password when required), via terminal:
+For UNIX, Linux, and MacOS systems (insert password when required), via terminal:
 
 
 \begin{lstlisting}
@@ -1499,7 +1495,7 @@ About Puppet Server, Puppet provides official packages that install Puppet Serve
 If Puppet doesn't provide a package for your system, you can run Puppet Server from source on any x86\_64 Linux server with JDK 1.8 or 11.
 \cite{puppetDocSupportServer}
 
-About Puppet agent, the installation is instead available for *nix, Windows, or macOS.
+About Puppet agent, the installation is instead available for *nix, Windows, or MacOS.
 \cite{puppetDocSupportAgents}
 
 \subsection{Puppet project}
@@ -1612,38 +1608,30 @@ Puppet Server is configured to use 2GB of RAM. However, it is possible to test i
 \cite{puppetDocSupportServer}
 
 \subsection{Install Puppet agents}
-There are different ways to install Puppent agents, also considering that there is possible to install them not only in Linux but also in Windows and MacOS.
-
-%TOCHECK
-
-%\begin{itemize}
-%\item Install *nix agents
-%\item Install Windows agents
-%\begin{itemize}
-%\item Install Windows agents with the .msi package
-%\item Install Windows agents with the installer
-%\item Install Windows agents using msiexec from the command line
-%\begin{itemize}
-%\item MSI properties
-%\end{itemize}
-%\item Upgrading or downgrading between 32-bit and 64-bit Puppet on Windows
-%\begin{itemize}
-%\item Upgrading to 64-bit
-%\item Downgrading to 32-bit
-%\end{itemize}
-%\end{itemize}
-%\item Install macOS agents
-%\begin{itemize}
-%\item Add full disk access for Puppet on macOS 10.14 and newer
-%\item Install macOS agents from Finder
-%\item Install macOS agents from the command line
-%\item Install macOS agents with Homebrew
-%\end{itemize}
+There are different ways to install Puppent agents, also considering that it is possible to install them not only in Linux but also in Windows and MacOS.
+In Linux, after enabling Puppet platform repository, install the agent by the terminal using the command appropriate to the OS environment and start the Puppet service.
+In Windows, it is possible to use msi package to install agent. It is also possible to upgrade or downgrade between 32-bit and 64-bit Puppet on Windows nodes.
+In MacOS, there are different ways to install agent: from Finder, the command line or Homebrew.
 
 \cite{puppetDocSupportAgents}
 
 \section{Tecnologies for testing Puppet}
-%TBD
+One way to test modules is using \textbf{Litmus}, which is installed as (experimental) part of Puppet Development Kit(PDK). It is "a command line tool that allows you to run acceptance tests against Puppet modules for a variety of OSes and deployment scenarios"\cite{puppetLitmus}.
+
+PDK includes a series of tools to test Puppet, not only for modules but also for code, such as:
+\begin{itemize}
+    \item \textbf{puppet-lint} checks that Puppet manifests conform to the style guide\newline
+    https://github.com/puppetlabs/puppet-lint
+    \item \textbf{metadata-json-lint} validates and lint Puppet metadata.json files\newline
+    https://github.com/voxpupuli/metadata-json-lint
+    \item \textbf{puppetlabs-rspec} tests for Puppet manifests and modules\newline
+    https://github.com/puppetlabs/rspec-puppet
+    \item \textbf{rspec-puppet-facts} simplify unit tests by looping on every supported Operating System and populating facts\newline
+    https://github.com/voxpupuli/rspec-puppet-facts
+\end{itemize}
+Some of them are from \texttt{Vox Populi}, where there are many tools created by the community to execute different tests.
+There are some test tools created by the community also on \texttt{Puppet Forge}.
+It also exists a Puppet Extension for Visual Studio Code and a Puppet Plugin for IntelliJ Idea.
 
 \section{Learning curve}
 It is possible to consider Puppet learning curve not one of the fastest.
