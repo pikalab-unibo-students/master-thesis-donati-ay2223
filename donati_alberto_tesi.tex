@@ -942,7 +942,7 @@ Unit tests can still provide some testing support by testing the logic contained
 
 \section{Learning curve}
 The learning curve is not the fastest and has some configurations that are not intuitive in a completely agent-less way.
-Also, considering that, even if is allowed, the connection is not passed by SSH; it is better to understand the ZeroMQ messaging technology.
+Also, considering that, even if is allowed, SSH connections are not recommended, it is better to understand the ZeroMQ messaging technology.
 Having a basic understanding of how ZeroMQ works can help you better understand how SaltStack operates under the hood about the communication between nodes (master and minions).
 But it needs to be considered that the project is Python-based, considered a simple language, and also the state files (to describe the state of system components) are written in YAML, a very simple language to make configuration files.
 
@@ -1667,15 +1667,15 @@ About years of creation, Puppet is the oldest, created in 2005, and Ansible is t
     \hline
     \textbf{Tool} & \textbf{agent-agentless} \\ \hline
     Ansible       & agentless                \\ \hline
-    Chef          & agent                    \\ \hline
     Salt          & agent                    \\ \hline
+    Chef          & agent                    \\ \hline
     Puppet        & agent                    \\ \hline
     \end{tabular}
 \end{table}
 Ansible is the only pure agentless tool examined. Others have as the preferred type of working the agent-server.
 Others have also implemented agentless mode, but to have the complete functionalities given by the tool is recommended to use the agent approach.
 Having an agent could contribute to having better control of machines, but it needs extra configuration and resources on the nodes.
-Ansible needs SSH to send commands to the nodes but no extra installations (besides Python in many case) or configuration is needed on the nodes.
+Ansible needs SSH to send commands to the nodes but no extra installations (besides Python in many cases) or configuration is needed on the nodes.
 
 \subsection{Language of the project}
 \begin{table}[H]
