@@ -142,7 +142,7 @@ The structure will be something like this:
 \chapter{State of the art}
 
 \section{What are automation tools}
-We could consider in some way that for DevOps purposes all the job we need to execute is expressed in the form of code\cite{learnDevOps}.
+We could consider in some way that for DevOps purposes all the job we need to execute is expressed in the form of code~\cite{learnDevOps}.
 
 
 And also the configuration of servers and installations of software could do that.
@@ -223,13 +223,13 @@ Ubuntu is one of the most popular Linux distributions, Ubuntu has great communit
 Canonical helps and contributes to Ubuntu distribution but also sells some products related like support, differences updates, and infrastructures.
 
 An example of an automation tool could be Red Hat which offers Ansible Automation Platform.
-Red Hat describes it as an end-to-end automation platform able to scale across the entire enterprise that is useful to configure systems, deploy software, and orchestrate advanced workflows.\cite{ansibleAutomationPlatform}
-Automation controller is a part of Ansible Automation Platform, and there is a sort of community-supported alternative called "AWX"\cite{ansibleAwxAAP}.
-Red Hat explains that Automation controller "is produced by taking selected releases of AWX, hardening them for long-term supportability, and making them available to customers as a hosted service within Red Hat Ansible Automation Platform"\cite{ansibleFaq}.
+Red Hat describes it as an end-to-end automation platform able to scale across the entire enterprise that is useful to configure systems, deploy software, and orchestrate advanced workflows.~\cite{ansibleAutomationPlatform}
+Automation controller is a part of Ansible Automation Platform, and there is a sort of community-supported alternative called "AWX"~\cite{ansibleAwxAAP}.
+Red Hat explains that Automation controller "is produced by taking selected releases of AWX, hardening them for long-term supportability, and making them available to customers as a hosted service within Red Hat Ansible Automation Platform"~\cite{ansibleFaq}.
 
 Also Salt has open source versions and an enterprise version. The open source is free and usable via a command-line interface.
 The paid enterprise edition (but the prices are not available to the public), SaltStack Enterprise, adds some features such as GUI and support for Windows and MacOS.
-Salt offers professional services to help customers integrate with third-party systems, also, the Salt Enterprise API has many more features than the free version.\cite{saltTechTarget}
+Salt offers professional services to help customers integrate with third-party systems, also, the Salt Enterprise API has many more features than the free version.~\cite{saltTechTarget}
 
 
 So, when a company makes a big contribution to an open-source project there could be some negative implications ( for example regarding support or licenses), but the community nonetheless takes benefits.
@@ -300,7 +300,7 @@ After a period when Micheal was working on the automation of OpenStack with Pupp
 Ansible increased and Micheal and others had a good-sized company supporting it and more importantly, building great products on top of it.
 
 
-In 2015 Ansible was acquired from RedHat\cite{ansibleRedHat}.
+In 2015 Ansible was acquired from RedHat~\cite{ansibleRedHat}.
 
 
 Now, Ansible is currently one of the most used automation tools.
@@ -350,7 +350,7 @@ Ansible has
 We could consider the community very active, considering also that every few days a new issue appears.
 
 \subsection{Community way to help and improve}
-If someone with to be involved in the project there is the official page that explains\cite {ansibleGithub}.
+If someone with to be involved in the project there is the official page that explains~\cite{ansibleGithub}.
 
 \begin{itemize}
     \item Read Community Information for all kinds of ways to contribute to and interact with the project, including mailing list information and how to submit bug reports and code to Ansible.
@@ -360,16 +360,16 @@ If someone with to be involved in the project there is the official page that ex
     \item For a list of email lists, IRC channels and Working Groups, see the Communication page
 \end{itemize}
 
-There is also a sort of community-based platform to share collections and roles, called Ansible Galaxy\cite{ansibleGalaxy}.
+There is also a sort of community-based platform to share collections and roles, called Ansible Galaxy~\cite{ansibleGalaxy}.
 The documentation of Ansible also includes instructions to use Galaxy for the projects.
-An Ansible-related open source project is AWX which "provides a web-based user interface, REST API, and task engine built on top of Ansible"\cite{ansibleAWX}.
+An Ansible-related open source project is AWX which "provides a web-based user interface, REST API, and task engine built on top of Ansible"~\cite{ansibleAWX}.
 
 \section{Main Ansible components}
 
 \subsection{Inventory}
 Inventory defines nodes(also called hosts) of the infrastructure on which Ansible performs automations. Even if you can pass the host names from the terminal, it is good practice to create the inventory file.
 The hosts are inserted into groups so that you can run automations on multiple hosts at the same time.
-According to the Ansible documentation on inventory management\cite{ansibleDocInventory}, you can group the machines according to the following criteria:
+According to the Ansible documentation on inventory management~\cite{ansibleDocInventory}, you can group the machines according to the following criteria:
             
             \begin{itemize}
                 \item \textbf{What:} What purpose they were created for
@@ -394,7 +394,7 @@ There are modules for different jobs we want to perform, some are already provid
 One example is package installation via apt (ansible.builtin.apt).
 
 
-There are also many modules provided by the community. If the community and default modules are not enough, there is the option of creating custom modules\cite{ansibleDocNewModules}.
+There are also many modules provided by the community. If the community and default modules are not enough, there is the option of creating custom modules~\cite{ansibleDocNewModules}.
 
 
 Ansible modules are designed to be idempotent, which means that they will make changes to managed nodes only when necessary. This ensures that managed nodes remain desired, even if the playbook is run multiple times.
@@ -448,17 +448,17 @@ Windows in the last years supports a Linux layer directly integrated into the ma
 WSL (Windows Subsystem for Linux) allows the installation of a Linux distribution and the use of Linux commands on Windows.
 
 
-About Ansible, using Windows without WSL "is not natively supported as a control node"\cite{ansibleDocInstallIntro} and also
+About Ansible, using Windows without WSL "is not natively supported as a control node"~\cite{ansibleDocInstallIntro} and also
 
 
-"The Windows Subsystem for Linux is not supported by Ansible and should not be used for production systems."\cite{ansibleWinFaq}.
+"The Windows Subsystem for Linux is not supported by Ansible and should not be used for production systems."~\cite{ansibleWinFaq}.
 
 
 Besides that, it is possible to use Windows machines as hosts and run automation scripts on those.
 
 \subsection{Ansible project}
 
-Ansible project (not considering other projects directly related) is available at \url{https://github.com/ansible/ansible}\cite{ansibleGithub}.
+Ansible project (not considering other projects directly related) is available at \url{https://github.com/ansible/ansible}~\cite{ansibleGithub}.
 
 
 This project is mainly written in Python, and its License is GNU General Public License 3.0.
@@ -479,7 +479,7 @@ Without that, it is not needed to update and manage nodes. Having an agent allow
 
 If a technology like Ansible, in Linux, is entirely based on connection to SSH, it means that also the security of SSH is crucial.
 
-Anyway, it is possible to mitigate the risk of SSH. For example, instead of using a password use keys for authentication and insert a password for sudo privileges\cite{ansibleSSH}.
+Anyway, it is possible to mitigate the risk of SSH. For example, instead of using a password use keys for authentication and insert a password for sudo privileges~\cite{ansibleSSH}.
 
 Unlike Linux/Unix hosts, which use SSH by default, Windows hosts are configured with WinRM, which communicates over HTTP/HTTPS.
 
@@ -493,16 +493,16 @@ It is possible to write them. In the documentation is explained that:
 Plugins are pieces of code that augment Ansible's core functionality. Ansible uses a plugin architecture to enable a rich, flexible and expandable feature set.
 
 
-Ansible ships with a number of handy plugins, and you can easily write your own."\cite{ansibleDocPlugins}.
+Ansible ships with a number of handy plugins, and you can easily write your own."~\cite{ansibleDocPlugins}.
 
 
 About the creation of modules, Ansible doc explains that:
 
 
-"If you need functionality that is not available in any of the thousands of Ansible modules found in collections, you can easily write your own custom module. When you write a module for local use, you can choose any programming language and follow your own rules."\cite{ansibleDocNewModules}
+"If you need functionality that is not available in any of the thousands of Ansible modules found in collections, you can easily write your own custom module. When you write a module for local use, you can choose any programming language and follow your own rules."~\cite{ansibleDocNewModules}
 
 \section{Installation}
-As indicated in the official documentation\cite{ansibleDocInstall}:
+As indicated in the official documentation~\cite{ansibleDocInstall}:
 
 Ansible community packages are distributed in two ways:
 
@@ -532,7 +532,7 @@ The installation requires only about 80 MegaByte.
 
 \subsection{Example}
 
-There is a very simple way to make a fast test to see if Ansible is working, following that simple tutorial\cite{ansibleRIP}.
+There is a very simple way to make a fast test to see if Ansible is working, following that simple tutorial~\cite{ansibleRIP}.
 
 
 First, create a dir to work on it with the \texttt{mkdir} command.
@@ -572,7 +572,7 @@ Usually, it is a good practice to execute tests in a dev environment. So, if som
 
 In our case, we need to check the Ansible Playbooks.
 
-Considering some advice taken from \textbf{Ansible for DevOps} \cite{ansibleForDevOps}, there is three type of test:
+Considering some advice taken from \textbf{Ansible for DevOps} ~\cite{ansibleForDevOps}, there is three type of test:
 
 \textbf{Unit testing}, would typically apply to individual playbooks.
 Run individual playbooks in an isolated environment could be done, but it could be not too useful in that case. It is useful to check the playbook syntax
@@ -621,7 +621,7 @@ The project Ansible Molecules helps in the development and testing of Ansible co
 Also, "Molecule provides support for testing with multiple instances, operating systems and distributions, virtualization providers, test frameworks and testing scenarios." and 
 
 
-"Molecule encourages an approach that results in consistently developed roles that are well-written, easily understood and maintained."\cite{ansibleMolecule}
+"Molecule encourages an approach that results in consistently developed roles that are well-written, easily understood and maintained."~\cite{ansibleMolecule}
 
 \section{Learning curve}
 Ansible has a very fast learning curve, considering that Ansible that the automation is written in YAML files.
@@ -633,13 +633,13 @@ Also, the project was written in Python, so understanding the project is simpler
 %SALT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Salt}
-Salt declares itself as "the world's fastest, most intelligent and scalable automation engine"\cite{saltDocAbout}.
+Salt declares itself as "the world's fastest, most intelligent and scalable automation engine"~\cite{saltDocAbout}.
 
 
 Salt (called also SaltStack or Salt Project) is a Python-written and event-driven configuration management tool, available at \url{https://saltproject.io/}.
 
 
-It describes itself as "SaltStack is a revolutionary approach to infrastructure management that replaces complexity with speed. SaltStack is simple enough to get running in minutes, scalable enough to manage tens of thousands of servers, and fast enough to communicate with each system in seconds."\cite{saltDocStart}
+It describes itself as "SaltStack is a revolutionary approach to infrastructure management that replaces complexity with speed. SaltStack is simple enough to get running in minutes, scalable enough to manage tens of thousands of servers, and fast enough to communicate with each system in seconds."~\cite{saltDocStart}
 
 
 Salt users can personalize their experience by writing their scripts and programs, and also use prebuilt configurations created by the user community.
@@ -647,7 +647,7 @@ Salt users can personalize their experience by writing their scripts and program
 \section{The begin of Salt}
 
 \subsection{History}
-Salt was started in 2011, as a project ideated by Thomas S. Hatch which was not satisfied with other open source technologies available\cite{saltFloss}. He decided to use the fast ZeroMQ for connections and messages between machines. Some steps can be seen at \url{https://red45.wordpress.com/2011/05/29/
+Salt was started in 2011, as a project ideated by Thomas S. Hatch which was not satisfied with other open source technologies available~\cite{saltFloss}. He decided to use the fast ZeroMQ for connections and messages between machines. Some steps can be seen at \url{https://red45.wordpress.com/2011/05/29/
 salt-configuration-management/}
 
 
@@ -660,20 +660,20 @@ For example, he posted about \textbf{Salt Configuration Management} when he wrot
 The states of machines in Salt are written on YAML, and Salt compiles these configurations in Python data structure.
 
 
-Following the documentation: "The core of the Salt State system is the SLS, or Salt State file. The SLS is a representation of the state in which a system should be in, and is set up to contain this data in a simple format."\cite{saltDocSLS}.
+Following the documentation: "The core of the Salt State system is the SLS, or Salt State file. The SLS is a representation of the state in which a system should be in, and is set up to contain this data in a simple format."~\cite{saltDocSLS}.
 
-Also, some improvements are written about documentation publishing a post with the title \textbf{Initial Salt Docs Site Up!}\cite{saltPost}.
-
-
-Considering that Salt has support also for Windows machines, we could see a first attempt of that in December 2011 with \textbf{Windows is Being Salted!} post \cite{saltPost2}.
+Also, some improvements are written about documentation publishing a post with the title \textbf{Initial Salt Docs Site Up!}~\cite{saltPost}.
 
 
-In that post, he wrote "There is no escape from the ongoing march of Salt platform support, even Windows is now controllable via Salt! While Salt on Windows is still in its infancy, Dave Boucha has accomplished it and we have pushed the needed patches upstream. This only works on the latest git checkout of Salt and 0.9.5 will include experimental support for Windows!"\cite{saltPost2}.
+Considering that Salt has support also for Windows machines, we could see a first attempt of that in December 2011 with \textbf{Windows is Being Salted!} post ~\cite{saltPost2}.
+
+
+In that post, he wrote "There is no escape from the ongoing march of Salt platform support, even Windows is now controllable via Salt! While Salt on Windows is still in its infancy, Dave Boucha has accomplished it and we have pushed the needed patches upstream. This only works on the latest git checkout of Salt and 0.9.5 will include experimental support for Windows!"~\cite{saltPost2}.
 
 During years after years, Salt grew, and in 2020 was acquired by VMware.
 
-About the acquisition, VMware said that "it's committed to preserving SaltStack's open source community after the deal closes"\cite{saltAcq}.
-In VMware's blog, it is possible to read the confirmation about the end of the acquisition\cite{saltAcqEnd}.
+About the acquisition, VMware said that "it's committed to preserving SaltStack's open source community after the deal closes"~\cite{saltAcq}.
+In VMware's blog, it is possible to read the confirmation about the end of the acquisition~\cite{saltAcqEnd}.
 Some months before the acquisition there were big security issues related to Salt. These issues were enough important to have two CVE-related, CVE-2020-11651 and CVE-2020-11652.
 
 \section{Purpose of the technology}
@@ -706,7 +706,7 @@ On the official GitHub repo \url{https://github.com/saltstack/salt} about the sp
 "Salt powers VMware's VMware Aria Automation Config (previously vRealize Automation SaltStack Config / SaltStack Enterprise), and can be found under the hood of products from Juniper, Cisco, Cloudflare, Nutanix, SUSE, and Tieto, to name a few.
 
 
-The original sponsor of our community, SaltStack, was acquired by VMware in 2020. The Salt Project remains an open source ecosystem that VMware supports and contributes to. VMware ensures the code integrity and quality of the Salt modules by acting as the official sponsor and manager of the Salt project. Many of the core Salt Project contributors are also VMware employees. This team carefully reviews and enhances the Salt modules to ensure speed, quality, and security."\cite{saltGitHub}
+The original sponsor of our community, SaltStack, was acquired by VMware in 2020. The Salt Project remains an open source ecosystem that VMware supports and contributes to. VMware ensures the code integrity and quality of the Salt modules by acting as the official sponsor and manager of the Salt project. Many of the core Salt Project contributors are also VMware employees. This team carefully reviews and enhances the Salt modules to ensure speed, quality, and security."~\cite{saltGitHub}
 
 
 Also, there is a good community of more than 2000 contributors and there are hundreds of businesses who use it.
@@ -737,13 +737,13 @@ Salt has the following channels to being known better and to invite to participa
     \item Twitch
     \item Reddit
 \end{itemize}
-On Twitter Salt declares itself community as "One of the largest, friendliest, and most active open source communities in the world"\cite{saltTwitter}.
+On Twitter Salt declares itself community as "One of the largest, friendliest, and most active open source communities in the world"~\cite{saltTwitter}.
 It is possible to contact directly the Community Manager, which is Jimmy Chunga, via Slack.
 Also, there are some events about Salt:
-"Every month, there are around a dozen opportunities to meet with other contributors and the Salt Core team and collaborate in real time. The best way to keep track is by subscribing to the Salt Project Community Events Calendar on the main https://saltproject.io website."\cite{saltGitHub}
+"Every month, there are around a dozen opportunities to meet with other contributors and the Salt Core team and collaborate in real time. The best way to keep track is by subscribing to the Salt Project Community Events Calendar on the main https://saltproject.io website."~\cite{saltGitHub}
 Salt is very open to contribution so they also have an email to contact \texttt{saltproject@vmware.com} for questions.
 
-On Salt also exist \textbf{Working Groups} where "community members join in collaboration with the Salt Core Team to decide on objectives and goals to propel the overall project forward while working specific projects"\cite{saltWG}.
+On Salt also exist \textbf{Working Groups} where "community members join in collaboration with the Salt Core Team to decide on objectives and goals to propel the overall project forward while working specific projects"~\cite{saltWG}.
 
 \section{Main Salt components}
 
@@ -752,11 +752,11 @@ On Salt also exist \textbf{Working Groups} where "community members join in coll
 Salt Master is used to communicate with other machines to execute commands of various types.
 The technology for Communication used is ZeroMQ. Salt is usually used with agents(minions), but is also possible to make connections with nodes with SSH.
 
-Salt SSH is not a substitute for standard communication of Salt, but it is a valid alternative but not as fast as ZeroMQ\cite{saltSSH}.
+Salt SSH is not a substitute for standard communication of Salt, but it is a valid alternative but not as fast as ZeroMQ~\cite{saltSSH}.
 
 Salt Manager uses also Pillar with minions as
 "tree-like structures of data defined on the Salt Master and passed through to minions.
-They allow confidential, targeted data to be securely sent only to the relevant minion."\cite{saltDocPillar}
+They allow confidential, targeted data to be securely sent only to the relevant minion."~\cite{saltDocPillar}
 
 The Salt Master configuration file follows these parts to be correctly set.
 \begin{itemize}
@@ -834,7 +834,7 @@ First, the reactor option needs to be set in the master configuration file.
 The reactor option allows for event tags to be associated with SLS reaction files.
 
 
-Second, these reaction files use highdata (like the state system) to define reactions to be executed.\cite{saltDocReactor}
+Second, these reaction files use highdata (like the state system) to define reactions to be executed.~\cite{saltDocReactor}
 
 \subsection{Grains}
 Salt can take information about the target system.
@@ -846,7 +846,7 @@ This ability is called the Grains interface because it presents salt with grains
 Grains are collected for the operating system, domain name, IP address, kernel, OS type, memory, and many other system properties.
 
 
-The grains interface is made available to Salt modules and components so that the right salt-minion commands are automatically available on the right systems.\cite{saltDocGrains}
+The grains interface is made available to Salt modules and components so that the right salt-minion commands are automatically available on the right systems.~\cite{saltDocGrains}
 
 
 \subsection{modules}
@@ -863,7 +863,7 @@ In Salt, both modules and execution modules are Python (or Cython) files that co
 \subsection{Platforms available (Linux, Windows, MacOS)}
 Salt is natively supported in many Linux, MacOS and Windows systems, in controlled nodes.
 In node that acts as a master node, it seems reading the documentation that only in (many) Linux systems can do that.
-Salt has created a table, with detailed explanations, with many OS and distributions with relative Salt compatibility\cite{saltDocTable}.
+Salt has created a table, with detailed explanations, with many OS and distributions with relative Salt compatibility~\cite{saltDocTable}.
 
 \subsection{Salt project}
 The project is available under the Apache 2.0 license. This license includes very few restrictions on the modification and distribution of the project.
@@ -878,13 +878,13 @@ Usually, it is better to use the agent mode because Salt is thought and construc
 \subsection{Extensions of the project}
 About the creation of Salt execution module, it is possible to write the Salt execution module it prefers,
 for the docs "A Salt execution module is a Python or Cython module
-placed in a directory called \_modules/ at the root of the Salt fileserver".\cite{saltDocModules}
+placed in a directory called \_modules/ at the root of the Salt fileserver".~\cite{saltDocModules}
 Salt has a way to better manage modules, that consist in the use of imported modules zipped (.zip) archive.
 All of the Salt execution modules are available to each other and modules can call functions available in other execution modules.
 
 \section{Installation}
 
-In the official documentation\cite{saltDocInstall} there is a table with different passages to correctly install Salt on the system.
+In the official documentation~\cite{saltDocInstall} there is a table with different passages to correctly install Salt on the system.
 
 Install the salt-master service on the node that will manage your other nodes, meaning it will send commands to other nodes. Then, install the salt-minion service on the nodes that will be managed by the Salt master.
 
@@ -922,20 +922,20 @@ https://docs.saltproject.io/en/latest/topics/tutorials/writing\_tests.html}.
 Salt comes with a powerful integration and unit test suite, which are two ways to test Salt with different approaches.
 The test suite allows for the fully automated run of integration and/or unit tests from a single interface.
 Salt's test suite is located under the \textbf{tests} directory in the root of Salt's code base and is divided into two main types described above.
-The \textbf{unit} and \textbf{integration} sub-test-suites are located in the \textbf{tests} directory, which is where the majority of Salt's test cases are housed.\cite{saltDocTest}
+The \textbf{unit} and \textbf{integration} sub-test-suites are located in the \textbf{tests} directory, which is where the majority of Salt's test cases are housed.~\cite{saltDocTest}
 
 
 Integration tests, the preferred way to test Salt, use Salt masters, minions, and a syndic(that is a sort of passthrough/intermediate Minion node) to test Salt functionality directly and focus on testing the interaction of these components.
 Salt's integration test runner includes functionality to run Salt execution modules, runners, states, shell commands, salt-ssh commands, salt-api commands, and more.
 Since Salt is used to change the settings and behavior of systems, usually is convenient to run integration tests in a subsystem.
-Integration tests could be written on purpose to modify the system where they are running, and they are called \textbf{destructive tests}\cite{saltDocTest}.
+Integration tests could be written on purpose to modify the system where they are running, and they are called \textbf{destructive tests}~\cite{saltDocTest}.
 
 
 Unit tests try to test a single implementation of a certain function and its logic. Unit tests should be used to test a function's exit points such as any return/raise statements.
 In the part of documentation dedicated to unit tests, there are some examples with different complexity: simple, complete, and complex.
 Unit tests are also useful in cases where writing an integration test might not be possible.
 Even if the integration test suite is powerful it does not cover all functional areas of Salt's ecosystem (for example Proxy Minions).
-Unit tests can still provide some testing support by testing the logic contained inside Proxy Minion functions.\cite{saltDocTest}.
+Unit tests can still provide some testing support by testing the logic contained inside Proxy Minion functions.~\cite{saltDocTest}.
 
 \section{Learning curve}
 The learning curve is not the fastest and has some configurations that are not intuitive in a completely agent-less way.
@@ -969,7 +969,7 @@ Integrate tightly with your applications, databases, LDAP directories, and more.
 
 
 Easily configure applications that require knowledge about your entire infrastructure."
-\cite{chefStory}
+~\cite{chefStory}
 
 They founded a new company (Opscode) with Barry Steinglass, Nathen Haneysmith, and Joshua Timberman to turn Chef into a product.
 Considering that this new tool used a set of recipes, the project was named \textbf{Chef} at the end.
@@ -980,11 +980,11 @@ In 2013, there was a post by Bryan McLellan about the new API server written in 
 
 The most significant new feature is that the Chef 11 Server is a complete rewrite of the core API server in Erlang, which we call Erchef.
 We learned a lot from running Opscode Hosted Chef, the single largest Chef Server, as well as supporting our Opscode Private Chef customers.
-Using these lessons and experience, we wrote the new server to be faster and more scalable, but still API compatible with the original Ruby based server."\cite{chefStory2}
+Using these lessons and experience, we wrote the new server to be faster and more scalable, but still API compatible with the original Ruby based server."~\cite{chefStory2}
 
 On 8th of September 2020
 
-Progress announced the acquisition of Chef \cite{chefStory3}.
+Progress announced the acquisition of Chef ~\cite{chefStory3}.
 
 The company created was called as now, \textbf{Progress Chef}.
 
@@ -1055,7 +1055,7 @@ That is available at \url{https://github.com/chef/chef-oss-practices}. It is als
 
 Also, there are defined communications \url{https://github.com/chef/chef-oss-practices/blob/main/communication/README.md}.
 
-There are four communication channels each with its specific purpose \cite{chefGithubOSSCom}:
+There are four communication channels each with its specific purpose ~\cite{chefGithubOSSCom}:
 
 
 \begin{itemize}
@@ -1085,13 +1085,13 @@ About the main structure, Chef has these 3 components.
 This structure is different from other similar tools.
 
 \textbf{Workstation}\newline
-Chef Workstation is described as\cite{chefWorkstation}
+Chef Workstation is described as~\cite{chefWorkstation}
 "Chef Workstation gives you everything you need to get started with Chef, so you can automate how you audit, configure, and manage applications end environments".
 The local machine where the automation code is created and pushed to the Server also does other tasks such as executing remote scanning and configuration tasks.
 
 
 \textbf{Server}\newline
-Chef Server is described as\cite{chefServer}
+Chef Server is described as~\cite{chefServer}
 "Chef Infra Server is a hub for configuration data; storing cookbooks, node policies and metadata of managed nodes".
 This is where all the code for making automation resides. It also contains all the information about nodes.
 
@@ -1100,11 +1100,11 @@ This is where all the code for making automation resides. It also contains all t
 Client(s), also called \textbf{Infra Client}, are strictly related to nodes. The machines where the code needs to be executed.
 Chef Infra Client is installed on each node that's managed with Chef Infra. Chef Infra Client configures the node locally by performing the tasks specified in the run-list.
 Chef Infra Client will also pull down any required configuration data from the Chef Infra Server during a Chef Infra Client run.
-Chef Infra is described as\cite{chefInfra}
+Chef Infra is described as~\cite{chefInfra}
 "Chef Infra, a powerful automation platform that transforms infrastructure into code automating how infrastructure is configured, deployed and managed across any environment, at any scale".
 \newline
 
-It is possible to visualize in that graphic \cite{chefFreeCodeCamp}
+It is possible to visualize in that graphic ~\cite{chefFreeCodeCamp}
 \newline
 
 \begin{figure}[H]
@@ -1135,7 +1135,7 @@ It also exists \textbf{automatic attributes} for example contain info about the 
 
 
 \subsection{Example of Recipe}
-An example of a recipe\cite{chefDigitalOcean}:
+An example of a recipe~\cite{chefDigitalOcean}:
 
 \lstinputlisting[label={lst:exampleRecipeChef}]{listings/exampleRecipeChef.rb}
 
@@ -1168,7 +1168,7 @@ The commercial support is described in the official Chef documentation as:
 
 
 Commercial support is limited to the platforms listed in the "Commercial Support" tables.
-Platforms not listed in those are unsupported"\cite{chefDocPlatforms}.
+Platforms not listed in those are unsupported"~\cite{chefDocPlatforms}.
 
 Instead, the Community Support is considered but differently:
 "Community support for platforms means that members of the Chef community have contributed to these platforms and Chef doesn't actively work to maintain this functionality. Chef doesn't explicitly test community-supported platforms as part of the development and release process.
@@ -1177,7 +1177,7 @@ Many of these are forks, clones, or otherwise derivative of platforms that Chef 
 Continued functionality for these platforms is likely, but not guaranteed.
 Unsupported platforms may have missing or non-operative functionality.
 As always, we welcome community contributions from anyone
-looking to expand community support for platforms in Chef products"\cite{chefDocPlatforms}.
+looking to expand community support for platforms in Chef products"~\cite{chefDocPlatforms}.
 
 
 There is also support for \textbf{Derived Platforms}, for example for a distribution that is rebuilt on an original supported distribution.
@@ -1189,7 +1189,7 @@ It has also derived support for AlmaLinux, whose parent is CentOS but also a lot
 The open source projects published by Chef are under Apache 2.0 license.
 The main repo for Chef open source projects is \url{https://github.com/chef/}.
 The Chef Server is written almost completely in Erlang and also Ruby, Chef Infra is written in Ruby.
-The Chef Infra Language is a comprehensive systems configuration language, based on Ruby, with resources and helpers for configuring operating systems. The language is primarily used in Chef Infra recipes and custom resources to tell the Chef Infra Client what action(s) to take to configure a system\cite{chefInfraLanguage}.
+The Chef Infra Language is a comprehensive systems configuration language, based on Ruby, with resources and helpers for configuring operating systems. The language is primarily used in Chef Infra recipes and custom resources to tell the Chef Infra Client what action(s) to take to configure a system~\cite{chefInfraLanguage}.
 Ruby is a free and open-source language that is not the simplest but it is used for different uses, its first release was in 1995.
 
 \subsection{Architecture, agent or agentless}
@@ -1220,7 +1220,7 @@ There are two ways to use Chef Supermarket:
 The public Chef Supermarket is hosted by Chef Software and is located at Chef Supermarket.
 
 
-A private Chef Supermarket may be installed on-premise behind the firewall on the internal network. Cookbook retrieval from a private Chef Supermarket is often faster than from the public Chef Supermarket because of closer proximity and fewer cookbooks to resolve. A private Chef Supermarket can also help formalize internal cookbook release management processes (e.g. “a cookbook is not released until it is published on the private Chef Supermarket”)."\cite{chefSupermarket}
+A private Chef Supermarket may be installed on-premise behind the firewall on the internal network. Cookbook retrieval from a private Chef Supermarket is often faster than from the public Chef Supermarket because of closer proximity and fewer cookbooks to resolve. A private Chef Supermarket can also help formalize internal cookbook release management processes (e.g. “a cookbook is not released until it is published on the private Chef Supermarket”)."~\cite{chefSupermarket}
 
 \section{Installation}
 The Chef Software install script can be used to install any Chef Software, including things like Chef Infra Client, Chef Infra Server, and Chef InSpec.
@@ -1235,7 +1235,7 @@ This script does the following:
 \end{itemize}
 
 
-\cite{chefDocInstall}
+~\cite{chefDocInstall}
 
 \subsection{Example}
 
@@ -1253,27 +1253,27 @@ For Windows systems, via PowerShell:
 \end{lstlisting}
 
 
-\cite{chefDocInstall}
+~\cite{chefDocInstall}
 
 \section{Tecnologies for testing Chef}
 In Chef, like others, it is possible to simply check the syntax with a single command via the terminal.
-For exemple\cite{chefTestMedium}
+For exemple~\cite{chefTestMedium}
 \begin{lstlisting}
     chef exec ruby -c test-cookbook/recipes/test-recipe.rb
 \end{lstlisting}
 
 
 There is an entire suite for testing called Test Kitchen \url{https://kitchen.ci/} directly supported by Chef.
-Test Kitchen provides a test harness to execute infrastructure code on one or more platforms in isolation.\cite{chefTestKit}
-Test Kitchen is used by all Chef-managed community cookbooks and is the integration testing tool of choice for cookbooks.\cite{chefTestKit}
+Test Kitchen provides a test harness to execute infrastructure code on one or more platforms in isolation.~\cite{chefTestKit}
+Test Kitchen is used by all Chef-managed community cookbooks and is the integration testing tool of choice for cookbooks.~\cite{chefTestKit}
 There is also an official Chef guide, is explains the power of using Chef Workstation and Test Kitchen together, at \url{https://www.chef.io/docs/cheflibraries/product-and-user-guides/chefguide_test_kitchen.pdf}.
-Chef Workstation also includes InSpec, which is an open-source framework for testing and auditing your applications and infrastructure. It compares the actual state of your system with the desired state that you express in easy-to-read and easy-to-write Chef InSpec code. It detects violations and displays findings in the form of a report, but puts you in control of remediation.\cite{chefInSpec}
-Test Kitchen allows you to apply your Chef Infra cookbooks and recipes to a variety of machines. It is immediately possible to verify the results with Chef InSpec, ensuring that those systems are properly deployed and remain in the states you want.\cite{chefTestKitPdf}
+Chef Workstation also includes InSpec, which is an open-source framework for testing and auditing your applications and infrastructure. It compares the actual state of your system with the desired state that you express in easy-to-read and easy-to-write Chef InSpec code. It detects violations and displays findings in the form of a report, but puts you in control of remediation.~\cite{chefInSpec}
+Test Kitchen allows you to apply your Chef Infra cookbooks and recipes to a variety of machines. It is immediately possible to verify the results with Chef InSpec, ensuring that those systems are properly deployed and remain in the states you want.~\cite{chefTestKitPdf}
 
 \section{Learning curve}
 Even if it is not the simplest, Chef has a good community with actively supports the technology and other developers.
 The Infra Client is written in Ruby but the server is a mix of Erlang and Ruby for most of the part.
-The Chef Infra Language, based on Ruby, is not difficult to understand but it is not the simplest language, in fact, in the official documentation of Ruby it is possible to read about Ruby that the creator, Yukihiro Matsumoto, "trying to make Ruby natural, not simple"\cite{rubyDoc}.
+The Chef Infra Language, based on Ruby, is not difficult to understand but it is not the simplest language, in fact, in the official documentation of Ruby it is possible to read about Ruby that the creator, Yukihiro Matsumoto, "trying to make Ruby natural, not simple"~\cite{rubyDoc}.
 
 %***********************************
 %*** PUPPET
@@ -1284,8 +1284,8 @@ Puppet works defining a desired state. Different from other languages, Puppet us
 It has a high flexibility in the system where it can be used, so it has compatibility with different platforms.
 \textbf{Puppet code} is a declarative language, and Puppet works defining the state desired. Puppet then automates putting the system into the state described.
 The Puppet Server stores the code that defines your desired state and the Puppet agent translates your code into commands and then executes it on the systems you specify, in what is called a Puppet run.
-\cite{puppetDocIndex}
-\cite{puppetDocWhatIs}
+~\cite{puppetDocIndex}
+~\cite{puppetDocWhatIs}
 
 \section{The beginning of Puppet}
 
@@ -1294,28 +1294,28 @@ Puppet began in 2005 by Luke Kanies
 "Luke Kanies is the Founder and CEO of Clickety. He also founded Puppet and Puppet Labs in 2005 out of fear and desperation, with the goal of producing better operations tools and changing how we manage systems.
 
 
-He has been publishing and speaking on his work in system administration since 1997, focusing on development since 2001. He has developed and published multiple simple sysadmin tools and contributed to established products like Cfengine, and has presented on Puppet and other tools around the world, including at OSCON, LISA, Linux.Conf.au, and FOSS.in. His work with Puppet has been an important part of DevOps and delivering on the promise of cloud computing".\cite{puppetStory1}
+He has been publishing and speaking on his work in system administration since 1997, focusing on development since 2001. He has developed and published multiple simple sysadmin tools and contributed to established products like Cfengine, and has presented on Puppet and other tools around the world, including at OSCON, LISA, Linux.Conf.au, and FOSS.in. His work with Puppet has been an important part of DevOps and delivering on the promise of cloud computing".~\cite{puppetStory1}
 
 
-In 2010, "Data center automation company Puppet Labs has acquired an open source project called The Marionette Collective. The project, also known as the Mcollective, is a framework to build server orchestration or parallel job execution systems".\cite{puppetStory2}
+In 2010, "Data center automation company Puppet Labs has acquired an open source project called The Marionette Collective. The project, also known as the Mcollective, is a framework to build server orchestration or parallel job execution systems".~\cite{puppetStory2}
 The open source project acquired aims to programmatically execute actions on clusters of servers.
 This acquisition wishes to help provide multi-server and multi-datacenter orchestration for the companies that use Puppet Labs framework for systems management.
-The Marionette Collective's real-time capabilities for networking made it simpler to schedule complex sequences of activities using data available from the Puppet platform.\cite{puppetStory2}
+The Marionette Collective's real-time capabilities for networking made it simpler to schedule complex sequences of activities using data available from the Puppet platform.~\cite{puppetStory2}
 
 
 In 2011 version 2.0 of Puppet was announced with some interesting features. These include new orchestration capabilities that give systems administrators “command and control”
 power to efficiently make parallel changes across clusters of nodes with just a single
 command. Also, there were new baselining capabilities that enabled systems administrators to monitor their
 infrastructure's compliance against a desired state, a critical input to comprehensive
-change management and auditing processes\cite{puppetStory3}.
+change management and auditing processes~\cite{puppetStory3}.
 
 
-In 2017, Puppet announced that it had acquired Distelli, a Seattle startup founded in 2015 by Singh that helps software engineers deploy code more efficiently.\cite{puppetStory4}
-About that acquisition, Puppet Chief Product Officer that was at that time Omri Gazitt who said “We quickly realized Distelli represented the best of everything that we were hoping to get” and “matched perfectly with our philosophy”\cite{puppetStory4}.
+In 2017, Puppet announced that it had acquired Distelli, a Seattle startup founded in 2015 by Singh that helps software engineers deploy code more efficiently.~\cite{puppetStory4}
+About that acquisition, Puppet Chief Product Officer that was at that time Omri Gazitt who said “We quickly realized Distelli represented the best of everything that we were hoping to get” and “matched perfectly with our philosophy”~\cite{puppetStory4}.
 
 
 In 2022, Perforce acquired Puppet, as described on the official Perforce site:
-"Perforce Software (“Perforce”), a provider of solutions to enterprise teams requiring productivity, visibility, and scale along the development lifecycle, backed by Francisco Partners and Clearlake Capital Group, L.P. (together with its affiliates, “Clearlake”), announced today that it has signed a definitive agreement to acquire Puppet (or “the Company”), an infrastructure automation software platform which enables users to deliver, update, monitor, and secure software across physical and virtual machines"\cite{puppetStory5}.
+"Perforce Software (“Perforce”), a provider of solutions to enterprise teams requiring productivity, visibility, and scale along the development lifecycle, backed by Francisco Partners and Clearlake Capital Group, L.P. (together with its affiliates, “Clearlake”), announced today that it has signed a definitive agreement to acquire Puppet (or “the Company”), an infrastructure automation software platform which enables users to deliver, update, monitor, and secure software across physical and virtual machines"~\cite{puppetStory5}.
 
 
 Over the years, Puppet has grown raising money and growing its set of technological partners.
@@ -1323,7 +1323,7 @@ Now it has its 8.4.x version.
 
 \section{Purpose of the technology}
 Puppet is a project proud to be open source, it encourages a lot of the participation of the community.
-It creates a sort of group to thank with some benefits dedicated to that, called "Puppet Champion", and also a special group called "The League of Extraordinary Puppeteers"\cite{puppetDocChampions}.
+It creates a sort of group to thank with some benefits dedicated to that, called "Puppet Champion", and also a special group called "The League of Extraordinary Puppeteers"~\cite{puppetDocChampions}.
 
 
 Puppet is built on the concept of IaS (Infrastructure as Code), meaning that the infrastructure is created by writing code by the system administrator adopting practices that are traditionally associated with software developers.
@@ -1341,10 +1341,10 @@ Puppet offers a scalable solution, that allows the system administrators to cent
 When adopting a tool like Puppet, Puppet itself advises using it with an agile methodology in mind (making incremental units of work and reusing code).
 With more familiarity with Puppet, more scalability is possible. And also agile invites colleagues to spread the work between them.
 Sharing common Puppet methodology and language between colleagues allows the business to work more efficiently.
-\cite{puppetIntroMedium}\cite{puppetDocIntro}
+~\cite{puppetIntroMedium}~\cite{puppetDocIntro}
 
 
-There are some Puppet use cases, for example, Alex Zbarcea, DevOps Engineer III, Fannie Mae said "Puppet forces you to have accountability for each artifact managed in production. You'll know nothing is being missed, nothing is not being tracked. Puppet brings a lot of health into configuration management, giving visibility to teams across silos so they know the lifecycle of each artifact for services required for other services. Puppet is great at answering: Are the services configured as they should be? Did anything change? Is there a conflict between configuration processes? Puppet brings consistency and predictability into the environment. When you have to upgrade a service, it's so much easier"\cite{puppetDocUseCase}.
+There are some Puppet use cases, for example, Alex Zbarcea, DevOps Engineer III, Fannie Mae said "Puppet forces you to have accountability for each artifact managed in production. You'll know nothing is being missed, nothing is not being tracked. Puppet brings a lot of health into configuration management, giving visibility to teams across silos so they know the lifecycle of each artifact for services required for other services. Puppet is great at answering: Are the services configured as they should be? Did anything change? Is there a conflict between configuration processes? Puppet brings consistency and predictability into the environment. When you have to upgrade a service, it's so much easier"~\cite{puppetDocUseCase}.
 
 
 \subsection{Best points of Puppet}
@@ -1376,19 +1376,19 @@ Puppet has
     \item $>$580 contributors
     \item 12.2k projects use it as a dependency
 \end{itemize}
-\cite{puppetGitHubProject}
+~\cite{puppetGitHubProject}
 We could consider the community active as contributors and very used as a dependency. There are not a lot of issues and pull requests. Anyway, it has a lot of stars and forks.
 
 \subsection{Community way to help and improve}
 The main GitHub community page has a photo and also a description of the Puppet community:
-"At Puppet, open source software is in our DNA. From the earliest days of Facter to the latest version of Bolt, we've always been firm believers in the power of open source. We have a supportive, active community of thousands of people just like you who are making Puppet better — and making IT a better place to work"\cite{puppetGitHubGeneral}.
+"At Puppet, open source software is in our DNA. From the earliest days of Facter to the latest version of Bolt, we've always been firm believers in the power of open source. We have a supportive, active community of thousands of people just like you who are making Puppet better — and making IT a better place to work"~\cite{puppetGitHubGeneral}.
 
 There are also many channels available to contribute/participate in the community:
 \begin{itemize}
     \item Slack at \url{https://slack.puppet.com}
     \item Tickets at \url{https://tickets.puppet.com}
     \item Forge at \url{https://forge.puppet.com}
-    \item Voxpupuli at \url{https://voxpupuli.org} (described as "collective of Puppet module, tooling and documentation authors all working together to ensure continued development on the code we maintain")\cite{puppetVox}
+    \item Voxpupuli at \url{https://voxpupuli.org} (described as "collective of Puppet module, tooling and documentation authors all working together to ensure continued development on the code we maintain")~\cite{puppetVox}
     \item dev.to and dev.to feed at \url{https://dev.to/puppet}, \url{https://dev.to/feed/tag/puppet}
     \item Mastodon at \url{https://fosstodon.org/@puppet}
     \item GitHub discussion at \url{https://github.com/puppetlabs/community/discussions}
@@ -1400,7 +1400,7 @@ For example, three Mailing List on Google Groups at \url{https://groups.google.c
 
 There is a calendar with meetings, streams, etc. at \url{https://www.puppet.com/community/calendar}.
 There is a dedicated customer experience research program for the community, called Puppet Test Pilots. It offers benefits like gift cards or charity donations for participating, at \url{https://www.puppet.com/community/puppet-test-pilots}.
-There is a Puppet Dev Kit at \url{https://www.puppet.com/community/open-source} to develop and test Puppet modules by providing a simple, unified interface to a set of helpful tools for anyone who writes or consumes Puppet code\cite{puppetDocDevKit}.
+There is a Puppet Dev Kit at \url{https://www.puppet.com/community/open-source} to develop and test Puppet modules by providing a simple, unified interface to a set of helpful tools for anyone who writes or consumes Puppet code~\cite{puppetDocDevKit}.
 
 Other particular programs are Puppet Champions and The League of Extraordinary Puppeteers.
 Puppet Champions is a group that allows you to have some benefits like Puppet presentations, demos, Puppet store discounts, stickers, etc.
@@ -1420,12 +1420,12 @@ It is possible to add custom facts by writing snippets of Ruby code on the prima
 It exists \texttt{external facts} that provide a way to use arbitrary executables or scripts as facts, or set facts statically with structured data.
 It has also a configuration file called \textbf{facter.conf} that allows the user to cache and block fact groups and facts, and manage how Facter interacts with the system.
 
-\cite{puppetDocPlatform} \cite{puppetDocFacter}
+~\cite{puppetDocPlatform} ~\cite{puppetDocFacter}
 
 \textbf{Catalog}
 Catalog is a JSON document that describes the desired state of a specific agent node, created with facts received from Facter.
 Each agent requests and receives its own individual catalog and then enforces that desired state on the node it's running on.
-Puppet is so able to apply changes all across the entire infrastructure, ensuring that each node matches the state is defined with Puppet code. \cite{puppetDocPlatform}
+Puppet is so able to apply changes all across the entire infrastructure, ensuring that each node matches the state is defined with Puppet code. ~\cite{puppetDocPlatform}
 
 \textbf{Modules}
 Modules serve as the basic building blocks of Puppet and are reusable and shareable.
@@ -1433,12 +1433,12 @@ You keep nearly all of your Puppet code in modules that contain both code and da
 Using a tool called Hiera, you can separate the data from the code and place it in a centralized location.
 Each module manages a specific task in the infrastructure, such as installing and configuring a piece of software.
 Modules contain Puppet classes, defined types, tasks, task plans, functions, resource types and providers, and plug-ins such as custom types or facts. 
-\cite{puppetDocPlatform} \cite{puppetDocModules}
+~\cite{puppetDocPlatform} ~\cite{puppetDocModules}
 
 \textbf{PuppetDB}
 All of the data generated by Puppet (for example facts, catalogs, reports) is stored in the Puppet database (PuppetDB).
 Storing data in PuppetDB allows Puppet to work faster and provides an API for other applications to access Puppet's collected data.
-Once PuppetDB is full of your data, it becomes a great tool for infrastructure discovery, compliance reporting, vulnerability assessment, and more. These task can be done via PuppetDB queries. \cite{puppetDocPuppetDB}
+Once PuppetDB is full of your data, it becomes a great tool for infrastructure discovery, compliance reporting, vulnerability assessment, and more. These task can be done via PuppetDB queries. ~\cite{puppetDocPuppetDB}
 
 \textbf{Puppet agent}
 Puppet agent is the application that manages configurations on your nodes. It requires a Puppet primary server to fetch configuration catalogs.
@@ -1456,30 +1456,30 @@ That can be done with:
     To run on demand on many nodes it is possible to use Bolt \url{https://www.puppet.com/docs/bolt/} or deploy MCollective \url{https://forge.puppet.com/modules/puppet/mcollective/readme}.
 \end{itemize}
 
-\cite{puppetDocAgentNix} \cite{puppetDocAgentWin}
+~\cite{puppetDocAgentNix} ~\cite{puppetDocAgentWin}
 
 \textbf{Puppet device}
-With Puppet device, you can manage network devices, such as routers, switches, firewalls, and IoT devices, without installing a Puppet agent on them. \cite{puppetDocDevice}
+With Puppet device, you can manage network devices, such as routers, switches, firewalls, and IoT devices, without installing a Puppet agent on them. ~\cite{puppetDocDevice}
 
 \textbf{Puppet apply}
-Puppet apply is an application that compiles and manages configurations on nodes. It acts like a self-contained combination of the Puppet primary server and Puppet agent applications. \cite{puppetDocApply}
+Puppet apply is an application that compiles and manages configurations on nodes. It acts like a self-contained combination of the Puppet primary server and Puppet agent applications. ~\cite{puppetDocApply}
 
 \textbf{Puppet reports}
-Puppet creates a report about its actions and your infrastructure each time it applies a catalog during a Puppet run. You can create and use report processors to generate insightful information or alerts from those reports. \cite{puppetDocReports}
+Puppet creates a report about its actions and your infrastructure each time it applies a catalog during a Puppet run. You can create and use report processors to generate insightful information or alerts from those reports. ~\cite{puppetDocReports}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\linewidth]{figures/puppetplatformjpeg.png}
     \caption{Puppet Platform}
     \label{fig:puppet-platform-image}
-\end{figure}\cite{puppetDocPlatform}
+\end{figure}~\cite{puppetDocPlatform}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\linewidth]{figures/puppetfunctioning.png}
     \caption{Puppet Functioning}
     \label{fig:puppet-functioning-image}
-\end{figure}\cite{puppetImgFunctioning}
+\end{figure}~\cite{puppetImgFunctioning}
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
 
@@ -1493,17 +1493,17 @@ About Puppet Server, Puppet provides official packages that install Puppet Serve
 \end{itemize}
 As it is possible to see, MacOS and Windows systems are not included for server.
 If Puppet doesn't provide a package for your system, you can run Puppet Server from source on any x86\_64 Linux server with JDK 1.8 or 11.
-\cite{puppetDocSupportServer}
+~\cite{puppetDocSupportServer}
 
 About Puppet agent, the installation is instead available for *nix, Windows, or MacOS.
-\cite{puppetDocSupportAgents}
+~\cite{puppetDocSupportAgents}
 
 \subsection{Puppet project}
 The general Puppet project is available at \url{https://github.com/puppetlabs/}.
 The part related to the Puppet main project at \url{https://github.com/puppetlabs/puppet}.
 
-This project is written in Ruby, available with Apache License 2.0\cite{puppetGitHubProject}.
-About the choice to write Puppet in Ruby instead in a language as Python, Luke Kanies, the author of Puppet said "I tried Python, because this was around 2003 and Python was the next new thing and everyone was saying how great it is, but I just can't seem to write in Python at all. A friend had said he'd heard Ruby was cool, so I gave it a try, and in four hours I went from never having seen a line of it to having a working prototype. I haven't looked back since then, and haven't regretted the choice"\cite{puppetDocOldFAQ}.
+This project is written in Ruby, available with Apache License 2.0~\cite{puppetGitHubProject}.
+About the choice to write Puppet in Ruby instead in a language as Python, Luke Kanies, the author of Puppet said "I tried Python, because this was around 2003 and Python was the next new thing and everyone was saying how great it is, but I just can't seem to write in Python at all. A friend had said he'd heard Ruby was cool, so I gave it a try, and in four hours I went from never having seen a line of it to having a working prototype. I haven't looked back since then, and haven't regretted the choice"~\cite{puppetDocOldFAQ}.
 
 Puppet automations is defined in a declarative language derived from Ruby (Ruby DSL) called Puppet Code.
 
@@ -1512,28 +1512,28 @@ Considering that Puppet automation is described in Puppet Code that is declarati
 Puppet then automates the process of getting these systems into that state and keeping them there.
 Puppet does this through Puppet primary server and a Puppet agent.
 The Puppet primary server is the server that stores the code that defines your desired state.
-The Puppet agent translates your code into commands and then executes it on the systems you specify, in what is called a Puppet run\cite{puppetDocWhatIs}.
-In Puppet servers and agents communicate by HTTPS using SSL certificates. Puppet includes a built-in certificate authority for managing certificates.Puppet Server performs the role of the primary node and also runs an agent to configure itself\cite{puppetDocPlatform}.
+The Puppet agent translates your code into commands and then executes it on the systems you specify, in what is called a Puppet run~\cite{puppetDocWhatIs}.
+In Puppet servers and agents communicate by HTTPS using SSL certificates. Puppet includes a built-in certificate authority for managing certificates.Puppet Server performs the role of the primary node and also runs an agent to configure itself~\cite{puppetDocPlatform}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\linewidth]{figures/puppetagentserverjpeg.png}
     \caption{Puppet Agent Server}
     \label{fig:chef-agent-server-image}
-\end{figure}\cite{puppetDocWhatIs}
+\end{figure}~\cite{puppetDocWhatIs}
 
 \subsection{Extensions of the project}
 It is possible to create custom code and modules, using the \textbf{Puppet Development Kit (PDK)}.
-PDK is "a framework to successfully build, test and validate your modules"\cite{puppetDocPDK}.
+PDK is "a framework to successfully build, test and validate your modules"~\cite{puppetDocPDK}.
 
 
 There is also a sort of collection of modules called \textbf{Puppet Forge} at \url{https://forge.puppet.com/}.
-"Puppet Forge is a catalogue of modules created by Puppet, our partners, and community that helps IT ops practitioners supercharge and simplify their automation processes. With step-by-step guides and tutorials, Puppet Forge provides a platform for you to grow your skills with Puppet, whatever your current level"\cite{puppetForge}.
+"Puppet Forge is a catalogue of modules created by Puppet, our partners, and community that helps IT ops practitioners supercharge and simplify their automation processes. With step-by-step guides and tutorials, Puppet Forge provides a platform for you to grow your skills with Puppet, whatever your current level"~\cite{puppetForge}.
 Puppet Forge modules could have different badges like "Supported" or "Approved" by Puppet.
 There are more than 7k modules available and about 2.5k community contributors.
 
-Considering the Puppet community and related channels, there is a project called Vox Populi, which defines itself as "We are a collective of Puppet module, tooling and documentation authors all working together to ensure continued development on the code we maintain"\cite{puppetVox}.
-About the way works this project "We work under a shared name and namespace and synchronize our efforts. Having no official relation to Puppet Inc. allows us to maintain our own pace and direction when it comes to how we work and develop"\cite{puppetVox}.
+Considering the Puppet community and related channels, there is a project called Vox Populi, which defines itself as "We are a collective of Puppet module, tooling and documentation authors all working together to ensure continued development on the code we maintain"~\cite{puppetVox}.
+About the way works this project "We work under a shared name and namespace and synchronize our efforts. Having no official relation to Puppet Inc. allows us to maintain our own pace and direction when it comes to how we work and develop"~\cite{puppetVox}.
 
 \section{Installation}
 
@@ -1542,7 +1542,7 @@ First of all, to install Puppet on the system is necessary to enable the Puppet 
 Enabling the Puppet platform repository makes the components needed for installation available on your system.
 The enabling of the repository depends on which package management system the system uses: \texttt{yum} or \texttt{apt}.
 It is important to search the correct URL of the package to enable based on the operating system and version, located in \url{yum.puppet.com} and \url{apt.puppet.com}.
-\cite{puppetDocInstall}
+~\cite{puppetDocInstall}
 
 \subsubsection{Example for Yum}
 Logged in as root, run the RPM tool in upgrade mode.
@@ -1573,7 +1573,7 @@ Update the apt package lists.
 sudo apt-get update
 \end{lstlisting}
 
-\cite{puppetDocInstall}
+~\cite{puppetDocInstall}
 
 \subsection{Install Puppet Server}
 Install the Puppet Server package.
@@ -1605,7 +1605,7 @@ puppetserver -v
 
 Puppet Server is configured to use 2GB of RAM. However, it is possible to test it also on a VM, allocating as little as 512MB of memory. 
 
-\cite{puppetDocSupportServer}
+~\cite{puppetDocSupportServer}
 
 \subsection{Install Puppet agents}
 There are different ways to install Puppent agents, also considering that it is possible to install them not only in Linux but also in Windows and MacOS.
@@ -1613,10 +1613,10 @@ In Linux, after enabling Puppet platform repository, install the agent by the te
 In Windows, it is possible to use msi package to install agent. It is also possible to upgrade or downgrade between 32-bit and 64-bit Puppet on Windows nodes.
 In MacOS, there are different ways to install agent: from Finder, the command line or Homebrew.
 
-\cite{puppetDocSupportAgents}
+~\cite{puppetDocSupportAgents}
 
 \section{Tecnologies for testing Puppet}
-One way to test modules is using \textbf{Litmus}, which is installed as (experimental) part of Puppet Development Kit(PDK). It is "a command line tool that allows you to run acceptance tests against Puppet modules for a variety of OSes and deployment scenarios"\cite{puppetLitmus}.
+One way to test modules is using \textbf{Litmus}, which is installed as (experimental) part of Puppet Development Kit(PDK). It is "a command line tool that allows you to run acceptance tests against Puppet modules for a variety of OSes and deployment scenarios"~\cite{puppetLitmus}.
 
 PDK includes a series of tools to test Puppet, not only for modules but also for code, such as:
 \begin{itemize}
@@ -1637,7 +1637,7 @@ It also exists a Puppet Extension for Visual Studio Code and a Puppet Plugin for
 It is possible to consider Puppet learning curve not one of the fastest.
 Puppet project is written in Ruby, which is not as simple as language for beginners like Python.
 Puppet automations are not written in Ruby but in a Ruby DSL which adds another little difficulty to start with Puppet.
-About the fact that Puppet wish not to use XML/YAML for automations, it is beacuse "using XML or YAML would limit any assurance that the interface was declarative - one process might treat an XML configuration differently from another"\cite{puppetDocOldFAQ}.
+About the fact that Puppet wish not to use XML/YAML for automations, it is beacuse "using XML or YAML would limit any assurance that the interface was declarative - one process might treat an XML configuration differently from another"~\cite{puppetDocOldFAQ}.
 Considering also that the Puppet structure is not a standard agent-server structure it is not the best for beginners in automations, but has good support from the community.
 
 \chapter{Conclusions}
