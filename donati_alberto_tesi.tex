@@ -35,11 +35,11 @@
     Therefore, systems that can automate tasks on large numbers of machines in parallel are created and are increasingly being used.
     This thesis aims to compare and evaluate different server automation tools, analyzing their features, advantages, and disadvantages.
     Technologies considered are based on open source projects, with a free version and a community-oriented license.
-    "Closed" technologies properties for example tools of Amazon, Google and Microsoft will not considered.
+    Closed technology properties for example tools of Amazon, Google and Microsoft will not considered.
     The thesis analyzes for each technology the historical backgroud, the purpose of that, the community, the main components and some characteristics.
     Characteristics analyzed are platforms available, the project itself, the architecture and the extension. Also, it describes some information about the installation of the technology.
-    There are present, at the end, some tables and explanations for a comparison point of view of the technologies analyzed.
-    It then goes on to provide a summary overview of the reasons why professionals could choose one alternative over another.
+    There are, in the end, some tables and explanations for a comparison point of view of the technologies analyzed.
+    It is provided also a summary overview of the reasons why it could choose one alternative over another.
 \end{abstract}
 
 %\begin{dedication} % this is optional
@@ -62,18 +62,19 @@
 \chapter{Introduction}
 \label{chap:introduction}
 %----------------------------------------------------------------------------------------
-
-Considering the last decades, the number of servers increase, computing capacity is increasing more and more and technologies grow.
-
-So, now IT companies need also technologies to manage the infrastructure they have, which simplify and organize the jobs on servers.
-
+Nowadays IT companies need technologies to manage the infrastructure they have, which simplifies and organizes the jobs on servers.
+The number of servers is increasing year after year, computing capacity is continually growing, and technologies are advancing.
 There are a lot of repetitive tasks when it is needed to install and configure a server, so there are now tools to simplify it a lot and also make an automation on it.
-
-These technologies are usually called "automation tools". Considering different DevOps technologies, this document aims to study and compare some open source technologies about automation.
-
-That document is useful for IT students, teachers and enthusiasts who wish to manage their IT environment differently.
-
-It is a starting point to see what is an automation tool, different types of ways to automate with these technologies, see some examples and also see overviews and comparisons.
+These technologies are usually called "automation tools".
+Starting from a previous internship experience in the DevOps field, I became interested in automation tools.
+During my experience, I saw and learned to use Ansible among the available tools.
+With Ansible, I learned how to create several commands to perform automations that also included launching executions of personalized scripts.
+Using this experience with Ansible as a starting point, I decided to go deeper into the topic on Ansible and other open source and free automation tools.
+This document aims to study and compare some open source automation tools, that have a wide community and a free version.
+Automation tools are not useful only for wide organizations but could be used also for personal projects or small businesses.
+This thesis is useful for IT students, teachers and enthusiasts who wish to manage their IT environment differently.
+It is a starting point to see what is an automation tool and compare differences and similarities in structures, communities, technologies, and ways to automate with these tools.
+Providing an overview and comparison of them helps users to have a summarized point of view of these technologies and what could be the correct choice for their use case.
 
 \section{Methodology}
 There is a focus on tools created in these years. Searching for technologies just created is not the scope, and also finding technologies too old might result in not being useful for real use.
@@ -105,24 +106,9 @@ Considering this research and other sources, there is a little description of th
 
 At the end, there is a summary of the research done writing that document, and tables or similar mixing different technologies.
 
-The structure is something like this:
-
-\begin{itemize}
-    \item Introduction
-    \item State of the art (what are automation tools, who uses, open source)
-    \item for each automation tool:
-    \begin{itemize}
-    \item History of the technology
-    \item Purpose of the technology
-    \item Community, maintenance and support
-    \item Main technology components
-    \item Installation and examples
-    \item How to test the technology
-    \item Pros and Cons
-    \end{itemize}
-    \item Conclusions (Considerations and comparisons)
-\end{itemize}
-
+The structure includes ad the beginning the introduction and the state of the art.
+After, for each technology is indicated at least the history, the community, main components, installation and ways of testing.
+At the end, there is a conclusion chapter with comparisons and considerations.
 
 \chapter{State of the art}
 
@@ -176,14 +162,7 @@ If it is a beginner, there are some stuff that probability has no sense to autom
 When someone knows a tool enough, it is possible to also expand the automation for more complex jobs.
 
 \section{What are the main tools}
-Some of the tools used by the community for automation, which try to reply to the scope indicated above are:
-
-\begin{itemize}
-    \item Ansible
-    \item Salt
-    \item Chef
-    \item Puppet
-\end{itemize}
+Some of the tools used by the community for automation, which try to reply to the scope indicated above are \textbf{Ansible, Salt, Chef, Puppet}.
 
 Every technology has some differences considering for example language to write automation, learning curve, necessity of demons, connection with machines and so on.
 
@@ -305,16 +284,7 @@ Usually, its use is recommended in a Linux environment, but some features are sl
 
 Considering that most servers have a Linux kernel, the tests will focus on a Linux environment.
 
-
 Ansible is ideal for managing IT environments, as it can automate tasks on a multitude of nodes simultaneously.
-
-\subsection{Best points of Ansible}
-\begin{itemize}
-    \item \textbf{Simple}: As syntax, the files are described in YAML language. YAML is easy to understand by those who have minimal knowledge of programming languages and is often used for configurations. In addition, most configuration management software is characterized by an agent and a server from which to start the orchestration. In this case, Ansible's agentless management makes it easy to manage machines.
-    \item \textbf{Fast}: Ansible, in addition to having a low learning curve, has a fast configuration, not having agents that must be constantly active on the host machines. Ansible connects directly to the host machines via SSH, and it is enough to have Python installed on the host machines.
-    \item \textbf{Efficient}: Considering that Ansible does not have active agents, this does not consume extra resources in the hosts where the automatisms are executed. Ansible takes space and resources only during the execution of the activity on the controlled node.
-    \item \textbf{Secure}: Considering that the connection from the manager to the controlled node is via SSH, no extra open ports are required.
-\end{itemize}
 
 \section{How the tool is shown to the community}
 
@@ -355,15 +325,10 @@ An Ansible-related open source project is AWX which "provides a web-based user i
 Inventory defines nodes(also called hosts) of the infrastructure on which Ansible performs automations. Even if you can pass the host names from the terminal, it is good practice to create the inventory file.
 The hosts are inserted into groups so that you can run automations on multiple hosts at the same time.
 According to the Ansible documentation on inventory management~\cite{ansibleDocInventory}, you can group the machines according to the following criteria:
-            
-            \begin{itemize}
-                \item \textbf{What:} What purpose they were created for
-                \item \textbf{Where:} Where the machines are located
-                \item \textbf{When:} The stage of development they are assigned to
-            \end{itemize}
-            
-            In addition, you can also make parent-child relationships, in which each machine inserted in a child group is also part of the parent group. All that can be done using the \texttt{children} attribute.
-            Another function that might be useful, considering the inventories, is the variables, which can be defined for the groups (and also subgroups), through the \texttt{vars} attribute.
+\textbf{What}(What purpose they were created for), \textbf{Where}(Where the machines are located) and \textbf{When}(The stage of development they are assigned to).
+
+In addition, you can also make parent-child relationships, in which each machine inserted in a child group is also part of the parent group. All that can be done using the \texttt{children} attribute.
+Another function that might be useful, considering the inventories, is the variables, which can be defined for the groups (and also subgroups), through the \texttt{vars} attribute.
 
 \subsubsection{Example Inventory Ansible}
 
@@ -445,11 +410,13 @@ Besides that, it is possible to use Windows machines as hosts and run automation
 
 Ansible project (not considering other projects directly related) is available at \url{https://github.com/ansible/ansible}~\cite{ansibleGithub}.
 
-
 This project is mainly written in Python, and its License is GNU General Public License 3.0.
 
-
 The automation is written in YAML, a language invented in 2001, which is a very simple language based on lists mixed with dictionaries (created with key-value pairs).
+
+Considering that Ansible does not have active agents, this does not consume extra resources in the hosts where the automatisms are executed. Ansible takes space and resources only during the execution of the activity on the controlled node.
+
+Ansible has a fast configuration, not having agents that must be constantly active on the host machines. Ansible connects directly to the host machines via SSH (in Linux), and it is enough to have Python installed on the host machines.
 
 \subsection{Architecture, agent or agentless}
 
@@ -457,8 +424,7 @@ The automation is written in YAML, a language invented in 2001, which is a very 
 The architecture of Ansible is agentless, it doesn't need any type of demons or particular configuration in the host machine to be controlled.
 
 
-The machine that controls others connects to nodes via SSH connections. The nodes also need (to run almost all Ansible commands) Python installed.
-
+The machine that controls others connects to nodes via SSH connections in Linux. The nodes also need (to run almost all Ansible commands) Python installed.
 
 Without that, it is not needed to update and manage nodes. Having an agent allows the user to know better the state of the machine-controlled and the condition of the network.
 
@@ -632,15 +598,13 @@ Salt users can personalize their experience by writing their scripts and program
 \section{The begin of Salt}
 
 \subsection{History}
-Salt was started in 2011, as a project ideated by Thomas S. Hatch which was not satisfied with other open source technologies available~\cite{saltFloss}. He decided to use the fast ZeroMQ for connections and messages between machines. Some steps can be seen at \url{https://red45.wordpress.com/2011/05/29/
-salt-configuration-management/}
+Salt was started in 2011, as a project ideated by Thomas S. Hatch which was not satisfied with other open source technologies available~\cite{saltFloss}. He decided to use the fast ZeroMQ for connections and messages between machines.
 
 
 For example, he posted about \textbf{Salt Configuration Management} when he wrote:
 
 
-"The Salt configuration management took a big leap forward late last night. The capability to define more complex states in salt from the master became a reality. Salt can now define states on the master file server, and pull those states on the minions. More work still needs to be done, and we still need to write the documentation, but this is a big step forward!".
-
+"The Salt configuration management took a big leap forward late last night. The capability to define more complex states in salt from the master became a reality. Salt can now define states on the master file server, and pull those states on the minions. More work still needs to be done, and we still need to write the documentation, but this is a big step forward!"~\cite{saltConf}.
 
 The states of machines in Salt are written on YAML, and Salt compiles these configurations in Python data structure.
 
@@ -669,18 +633,6 @@ Useful to deploy, configure, and manage complex IT systems, Salt has the scope t
 
 
 Salt is useful to simplify and eliminate manual work (and so some errors) when repetitive tasks are needed on a group of servers.
-
-\subsection{Best points of Salt}
-
-Here are some good points about Salt:
-\begin{itemize}
-    \item \textbf{Flexibility:} It works on Unix and also on Windows systems, but also on different types of network devices such as switches and routers from different brands.
-                                It is usually used in a mode with agents called minions, but has also a limited working mode agentless.
-    \item \textbf{Speed:} It works using ZeroMQ and msgpack, so the communication is simple, light, and fast between nodes.
-    \item \textbf{Idempotent:} Every time automation is started, it always has the same result despite the state of a system when the run starts.
-    \item \textbf{Robust:} Considering that the system is based on agents who used ZeroMQ to communicate, the agent approach with good technology made the communication where there is better knowledge about the state of the nodes.
-    \item \textbf{Secure:} It uses public keys for authentication and AES encryption for payload communication
-\end{itemize}
 
 \section{How the tool is shown to the community}
 
@@ -847,13 +799,17 @@ In Salt, both modules and execution modules are Python (or Cython) files that co
 
 \subsection{Platforms available (Linux, Windows, MacOS)}
 Salt is natively supported in many Linux, MacOS and Windows systems, in controlled nodes.
-In node that acts as a master node, it seems reading the documentation that only in (many) Linux systems can do that.
+In a node that acts as a master node, it seems reading the documentation that only in (many) Linux systems can do that.
 Salt has created a table, with detailed explanations, with many OS and distributions with relative Salt compatibility~\cite{saltDocTable}.
 
 \subsection{Salt project}
 The project is available under the Apache 2.0 license. This license includes very few restrictions on the modification and distribution of the project.
 The GitHub repo is available at \url{https://github.com/saltstack/salt}, and it is written in Python.
 Salt represents, by default, the SLS data in what is one of the simplest serialization formats available, which is YAML.
+Salt works on Unix and also on Windows systems, but also on different types of network devices such as switches and routers from different brands.
+It is usually used in a mode with agents called minions, but has also a limited working mode agentless.
+It works with agents who use ZeroMQ and msgpack to communicate. The agent approach with good technology made the communication where there is better knowledge about the state of the nodes.
+Salt uses public keys for authentication and AES encryption for payload communication.
 
 \subsection{Architecture, agent or agentless}
 The preferred approach that Salt uses, is the master-minion setup, the Salt master sends commands to the Salt minions to execute.
@@ -978,14 +934,6 @@ The company created was called as now, \textbf{Progress Chef}.
 "Chef is used by companies of all shapes and sizes, from tiny startups to the largest companies in the world, to create businesses where infrastructure moves as fast as software.", Adam Jacob, the main inventor of Chef, declare it about Chef.
 Chef aims to speak from small to big business with that quote.
 
-\subsection{Best points of Chef}
-
-\begin{itemize}
-\item{Flexibility}: it works on different Linux distros, MacOS and Windows
-\item{Interoperability}: it works on clouds, on-premise and also on hybrid systems.
-\item{Easy repetitive}: it is possible to reuse code written by others to reproduce automation
-\end{itemize}
-
 \section{How the tool is shown to the community}
 
 \subsection{Who supports and maintains the project}
@@ -1035,10 +983,8 @@ It is available at \url{https://community.chef.io/}.
 
 
 About open source Chef practice, there is a GitHub repo created by Chef on purpose.
-That is available at \url{https://github.com/chef/chef-oss-practices}. It is also available a guide at \url{https://github.com/chef/chef-oss-practices/blob/main/CONTRIBUTING.md}.
+That is available at \url{https://github.com/chef/chef-oss-practices}, which includes also a guide.
 
-
-Also, there are defined communications \url{https://github.com/chef/chef-oss-practices/blob/main/communication/README.md}.
 
 There are four communication channels each with its specific purpose ~\cite{chefGithubOSSCom}:
 
@@ -1176,7 +1122,8 @@ The main repo for Chef open source projects is \url{https://github.com/chef/}.
 The Chef Server is written almost completely in Erlang and also Ruby, Chef Infra is written in Ruby.
 The Chef Infra Language is a comprehensive systems configuration language, based on Ruby, with resources and helpers for configuring operating systems. The language is primarily used in Chef Infra recipes and custom resources to tell the Chef Infra Client what action(s) to take to configure a system~\cite{chefInfraLanguage}.
 Ruby is a free and open-source language that is not the simplest but it is used for different uses, its first release was in 1995.
-
+Chef works on different Linux distros, MacOS and Windows and it is thought to work on clouds, on-premise and also on hybrid systems.
+    
 \subsection{Architecture, agent or agentless}
 Chef works on client-server configuration with the addition of a workstation.
 In Chef, there is an architecture where nodes pull configurations from the server. Chef has its server as the source of truth that requires uploaded cookbooks.
@@ -1331,19 +1278,6 @@ Sharing common Puppet methodology and language between colleagues allows the bus
 
 There are some Puppet use cases, for example, Alex Zbarcea, DevOps Engineer III, Fannie Mae said "Puppet forces you to have accountability for each artifact managed in production. You'll know nothing is being missed, nothing is not being tracked. Puppet brings a lot of health into configuration management, giving visibility to teams across silos so they know the lifecycle of each artifact for services required for other services. Puppet is great at answering: Are the services configured as they should be? Did anything change? Is there a conflict between configuration processes? Puppet brings consistency and predictability into the environment. When you have to upgrade a service, it's so much easier"~\cite{puppetDocUseCase}.
 
-
-\subsection{Best points of Puppet}
-
-Some Puppet key features:
-
-\begin{itemize}
-    \item \textbf{Idempotency}: Execute automations code once, is equal to executing hundreds of times. When the state is defined, the system forces to obtain(or maintain) the state desired of the system.
-    \item \textbf{Promote community}: Puppet gives some benefits (like discount, contents, stickers) to the contributors that are in a "group" called Puppet Champion".
-    There is also a special group called "The League of Extraordinary Puppeteers" that can you enter on it only by community nomination (and offers additional benefits).
-    \item \textbf{DevOps oriented}: Puppet wishes to work in a agile style inviting system administration to use devops technologies and practice
-    \item \textbf{Mature industry-proven technology} It has a strong user base, used by from community users to big tech companies (Accenture, Uber, Twich), it has been created years before different competitors and has great documentation on itself sources and also on others related online resources.
-\end{itemize}
-
 \section{How the tool is shown to the community}
 
 \subsection{Who supports and maintains the project}
@@ -1492,13 +1426,17 @@ About the choice to write Puppet in Ruby instead in a language as Python, Luke K
 
 Puppet automations is defined in a declarative language derived from Ruby (Ruby DSL) called Puppet Code.
 
+Puppet gives some benefits (like discount, contents, stickers) to the contributors that are in a "group" called Puppet Champion". 
+There is also a special group called "The League of Extraordinary Puppeteers" that can you enter on it only by community nomination (and offers additional benefits). Puppet is DevOps oriented because Puppet wishes to work in an agile style inviting system administration to use devops technologies and practices.
+Puppet has a strong user base, used by from community users to big tech companies (Accenture, Uber, Twitch), it has been created years before different competitors.
+
 \subsection{Architecture, agent or agentless}
 Considering that Puppet automation is described in Puppet Code that is declarative, the automations work describing the state the desired state of the system and not the steps needed to get there.
 Puppet then automates the process of getting these systems into that state and keeping them there.
 Puppet does this through Puppet primary server and a Puppet agent.
 The Puppet primary server is the server that stores the code that defines your desired state.
 The Puppet agent translates your code into commands and then executes it on the systems you specify, in what is called a Puppet run~\cite{puppetDocWhatIs}.
-In Puppet servers and agents communicate by HTTPS using SSL certificates. Puppet includes a built-in certificate authority for managing certificates.Puppet Server performs the role of the primary node and also runs an agent to configure itself~\cite{puppetDocPlatform}.
+In Puppet servers and agents communicate by HTTPS using SSL certificates. Puppet includes a built-in certificate authority for managing certificates. Puppet Server performs the role of the primary node and also runs an agent to configure itself~\cite{puppetDocPlatform}.
 
 \begin{figure}[H]
     \centering
